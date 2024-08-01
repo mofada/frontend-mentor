@@ -29,16 +29,33 @@ css让我很困惑。
 ## 概览
 
 ### 1. [二维码组件](challenges/qr-code-component)
-
 ![screenshot](challenges/qr-code-component/screenshot/screenshot.png)
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/qr-code-component/)
 
 ### 2. [博客预览卡片](challenges/blog-preview-card)
 
 ![Screenshot](challenges/blog-preview-card/screenshot/screenshot.png)
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/blog-preview-card/)
+
 
 ### 3. [社交媒体主页](challenges/social-links-profile)
 
 ![Screenshot](challenges/social-links-profile/screenshot/screenshot.png)
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/social-links-profile/)
+
+
+### 4. [食谱页面](challenges/recipe-page)
+
+![Screenshot](challenges/recipe-page/screenshot/screenshot.png)
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/recipe-page/)
+
+### 5. [产品预览卡片](challenges/product-preview-card-component)
+
+![Screenshot](challenges/product-preview-card-component/screenshot/screenshot.png)  
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/product-preview-card-component/)
+
+正在开发中...
 
 ## 作者
 

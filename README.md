@@ -35,14 +35,34 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 ![screenshot](challenges/qr-code-component/screenshot/screenshot.png)
 
+[Preview](https://mofada.github.io/frontend-mentor/challenges/qr-code-component/)
+
 ### 2. [Blog preview card](challenges/blog-preview-card)
 
 ![Screenshot](challenges/blog-preview-card/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/blog-preview-card/)
+
 
 ### 3. [Social links profile](challenges/social-links-profile)
 
 ![Screenshot](challenges/social-links-profile/screenshot/screenshot.png)
 
+[Preview](https://mofada.github.io/frontend-mentor/challenges/social-links-profile/)
+
+### 4. [Recipe page](challenges/recipe-page)
+
+![Screenshot](challenges/recipe-page/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/recipe-page/)
+
+### 5. [Product preview card component](challenges/product-preview-card-component)
+
+![Screenshot](challenges/product-preview-card-component/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/product-preview-card-component/)
+
+still working...
 
 ## Author
 
