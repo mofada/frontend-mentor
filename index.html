@@ -6,8 +6,136 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./resource/favicon-32x32.png">
 
     <title>Frontend Mentor</title>
-</head>
-<body>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        html: '#e96228',
+                        css: '#2862e9',
+                        tailwind: '#38bdf8',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+
+    </style>
+</head>
+<body class="bg-gray-100 w-screen h-screen">
+<main class="p-4 grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4">
+    <!--Qr code component-->
+    <section class="flex flex-col rounded-lg bg-white p-4 shadow">
+        <a href="challenges/qr-code-component" target="_blank">
+            <figure>
+                <img src="challenges/qr-code-component/screenshot/screenshot.png"
+                     alt="QR Code Component"
+                     class="w-full aspect-video object-cover rounded-lg  cursor-pointer "/>
+            </figure>
+        </a>
+
+        <a href="https://www.frontendmentor.io/solutions/tailwindcss-G5mnzkJKWK" target="_blank">
+            <h2 class="text-lg font-bold mt-2 underline hover:text-blue-500 ">QR Code Component</h2>
+        </a>
+        <p class="text-sm text-gray-500 ">
+            <span class="px-1 text-xs  rounded bg-html text-white">HTML</span>
+            <span class="px-1 text-xs rounded bg-css text-white">CSS</span>
+            <span class="px-1 text-xs rounded bg-tailwind text-white">Tailwind CSS</span>
+        </p>
+    </section>
+
+    <!-- blog-preview-card -->
+    <section class="flex flex-col rounded-lg bg-white p-4 shadow">
+        <a href="challenges/blog-preview-card" target="_blank">
+            <figure>
+                <img src="challenges/blog-preview-card/screenshot/screenshot.png"
+                     alt="QR Code Component"
+                     class="w-full aspect-video object-cover rounded-lg  cursor-pointer "/>
+            </figure>
+        </a>
+
+        <a href="https://www.frontendmentor.io/solutions/page-use-flex-and-tailwind-css-Mcd7ljeJBX"
+           target="_blank">
+            <h2 class="text-lg font-bold mt-2 underline hover:text-blue-500 ">Blog preview card
+            </h2>
+        </a>
+        <p class="text-sm text-gray-500 ">
+            <span class="px-1 text-xs  rounded bg-html text-white">HTML</span>
+            <span class="px-1 text-xs rounded bg-css text-white">CSS</span>
+            <span class="px-1 text-xs rounded bg-tailwind text-white">Tailwind CSS</span>
+        </p>
+    </section>
+
+    <!-- social-links-profile -->
+    <section class="flex flex-col rounded-lg bg-white p-4 shadow">
+        <a href="challenges/social-links-profile" target="_blank">
+            <figure>
+                <img src="challenges/social-links-profile/screenshot/screenshot.png"
+                     alt="QR Code Component"
+                     class="w-full aspect-video object-cover rounded-lg  cursor-pointer "/>
+            </figure>
+        </a>
+
+        <a href="https://www.frontendmentor.io/solutions/social-links-profile-page-Ip2oSbCmwa"
+           target="_blank">
+            <h2 class="text-lg font-bold mt-2 underline hover:text-blue-500 ">Social links
+                profile </h2>
+        </a>
+        <p class="text-sm text-gray-500 ">
+            <span class="px-1 text-xs  rounded bg-html text-white">HTML</span>
+            <span class="px-1 text-xs rounded bg-css text-white">CSS</span>
+            <span class="px-1 text-xs rounded bg-tailwind text-white">Tailwind CSS</span>
+        </p>
+    </section>
+
+    <!--recipe-page-->
+    <section class="flex flex-col rounded-lg bg-white p-4 shadow">
+        <a href="challenges/recipe-page" target="_blank">
+            <figure>
+                <img src="challenges/recipe-page/screenshot/screenshot.png"
+                     alt="QR Code Component"
+                     class="w-full aspect-video object-cover rounded-lg  cursor-pointer "/>
+            </figure>
+        </a>
+
+        <a href="https://www.frontendmentor.io/solutions/recipe-page-with-tailwind-css-Ii50a98PKE"
+           target="_blank">
+            <h2 class="text-lg font-bold mt-2 underline hover:text-blue-500 ">Recipe page
+                profile </h2>
+        </a>
+        <p class="text-sm text-gray-500 ">
+            <span class="px-1 text-xs  rounded bg-html text-white">HTML</span>
+            <span class="px-1 text-xs rounded bg-css text-white">CSS</span>
+            <span class="px-1 text-xs rounded bg-tailwind text-white">Tailwind CSS</span>
+        </p>
+    </section>
+
+    <!--product-preview-card-component-->
+    <section class="flex flex-col rounded-lg bg-white p-4 shadow">
+        <a href="challenges/product-preview-card-component" target="_blank">
+            <figure>
+                <img src="resource/frontend-mentor.png"
+                     alt="QR Code Component"
+                     class="w-full aspect-video object-cover rounded-lg  cursor-pointer "/>
+            </figure>
+        </a>
+
+        <a href="#"
+           target="_blank">
+            <h2 class="text-lg font-bold mt-2 underline hover:text-blue-500 ">
+                Product preview card component
+            </h2>
+        </a>
+        <p class="text-sm text-gray-500 ">
+            <span class="px-1 text-xs  rounded bg-html text-white">HTML</span>
+            <span class="px-1 text-xs rounded bg-css text-white">CSS</span>
+            <span class="px-1 text-xs rounded bg-tailwind text-white">Tailwind CSS</span>
+        </p>
+    </section>
+</main>
 </body>
 </html>
