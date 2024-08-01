@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | QR code component</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+          rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+    </style>
+</head>
+<body class="flex flex-col w-screen h-screen  bg-slate-300">
+
+<!--how to write box-shadow in tailwindcss better?-->
+<div
+        class="flex flex-col items-center w-80 h-[500px] p-4 m-auto bg-white rounded-[20px] shadow-2xl">
+    <img src="images/image-qr-code.png" alt="QR code" class="w-72 h-72 rounded-[10px]">
+
+    <h2 class="text-[22px] text-slate-900 leading-[26px] font-bold mt-6 px-4 text-center">
+        Improve your front-end skills by building projects
+    </h2>
+
+    <p class="text-[15px] text-slate-500 leading-[21px] text-center mt-4 px-4">
+        Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
+    </p>
+</div>
+
+<div class="fixed bottom-0 inset-x-0 text-[11px] text-center">
+    Challenge by
+    <!--I can't write hsl color in tailwindcss-->
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-[#3E52A3]">Frontend
+        Mentor
+        .</a>
+    Coded by
+    <a href="#" class="text-[#3E52A3]">Fada Mo.</a>
+</div>
+</body>
+</html>
