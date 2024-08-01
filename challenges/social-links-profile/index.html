@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Social links profile</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        Inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'green': 'hsl(75, 94%, 57%)',
+                        grey: {
+                            '700': 'hsl(0, 0%, 20%)',
+                            '800': 'hsl(0, 0%, 12%)',
+                            '900': 'hsl(0, 0%, 8%)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @font-face {
+            font-family: "Inter";
+            src: url("assets/fonts/static/Inter-Regular.ttf") format("truetype");
+        }
+    </style>
+
+<!--    <script>-->
+<!--        function changVisible() {-->
+<!--            const container = document.querySelector('main');-->
+<!--            container.classList.toggle('hidden');-->
+<!--            console.log(container);-->
+<!--        }-->
+<!--    </script>-->
+</head>
+
+<body class="w-screen h-screen flex items-center justify-center bg-grey-900 font-Inter">
+
+<!-- design template develop use -->
+<!--<img src="design/destkop-design.jpg" alt="desktop design"-->
+<!--     class="w-screen h-screen object-cover z-0 fixed">-->
+
+<!--<button class="fixed right-5 bottom-5 text-white" onclick="changVisible()">Toggle</button>-->
+
+<!--container-->
+<main class="w-[368px] h-[580px] rounded-[20px] p-9 flex flex-col items-center bg-grey-800">
+    <!--image-->
+    <figure>
+        <img src="./assets/images/avatar-jessica.jpeg" alt="Jessica Randall"
+             class="w-[84px] h-[84px] rounded-full object-cover">
+    </figure>
+
+    <h1 class="mt-6 text-white text-2xl ">Jessica Randall</h1>
+    <h2 class="text-green text-sm  mt-[5px] font-medium">London, United Kingdom</h2>
+
+    <p class="mt-6 text-white text-sm font-medium">"Front-end developer and avid reader."</p>
+
+
+    <!--action button-->
+    <button
+            class="w-72 h-10 bg-grey-700 mt-6 text-white text-sm rounded-md cursor-pointer hover:bg-green transition-colors">
+        GitHub
+    </button>
+
+    <button
+            class="w-72 h-10 bg-grey-700 mt-[20px] text-white text-sm rounded-md cursor-pointer hover:bg-green transition-colors">
+        Frontend Mentor
+    </button>
+
+    <button
+            class="w-72 h-10 bg-grey-700 mt-[20px] text-white text-sm rounded-md cursor-pointer hover:bg-green transition-colors">
+        LinkedIn
+    </button>
+
+    <button
+            class="w-72 h-10 bg-grey-700 mt-[20px] text-white text-sm rounded-md cursor-pointer hover:bg-green transition-colors">
+        Twitter
+    </button>
+
+    <button
+            class="w-72 h-10 bg-grey-700 mt-[20px] text-white text-sm rounded-md cursor-pointer hover:bg-green transition-colors">
+        Instagram
+    </button>
+</main>
+
+
+<footer class="fixed bottom-0 inset-x-0 text-[11px] text-center text-white">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-[#3E52A3]">
+        Frontend Mentor .
+    </a>
+    Coded by
+    <a href="#" class="text-[#3E52A3]">Fada Mo.</a>
+</footer>
+</body>
+</html>

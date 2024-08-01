@@ -31,17 +31,18 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 ## Overview
 
-### Challenge one - [Qr Code Component](challenges/qr-code-component)
-
-#### Screenshot
+### 1. [Qr Code Component](challenges/qr-code-component)
 
 ![screenshot](challenges/qr-code-component/screenshot/screenshot.png)
 
-### Links
+### 2. [Blog preview card](challenges/blog-preview-card)
 
-- Solution URL: [tailwindcss](https://www.frontendmentor.io/solutions/tailwindcss-G5mnzkJKWK)
-- Live Site
-  URL: [qr-code-component](https://mofada.github.io/frontend-mentor/challenges/qr-code-component/)
+![Screenshot](challenges/blog-preview-card/screenshot/screenshot.png)
+
+### 3. [Social links profile](challenges/social-links-profile)
+
+![Screenshot](challenges/social-links-profile/screenshot/screenshot.png)
+
 
 ## Author
 

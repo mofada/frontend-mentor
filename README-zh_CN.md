@@ -26,18 +26,19 @@ css让我很困惑。
 我很难接受这种写法，但慢慢的我尝试去接受它，我发现还是很不错的，就像大家常说的：质疑tailwind，理解tailwind，使用tailwind，成为tailwind
 ，超越tailwind(what? 我不认为自己能超威)
 
-## 预览
+## 概览
 
-### 挑战一 · [二维码组件](challenges/qr-code-component)
-
-#### 截图
+### 1. [二维码组件](challenges/qr-code-component)
 
 ![screenshot](challenges/qr-code-component/screenshot/screenshot.png)
 
-#### 链接
+### 2. [博客预览卡片](challenges/blog-preview-card)
 
-- 方案地址: [tailwindcss](https://www.frontendmentor.io/solutions/tailwindcss-G5mnzkJKWK)
-- 在线预览: [qr-code-component](https://mofada.github.io/frontend-mentor/challenges/qr-code-component/)
+![Screenshot](challenges/blog-preview-card/screenshot/screenshot.png)
+
+### 3. [社交媒体主页](challenges/social-links-profile)
+
+![Screenshot](challenges/social-links-profile/screenshot/screenshot.png)
 
 ## 作者
 
