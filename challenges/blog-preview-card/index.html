@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+          rel="stylesheet">
+
+    <title>Frontend Mentor | Blog preview card</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        Figtree: ['Figtree', 'sans-serif'],
+                    },
+                    colors: {
+                        'yellow': '#F4D04E',
+                        'gray-950': '#111111',
+                        'gray-500': '#6B6B6B',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: "Figtree", sans-serif;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="w-screen h-screen flex items-center justify-center bg-yellow">
+
+<article
+        class="container w-96 h-[522px] rounded-[20px] bg-white border border-solid border-gray-950 p-6 shadow-[8px_8px_0_0_#000000] flex flex-col">
+    <!--image-->
+    <!--image-->
+    <figure>
+        <img src="./assets/images/illustration-article.svg" alt="Illustration of the article"
+             class="w-full h-[200px] rounded-[10px]">
+    </figure>
+
+    <!--Learning-->
+    <div class="bg-yellow self-start mt-6 px-3 py-1 rounded text-sm text-gray-950 font-extrabold">
+        Learning
+    </div>
+
+    <!--date-->
+    <time datetime="2023-12-21" class="text-gray-950 mt-3 font-medium text-sm">Published 21 Dec 2023</time>
+
+    <!--title-->
+    <h2 class="text-gray-950 mt-3 text-2xl leading-9 font-extrabold cursor-pointer hover:text-yellow">HTML & CSS
+        foundations</h2>
+
+    <p class="text-gray-500 mt-3 text-base font-medium">
+        These languages are the backbone of every website, defining structure, content, and
+        presentation.
+    </p>
+
+    <!--user info-->
+    <div class="flex items-center mt-6 gap-3">
+        <img src="./assets/images/image-avatar.webp" alt="image-avatar"
+             class="w-8 h-8 rounded-full">
+        <p class="text-gray-950 font-extrabold text-sm">Greg Hooper</p>
+    </div>
+</article>
+
+<div class="fixed bottom-0 inset-x-0 text-[11px] text-center">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-[#3E52A3]">
+        Frontend Mentor .
+    </a>
+    Coded by
+    <a href="#" class="text-[#3E52A3]">Fada Mo.</a>
+</div>
+</body>
+</html>

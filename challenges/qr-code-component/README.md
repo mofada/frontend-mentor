@@ -15,8 +15,8 @@ project. I hope I can learn a lot from this project.
 
 ### Links
 
-- Solution URL: [qr-code-component-with-tailwindcss](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H/solutions/tailwindcss-G5mnzkJKWK/edit)
-- Live Site URL: [qr-code-component](https://mofada.github.io/recipe-page/)
+- Solution URL: [Qr Code Component with tailwindcss](https://www.frontendmentor.io/solutions/tailwindcss-G5mnzkJKWK)
+- Live Site URL: [qr-code-component](https://mofada.github.io/frontend-mentor/challenges/qr-code-component/)
 
 ## Author
 
