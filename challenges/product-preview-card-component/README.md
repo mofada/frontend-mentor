@@ -13,7 +13,7 @@
 
 ### Links
 
-- Solution URL: []()
+- Solution URL: [product-preview-card-with-90-reducibility](https://www.frontendmentor.io/solutions/product-preview-card-with-90-reducibility-c4tH02KHdg)
 - Live Site URL: [product-preview-card-component](https://mofada.github.io/frontend-mentor/challenges/product-preview-card-component/)
 
 ## Author
