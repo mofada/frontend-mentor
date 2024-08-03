@@ -10,12 +10,26 @@
     <title>Frontend Mentor | Product preview card component</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 colors: {
                     'dark-cyan': 'hsl(158, 36%, 37%)',
+                    'very-dark-cyan': 'hsl(156, 42%, 18%)',
                     'cream': 'hsl(30, 38%, 92%)',
                     'very-dark-blue': 'hsl(212, 21%, 14%)',
                     'dark-grayish-blue': 'hsl(228, 12%, 48%)',
@@ -30,37 +44,85 @@
     </script>
 
     <style>
-        .attribution {
-            font-size: 11px;
-            text-align: center;
-        }
 
-        .attribution a {
-            color: hsl(228, 45%, 44%);
-        }
     </style>
+
+    <script>
+        function changOpacity() {
+            const container = document.querySelector('main');
+            // change opacity
+            container.classList.toggle('hidden');
+        }
+    </script>
 </head>
-<body>
+<body class="flex flex-col w-screen h-screen bg-cream text-base font-medium font-montserrat">
 
-Perfume
+<!--design template develop use, set screen width 1440px and develop-->
+<!--if screen is mobile, set screen width 375px-->
+<picture>
+    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>
+    <source media="(max-width: 375px)" srcset="design/mobile-design.jpg"/>
+    <img src="design/mobile-design.jpg"
+         alt="produce image" class="w-full h-full z-0 absolute top-0 bottom-0"/>
+</picture>
+<button class="fixed right-5 bottom-5 text-white z-20" onclick="changOpacity()">Toggle</button>
 
-Gabrielle Essence Eau De Parfum
+<!-- main content -->
+<main class="m-auto flex flex-col w-[343px] h-[612px] bg-white rounded-xl z-10 opacity-60">
+    <!-- Cover Image -->
+    <picture>
+        <source media="(min-width: 768px)" srcset="images/image-product-desktop.jpg"/>
+        <source media="(max-width: 768px)" srcset="images/image-product-mobile.jpg"/>
+        <img src="images/image-product-mobile.jpg"
+             alt="produce image" class="w-full rounded-t-xl"/>
+    </picture>
 
-A floral, solar and voluptuous interpretation composed by Olivier Polge,
-Perfumer-Creator for the House of CHANEL.
+    <section class="flex flex-col px-6">
+        <!-- Product Type -->
+        <h2 class="mt-6  text-xs text-dark-grayish-blue tracking-[5px] uppercase">
+            Perfume</h2>
 
-$149.99
-$169.99
+        <!-- Product Title -->
+        <h1 class="text-[32px] text-very-dark-blue font-fraunces font-bold  mt-3 leading-8 ">
+            Gabrielle Essence Eau De Parfum
+        </h1>
 
-Add to Cart
+        <!-- Product Description -->
+        <p class="text-sm text-dark-grayish-blue leading-[23px]  mt-4">
+            A floral, solar and voluptuous interpretation composed by Olivier Polge,
+            Perfumer-Creator
+            for the House of CHANEL.
+        </p>
 
-<div class="fixed bottom-0 inset-x-0 text-xs text-center">
+        <!-- Product Prices -->
+        <p class="mt-7  flex items-center gap-5">
+            <span class="text-[32px] text-dark-cyan font-bold font-fraunces ">$149.99</span>
+            <del class="text-[13px] text-dark-grayish-blue  ">$169.99</del>
+        </p>
+
+        <!-- Add to Cart Button -->
+        <button
+                class="mt-6 h-12 bg-dark-cyan  rounded-lg text-white flex justify-center items-center gap-[11px] text-sm cursor-pointer hover:bg-very-dark-cyan"
+                aria-label="Add to Cart">
+            <img src="images/icon-cart.svg" alt="Cart Icon">
+            Add to Cart
+        </button>
+    </section>
+</main>
+
+
+<!--$149.99-->
+<!--$169.99-->
+
+<!--Add to Cart-->
+
+<footer class="fixed bottom-0 inset-x-0 text-xs text-center">
     Challenge by
     <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-dark-cyan">
         Frontend Mentor .
     </a>
     Coded by
     <a href="https://www.frontendmentor.io/profile/mofada" class="text-dark-cyan">Fada Mo.</a>
-</div>
+</footer>
 </body>
 </html>
