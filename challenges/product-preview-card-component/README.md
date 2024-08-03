@@ -22,8 +22,7 @@
 - Twitter - [@im_mofada](https://x.com/im_mofada)
 
 
-# how to set line-through and offset it?
-[//]: # ( 我仔细观察了一下UI稿，发现这个线是有偏移的，有什么办法给中划线加偏移吗？)
+### how to set line-through and offset it?
 I carefully observed the UI draft and found that this line is offset. Is there any way to add an offset to the line-through?
 
 Yes, I find a css property `text-decoration-skip-ink` can do this. set 
