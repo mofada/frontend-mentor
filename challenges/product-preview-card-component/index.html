@@ -50,7 +50,6 @@
     <script>
         function changOpacity() {
             const container = document.querySelector('main');
-            // change opacity
             container.classList.toggle('hidden');
         }
     </script>
@@ -59,62 +58,57 @@
 
 <!--design template develop use, set screen width 1440px and develop-->
 <!--if screen is mobile, set screen width 375px-->
-<picture>
-    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>
-    <source media="(max-width: 375px)" srcset="design/mobile-design.jpg"/>
-    <img src="design/mobile-design.jpg"
-         alt="produce image" class="w-full h-full z-0 absolute top-0 bottom-0"/>
-</picture>
-<button class="fixed right-5 bottom-5 text-white z-20" onclick="changOpacity()">Toggle</button>
+<!--<picture>-->
+<!--    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>-->
+<!--    <source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>-->
+<!--    <img src="design/mobile-design.jpg"-->
+<!--         alt="background" class="w-full h-full z-0 absolute top-0 bottom-0"/>-->
+<!--</picture>-->
+<!--<button class="fixed right-5 bottom-5 text-white z-20" onclick="changOpacity()">Toggle</button>-->
 
 <!-- main content -->
-<main class="m-auto flex flex-col w-[343px] h-[612px] bg-white rounded-xl z-10 opacity-60">
+<main
+        class="m-auto flex flex-col w-[343px] h-[612px] bg-white rounded-xl md:flex-row md:w-[600px] md:h-[450px]">
     <!-- Cover Image -->
-    <picture>
+    <picture class="md:grow md:basis-3/6">
         <source media="(min-width: 768px)" srcset="images/image-product-desktop.jpg"/>
         <source media="(max-width: 768px)" srcset="images/image-product-mobile.jpg"/>
         <img src="images/image-product-mobile.jpg"
-             alt="produce image" class="w-full rounded-t-xl"/>
+             alt="produce image" class="w-full rounded-t-xl md:rounded-l-xl md:rounded-r-none"/>
     </picture>
 
-    <section class="flex flex-col px-6">
+    <section class="flex flex-col px-6 md:grow md:px-8 md:basis-3/6">
         <!-- Product Type -->
-        <h2 class="mt-6  text-xs text-dark-grayish-blue tracking-[5px] uppercase">
+        <h2 class="mt-6  text-xs text-dark-grayish-blue tracking-[5px] uppercase md:mt-8">
             Perfume</h2>
 
         <!-- Product Title -->
-        <h1 class="text-[32px] text-very-dark-blue font-fraunces font-bold  mt-3 leading-8 ">
+        <h1 class="text-[32px] text-very-dark-blue font-fraunces font-bold  mt-3 leading-8 md:mt-5">
             Gabrielle Essence Eau De Parfum
         </h1>
 
         <!-- Product Description -->
-        <p class="text-sm text-dark-grayish-blue leading-[23px]  mt-4">
+        <p class="text-sm text-dark-grayish-blue leading-[23px]  mt-4 md:mt-6">
             A floral, solar and voluptuous interpretation composed by Olivier Polge,
             Perfumer-Creator
             for the House of CHANEL.
         </p>
 
         <!-- Product Prices -->
-        <p class="mt-7  flex items-center gap-5">
+        <p class="mt-7  flex items-center gap-5 md:mt-8">
             <span class="text-[32px] text-dark-cyan font-bold font-fraunces ">$149.99</span>
             <del class="text-[13px] text-dark-grayish-blue  ">$169.99</del>
         </p>
 
         <!-- Add to Cart Button -->
         <button
-                class="mt-6 h-12 bg-dark-cyan  rounded-lg text-white flex justify-center items-center gap-[11px] text-sm cursor-pointer hover:bg-very-dark-cyan"
+                class="mt-6 h-12 bg-dark-cyan  rounded-lg text-white flex justify-center items-center gap-[11px] text-sm cursor-pointer hover:bg-very-dark-cyan md:mt-[34px]"
                 aria-label="Add to Cart">
             <img src="images/icon-cart.svg" alt="Cart Icon">
             Add to Cart
         </button>
     </section>
 </main>
-
-
-<!--$149.99-->
-<!--$169.99-->
-
-<!--Add to Cart-->
 
 <footer class="fixed bottom-0 inset-x-0 text-xs text-center">
     Challenge by
