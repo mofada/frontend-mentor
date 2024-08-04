@@ -34,12 +34,12 @@
         }
     </script>
 
-    <script>
-        function changOpacity() {
-            const container = document.querySelector('main');
-            container.classList.toggle('hidden');
-        }
-    </script>
+<!--    <script>-->
+<!--        function changOpacity() {-->
+<!--            const container = document.querySelector('main');-->
+<!--            container.classList.toggle('hidden');-->
+<!--        }-->
+<!--    </script>-->
 </head>
 <body class="flex flex-col w-screen bg-light-gray text-base font-poppins">
 <!--design template develop use, set screen width 1440px and develop-->
@@ -50,98 +50,105 @@
 <!--    <img src="design/mobile-design.jpg"-->
 <!--         alt="background" class="w-full z-0 absolute top-0 md:bottom-0 md:h-full"/>-->
 <!--</picture>-->
-<button class="fixed right-5 bottom-5 text-white z-20" onclick="changOpacity()">Toggle</button>
+<!--<button class="fixed right-5 top-5 text-white z-20" onclick="changOpacity()">Toggle</button>-->
 
-<main class="flex flex-col w-[310px] mx-auto my-[90px] z-10 opacity-85">
+<main
+        class="flex flex-col w-[310px] mx-auto my-[90px] z-10 opacity-85 md:w-auto md:h-auto md:my-0 md:h-screen md:justify-center">
     <!--Header-->
     <header class="mx-[6px] text-center">
-        <h1 class="text-[22px] text-grayish-blue font-extralight tracking-[1px]">
+        <h1
+                class="text-[24px] text-grayish-blue tracking-[0.15px] font-extralight md:text-[36px] md:mt-[12px] md:tracking-[0.2px]">
             Reliable, efficient delivery
         </h1>
 
-        <h2 class="text-[22px] text-dark-blue font-semibold mt-[13px] tracking-[1.3px]">
+        <h2
+                class="text-[24px] text-dark-blue font-semibold mt-[13px] tracking-[0.15px] md:text-[36px] md:mt-[27px] md:tracking-[0.25px]">
             Powered by Technology
         </h2>
 
-        <p class="mt-[21px] text-[15px] text-grayish-blue text-center leading-[25px]">
+        <p
+                class="mt-[21px] text-[15px] text-grayish-blue text-center leading-[25px] md:w-[500px] md:mt-[30px] md:mx-auto">
             Our Artificial Intelligence powered tools use millions of project data points to ensure
             that your project is successful
         </p>
     </header>
 
     <!-- Section for cards -->
-    <section class="grid mt-[75px] gap-[24px]">
+    <section
+            class="grid mt-[75px] gap-[24px] md:grid-cols-3 md:grid-rows-2 md:gap-[30px] md:mt-[62px]">
         <!--Supervisor-->
         <article
-                class="w-[310px] h-[222px] rounded-lg bg-white overflow-hidden flex flex-col shadow-md before:h-1 before:bg-cyan">
-            <h3 class="mx-[27px] mt-[25px] text-[20px] text-dark-blue font-semibold ">
+                class="w-[310px] h-[222px] rounded-lg bg-white overflow-hidden flex flex-col shadow-md before:h-1 before:bg-cyan md:w-[350px] md:h-[250px] md:row-span-full md:self-center">
+            <h3
+                    class="mx-[27px] mt-[25px] text-[20px] text-dark-blue font-semibold md:mt-[30px] md:mx-[32px]">
                 Supervisor
             </h3>
 
-            <p class="mx-[28px] mt-[6px] text-[13px] text-grayish-blue leading-[23px]">
+            <p
+                    class="mx-[28px] mt-[6px] text-[13px] text-grayish-blue leading-[23px] tracking-[0.1px] md:mx-[32px] md:mt-[12px]">
                 Monitors activity to identify project roadblocks
             </p>
 
             <figure>
                 <img src="images/icon-supervisor.svg" alt="Supervisor"
-                     class="w-[57px] h-[57px] ml-auto mr-[28px] mt-[32px]"/>
+                     class="w-[57px] h-[57px] ml-auto mr-[28px] mt-[32px] md:w-[64px] md:h-[64px] md:mr-[32px] md:mt-[39px]"/>
             </figure>
         </article>
 
         <!--Team Builder-->
         <article
-                class="w-[310px] h-[222px] rounded-lg bg-white overflow-hidden flex flex-col shadow-md before:h-1 before:bg-red">
-            <h3 class="mx-[27px] mt-[25px] text-[20px] text-dark-blue font-semibold ">
+                class="w-[310px] h-[222px] rounded-lg bg-white overflow-hidden flex flex-col shadow-md before:h-1 before:bg-red md:w-[350px] md:h-[250px]">
+            <h3 class="mx-[27px] mt-[25px] text-[20px] text-dark-blue font-semibold md:mt-[30px] md:mx-[32px]">
                 Team Builder
             </h3>
 
-            <p class="mx-[28px] mt-[6px] text-[13px] text-grayish-blue leading-[23px]">
+            <p class="mx-[28px] mt-[6px] text-[13px] text-grayish-blue leading-[23px] tracking-[0.1px] md:mx-[32px] md:mt-[12px]">
                 Scans our talent network to create the optimal team for your project
             </p>
 
             <figure>
                 <img src="images/icon-team-builder.svg" alt="team-builder"
-                     class="w-[57px] h-[57px] ml-auto mr-[28px] mt-[32px]"/>
+                     class="w-[57px] h-[57px] ml-auto mr-[28px] mt-[32px] md:w-[64px] md:h-[64px] md:mr-[32px] md:mt-[39px]"/>
             </figure>
         </article>
 
         <!--Karma-->
         <article
-                class="w-[310px] h-[222px] rounded-lg bg-white overflow-hidden flex flex-col shadow-md before:h-1 before:bg-orange">
-            <h3 class="mx-[27px] mt-[25px] text-[20px] text-dark-blue font-semibold ">
+                class="w-[310px] h-[222px] rounded-lg bg-white overflow-hidden flex flex-col shadow-md before:h-1 before:bg-orange md:w-[350px] md:h-[250px]">
+            <h3 class="mx-[27px] mt-[25px] text-[20px] text-dark-blue font-semibold md:mt-[30px] md:mx-[32px]">
                 Karma
             </h3>
 
-            <p class="mx-[28px] mt-[6px] text-[13px] text-grayish-blue leading-[23px]">
+            <p class="mx-[28px] mt-[6px] text-[13px] text-grayish-blue leading-[23px] tracking-[0.1px] md:mx-[32px] md:mt-[12px]">
                 Regularly evaluates our talent to ensure quality
             </p>
 
             <figure>
                 <img src="images/icon-karma.svg" alt="karma"
-                     class="w-[57px] h-[57px] ml-auto mr-[28px] mt-[32px]"/>
+                     class="w-[57px] h-[57px] ml-auto mr-[28px] mt-[32px] md:w-[64px] md:h-[64px] md:mr-[32px] md:mt-[39px]"/>
             </figure>
         </article>
 
         <!--Calculator-->
         <article
-                class="w-[310px] h-[222px] rounded-lg bg-white overflow-hidden flex flex-col shadow-md before:h-1 before:bg-cyan">
-            <h3 class="mx-[27px] mt-[25px] text-[20px] text-dark-blue font-semibold ">
+                class="w-[310px] h-[222px] rounded-lg bg-white overflow-hidden flex flex-col shadow-md before:h-1 before:bg-blue md:w-[350px] md:h-[250px] md:row-span-full md:self-center md:col-end-[-1]">
+            <h3 class="mx-[27px] mt-[25px] text-[20px] text-dark-blue font-semibold md:mt-[30px] md:mx-[32px]">
                 Calculator
             </h3>
 
-            <p class="mx-[28px] mt-[6px] text-[13px] text-grayish-blue leading-[23px]">
+            <p class="mx-[28px] mt-[6px] text-[13px] text-grayish-blue leading-[23px] tracking-[0.1px] md:mx-[32px] md:mt-[12px]">
                 Uses data from past projects to provide better delivery estimates
             </p>
 
             <figure>
                 <img src="images/icon-calculator.svg" alt="Calculator"
-                     class="w-[57px] h-[57px] ml-auto mr-[28px] mt-[32px]"/>
+                     class="w-[57px] h-[57px] ml-auto mr-[28px] mt-[32px] md:w-[64px] md:h-[64px] md:mr-[32px] md:mt-[39px]"/>
             </figure>
         </article>
     </section>
 </main>
 
-<footer class="text-xs text-center">
+<footer class="text-xs text-center bottom-0 inset-x-0 md:fixed">
     Challenge by
     <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-dark-blue">
         Frontend Mentor .
