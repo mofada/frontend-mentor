@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+
+    <title>Frontend Mentor | Four card feature section</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                colors: {
+                    white: 'hsl(0, 0%, 100%)',
+                    red: 'hsl(0, 78%, 62%)',
+                    cyan: 'hsl(180, 62%, 55%)',
+                    orange: 'hsl(34, 97%, 64%)',
+                    blue: 'hsl(212, 86%, 64%)',
+                    'dark-blue': 'hsl(234, 12%, 34%)',
+                    'grayish-blue': 'hsl(229, 6%, 66%)',
+                    'light-gray': 'hsl(0, 0%, 98%)',
+                },
+                fontFamily: {
+                    poppins: ["Poppins", 'sans-serif'],
+                },
+            }
+        }
+    </script>
+
+    <script>
+        function changOpacity() {
+            const container = document.querySelector('main');
+            container.classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body class="flex flex-col w-screen bg-light-gray text-base font-poppins">
+<!--design template develop use, set screen width 1440px and develop-->
+<!--if screen is mobile, set screen width 375px-->
+<!--<picture>-->
+<!--    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>-->
+<!--    <source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>-->
+<!--    <img src="design/mobile-design.jpg"-->
+<!--         alt="background" class="w-full z-0 absolute top-0 md:bottom-0 md:h-full"/>-->
+<!--</picture>-->
+<button class="fixed right-5 bottom-5 text-white z-20" onclick="changOpacity()">Toggle</button>
+
+<main class="flex flex-col w-[310px] mx-auto my-[90px] z-10 opacity-85">
+    <!--Header-->
+    <header class="mx-[6px] text-center">
+        <h1 class="text-[22px] text-grayish-blue font-extralight tracking-[1px]">
+            Reliable, efficient delivery
+        </h1>
+
+        <h2 class="text-[22px] text-dark-blue font-semibold mt-[13px] tracking-[1.3px]">
+            Powered by Technology
+        </h2>
+
+        <p class="mt-[21px] text-[15px] text-grayish-blue text-center leading-[25px]">
+            Our Artificial Intelligence powered tools use millions of project data points to ensure
+            that your project is successful
+        </p>
+    </header>
+
+    <!-- Section for cards -->
+    <section class="grid mt-[75px] gap-[24px]">
+        <!--Supervisor-->
+        <article
+                class="w-[310px] h-[222px] rounded-lg bg-white overflow-hidden flex flex-col shadow-md before:h-1 before:bg-cyan">
+            <h3 class="mx-[27px] mt-[25px] text-[20px] text-dark-blue font-semibold ">
+                Supervisor
+            </h3>
+
+            <p class="mx-[28px] mt-[6px] text-[13px] text-grayish-blue leading-[23px]">
+                Monitors activity to identify project roadblocks
+            </p>
+
+            <figure>
+                <img src="images/icon-supervisor.svg" alt="Supervisor"
+                     class="w-[57px] h-[57px] ml-auto mr-[28px] mt-[32px]"/>
+            </figure>
+        </article>
+
+        <!--Team Builder-->
+        <article
+                class="w-[310px] h-[222px] rounded-lg bg-white overflow-hidden flex flex-col shadow-md before:h-1 before:bg-red">
+            <h3 class="mx-[27px] mt-[25px] text-[20px] text-dark-blue font-semibold ">
+                Team Builder
+            </h3>
+
+            <p class="mx-[28px] mt-[6px] text-[13px] text-grayish-blue leading-[23px]">
+                Scans our talent network to create the optimal team for your project
+            </p>
+
+            <figure>
+                <img src="images/icon-team-builder.svg" alt="team-builder"
+                     class="w-[57px] h-[57px] ml-auto mr-[28px] mt-[32px]"/>
+            </figure>
+        </article>
+
+        <!--Karma-->
+        <article
+                class="w-[310px] h-[222px] rounded-lg bg-white overflow-hidden flex flex-col shadow-md before:h-1 before:bg-orange">
+            <h3 class="mx-[27px] mt-[25px] text-[20px] text-dark-blue font-semibold ">
+                Karma
+            </h3>
+
+            <p class="mx-[28px] mt-[6px] text-[13px] text-grayish-blue leading-[23px]">
+                Regularly evaluates our talent to ensure quality
+            </p>
+
+            <figure>
+                <img src="images/icon-karma.svg" alt="karma"
+                     class="w-[57px] h-[57px] ml-auto mr-[28px] mt-[32px]"/>
+            </figure>
+        </article>
+
+        <!--Calculator-->
+        <article
+                class="w-[310px] h-[222px] rounded-lg bg-white overflow-hidden flex flex-col shadow-md before:h-1 before:bg-cyan">
+            <h3 class="mx-[27px] mt-[25px] text-[20px] text-dark-blue font-semibold ">
+                Calculator
+            </h3>
+
+            <p class="mx-[28px] mt-[6px] text-[13px] text-grayish-blue leading-[23px]">
+                Uses data from past projects to provide better delivery estimates
+            </p>
+
+            <figure>
+                <img src="images/icon-calculator.svg" alt="Calculator"
+                     class="w-[57px] h-[57px] ml-auto mr-[28px] mt-[32px]"/>
+            </figure>
+        </article>
+    </section>
+</main>
+
+<footer class="text-xs text-center">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-dark-blue">
+        Frontend Mentor .
+    </a>
+    Coded by
+    <a href="https://www.frontendmentor.io/profile/mofada" class="text-dark-blue">Fada Mo.</a>
+</footer>
+</body>
+</html>
