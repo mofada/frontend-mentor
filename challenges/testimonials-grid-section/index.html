@@ -22,45 +22,78 @@
                     'dark-grayish-blue': 'hsl(217, 19%, 35%)',
                     'dark-blackish-blue': 'hsl(219, 29%, 14%)',
                     'white': 'hsl(0, 0%, 100%)',
+                    'light-blue': 'hsl(213, 44%, 95%)',
                     'light-gray': 'hsl(0, 0%, 81%)',
                     'light-grayish-blue': 'hsl(210, 46%, 95%)',
                 },
                 fontFamily: {
-                    Barlow: ["Barlow Semi Condensed", 'sans-serif'],
+                    barlow: ["Barlow Semi Condensed", 'sans-serif'],
                 },
             }
         }
     </script>
 
-    <!--    <script>-->
-    <!--        function changOpacity() {-->
-    <!--            const container = document.querySelector('main');-->
-    <!--            container.classList.toggle('hidden');-->
-    <!--        }-->
-    <!--    </script>-->
+    <script>
+        function changOpacity() {
+            const container = document.querySelector('main');
+            container.classList.toggle('hidden');
+        }
+    </script>
 </head>
-<body>
+<body class="flex flex-col w-screen bg-light-blue text-[13px] leading-4 font-barlow font-medium">
 <!--design template develop use, set screen width 1440px and develop-->
 <!--if screen is mobile, set screen width 375px-->
-<!--<picture>-->
-<!--    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>-->
-<!--    <source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>-->
-<!--    <img src="design/mobile-design.jpg"-->
-<!--         alt="background" class="w-full z-0 absolute top-0 md:bottom-0 md:h-full"/>-->
-<!--</picture>-->
-<!--<button class="fixed right-5 top-5 text-white z-20" onclick="changOpacity()">Toggle</button>-->
+<picture>
+    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>
+    <source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>
+    <img src="design/mobile-design.jpg"
+         alt="background" class="w-full z-0 absolute top-0 md:bottom-0 md:h-full"/>
+</picture>
+<button class="fixed right-5 top-5 text-white z-20" onclick="changOpacity()">Toggle</button>
 
-Daniel Clifford
-Verified Graduate
+<main
+        class="grid mx-auto my-[71px] z-10 opacity-65">
+    <section
+            class="flex flex-col w-[327px] px-[30px] py-[24px] bg-moderate-violet rounded-lg">
+        <header class="flex items-center">
+            <!--avatar-->
+            <figure class="w-[32px] h-[32px] bg-[hsl(0,0%,100%,0.5)] p-[2px] rounded-full">
+                <img src="images/image-daniel.jpg" alt="Daniel Clifford"
+                     class="w-full h-full rounded-full"/>
+            </figure>
 
-I received a job offer mid-course, and the subjects I learned were current, if not more so,
-in the company I joined. I honestly feel I got every penny’s worth.
+            <!--name and verified-->
+            <div class="flex flex-col ml-[15px]">
+                <!--name-->
+                <p class="text-light-blue text-[13px] font-semibold">Daniel Clifford</p>
+                <p class="text-light-blue opacity-50 text-[11px]">Verified Graduate</p>
+            </div>
+        </header>
 
-“ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a
-transition and have heard some people who had an amazing experience here. I signed up
-for the free intro course and found it incredibly fun! I enrolled shortly thereafter.
-The next 12 weeks was the best - and most grueling - time of my life. Since completing
-the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup. ”
+        <article class="mx-[3px]">
+            <!-- Main Testimonial Quote -->
+            <blockquote  class="text-white font-semibold text-[20px] mt-[16px] leading-[24px]">
+                I received a job offer mid-course, and the subjects I learned were current, if not
+                more so,
+                in the company I joined. I honestly feel I got every penny’s worth.
+            </blockquote >
+
+            <!-- Detailed Testimonial -->
+            <p class="mt-[15px] text-light-gray text-[13px] leading-[18px] mr-[14px]">
+                “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to
+                make a
+                transition and have heard some people who had an amazing experience here. I signed
+                up
+                for the free intro course and found it incredibly fun! I enrolled shortly
+                thereafter.
+                The next 12 weeks was the best - and most grueling - time of my life. Since
+                completing
+                the course, I’ve successfully switched careers, working as a Software Engineer at a
+                VR startup. ”
+            </p>
+        </article>
+    </section>
+</main>
 
 Jonathan Walters
 Verified Graduate
