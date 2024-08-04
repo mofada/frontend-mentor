@@ -62,6 +62,18 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/product-preview-card-component/)
 
+### 6. [Four card feature section](challenges/four-card-feature-section)
+
+![Screenshot](challenges/four-card-feature-section/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/four-card-feature-section/)
+
+### 7. [Testimonials grid section](challenges/testimonials-grid-section)
+
+![Screenshot](challenges/testimonials-grid-section/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/testimonials-grid-section/)
+
 still working...
 
 ## Author
