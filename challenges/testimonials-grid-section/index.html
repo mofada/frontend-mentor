@@ -33,12 +33,12 @@
         }
     </script>
 
-<!--    <script>-->
-<!--        function changOpacity() {-->
-<!--            const container = document.querySelector('main');-->
-<!--            container.classList.toggle('hidden');-->
-<!--        }-->
-<!--    </script>-->
+<!--        <script>-->
+<!--            function changOpacity() {-->
+<!--                const container = document.querySelector('main');-->
+<!--                container.classList.toggle('hidden');-->
+<!--            }-->
+<!--        </script>-->
 </head>
 <body
         class="flex flex-col w-screen bg-light-blue text-[13px] leading-4 font-barlow font-medium md:h-screen">
@@ -48,19 +48,22 @@
 <!--    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>-->
 <!--    <source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>-->
 <!--    <img src="design/mobile-design.jpg"-->
-<!--         alt="background" class="w-full z-0 absolute top-0 md:bottom-0 md:h-full"/>-->
+<!--         alt="background" class="w-full z-0 absolute top-0 md:bottom-0 md:h-[900px]"/>-->
 <!--</picture>-->
 <!--<button class="fixed right-5 top-5 text-white z-20" onclick="changOpacity()">Toggle</button>-->
 
 <main
-        class="grid mx-auto my-[71px] w-[327px] gap-y-[25px] md:grid-cols-4 md:grid-rows-[minmax(0,1fr),245px] md:w-[1065px] md:h-[525px] md:m-auto md:gap-y-[22px] md:gap-x-[25px] grid-flow-row-dense">
+        class="grid mx-[25px] my-[71px] gap-y-[25px] md:grid-cols-4 md:grid-rows-[minmax(0,1fr),270px] md:w-[1110px] md:h-[575px] md:m-auto md:gap-y-[22px] md:gap-x-[25px] grid-flow-row-dense">
     <!--Daniel Clifford-->
     <article
-            class="flex flex-col px-[30px] pt-[24px] pb-[32px]  bg-moderate-violet rounded-lg md:col-span-2 md:py-[20px] ">
-        <header class="flex items-center">
+            class="flex flex-col px-[30px] pt-[24px] pb-[32px]  bg-moderate-violet rounded-lg md:col-span-2 md:py-[24px] relative ">
+        <img src="images/bg-pattern-quotation.svg" alt="quotation"
+             class="absolute right-[25px] top-0 z-0 md:right-[85px]"/>
+
+        <header class="flex items-center z-10">
             <!--avatar-->
             <figure
-                    class="w-[32px] h-[32px] bg-[hsl(0,0%,100%,0.5)] p-[2px] rounded-full md:w-[30px] md:h-[30px]">
+                    class="w-[32px] h-[32px] bg-[hsl(0,0%,100%,0.5)] p-[2px] rounded-full md:w-[32px] md:h-[32px]">
                 <img src="images/image-daniel.jpg" alt="Daniel Clifford"
                      class="w-full h-full rounded-full"/>
             </figure>
@@ -73,10 +76,10 @@
             </div>
         </header>
 
-        <section class="mx-[3px] md:mx-[2px]">
+        <section class="mx-[3px] md:mx-[2px] z-10">
             <!-- Main Testimonial Quote -->
             <blockquote
-                    class="text-white font-semibold text-[20px] mt-[16px] leading-[24px] md:mt-[12px] md:text-[19px] md:leading-[22px] md:tracking-[0.1px]">
+                    class="text-white font-semibold text-[20px] mt-[16px] leading-[24px] md:mt-[18px] md:leading-[22px]">
                 I received a job offer mid-course, and the subjects I learned were current, if not
                 more so,
                 in the company I joined. I honestly feel I got every penny’s worth.
@@ -84,7 +87,7 @@
 
             <!-- Detailed Testimonial -->
             <p
-                    class="mt-[15px] text-light-gray text-[13px] leading-[18px] mr-[14px] md:text-[12px] md:mt-[14px] md:tracking-[0.2px] md:leading-[17px] md:mr-[8px]">
+                    class="mt-[15px] text-light-gray text-[13px] leading-[18px] mr-[14px]  md:mt-[14px] md:leading-[19px] md:mr-[8px]">
                 “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to
                 make a
                 transition and have heard some people who had an amazing experience here. I signed
@@ -101,7 +104,7 @@
 
     <!--Jonathan Walters-->
     <article
-            class="flex flex-col px-[30px] pt-[24px] pb-[32px]  bg-dark-grayish-blue rounded-lg md:py-[20px] ">
+            class="flex flex-col px-[30px] pt-[24px] pb-[32px]  bg-dark-grayish-blue rounded-lg md:py-[24px] ">
         <header class="flex items-center">
             <!--avatar-->
             <figure
@@ -121,13 +124,13 @@
         <section class="mx-[3px] md:mx-[2px]">
             <!-- Main Testimonial Quote -->
             <blockquote
-                    class="text-white font-semibold text-[20px] mt-[16px] leading-[24px] md:mt-[12px] md:text-[19px] md:leading-[22px] md:tracking-[0.1px]">
+                    class="text-white font-semibold text-[20px] mt-[16px] leading-[24px] md:mt-[18px] md:leading-[22px]">
                 The team was very supportive and kept me motivated
             </blockquote>
 
             <!-- Detailed Testimonial -->
             <p
-                    class="mt-[15px] text-light-gray text-[13px] leading-[18px] md:text-[12px] md:mt-[14px] md:tracking-[0.2px] md:leading-[17px] md:mr-[5px]">
+                    class="mt-[15px] text-light-gray text-[13px] leading-[18px] mr-[14px] md:mt-[18px] md:leading-[19px] md:mr-[8px]">
                 “ I started as a total newbie with virtually no coding skills. I now work as a
                 mobile engineer
                 for a big company. This was one of the best investments I’ve made in myself. ”
@@ -137,7 +140,7 @@
 
     <!--Jeanette Harmon-->
     <article
-            class="flex flex-col px-[30px] pt-[24px] pb-[32px]  bg-white rounded-lg md:py-[20px] ">
+            class="flex flex-col px-[30px] pt-[24px] pb-[32px]  bg-white rounded-lg md:py-[25px] ">
         <header class="flex items-center">
             <!--avatar-->
             <figure
@@ -157,13 +160,13 @@
         <section class="mx-[3px] md:mx-[2px]">
             <!-- Main Testimonial Quote -->
             <blockquote
-                    class="text-dark-blackish-blue font-semibold text-[20px] mt-[16px] leading-[24px] md:mt-[12px] md:text-[19px] md:leading-[22px] md:tracking-[0.1px]">
+                    class="text-dark-blackish-blue font-semibold text-[20px] mt-[18px] leading-[24px] md:mt-[19px] md:leading-[22px]">
                 An overall wonderful and rewarding experience
             </blockquote>
 
             <!-- Detailed Testimonial -->
             <p
-                    class="mt-[15px] text-dark-grayish-blue text-[13px] leading-[18px] md:text-[12px] md:mt-[22px] md:tracking-[0.2px] md:leading-[17px] md:mr-[8px]">
+                    class="mt-[15px] text-dark-grayish-blue text-[13px] leading-[18px] mr-[14px]  md:mt-[25px] md:leading-[19px] md:mr-[8px]">
                 “ Thank you for the wonderful experience! I now have a job I really enjoy, and make
                 a good living while doing something I love. ”
             </p>
@@ -172,7 +175,7 @@
 
     <!--Patrick Abrams-->
     <article
-            class="flex flex-col px-[30px] pt-[24px] pb-[32px]  bg-dark-blackish-blue rounded-lg md:col-span-2 md:py-[20px] ">
+            class="flex flex-col px-[30px] pt-[24px] pb-[32px]  bg-dark-blackish-blue rounded-lg md:col-span-2 md:py-[24px] ">
         <header class="flex items-center">
             <!--avatar-->
             <figure
@@ -192,17 +195,21 @@
         <section class="mx-[3px] md:mx-[2px]">
             <!-- Main Testimonial Quote -->
             <blockquote
-                    class="text-white font-semibold text-[20px] mt-[16px] leading-[24px] md:mt-[12px] md:text-[19px] md:leading-[22px] md:tracking-[0.1px]">
-                Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and
+                    class="text-white font-semibold text-[20px] mt-[16px] leading-[24px] md:mt-[20px] md:leading-[22px]">
+                Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance
+                from them and
                 learning from their experiences was easy.
             </blockquote>
 
             <!-- Detailed Testimonial -->
             <p
-                    class="mt-[15px] text-light-gray text-[13px] leading-[18px] md:text-[12px] md:mt-[22px] md:tracking-[0.2px] md:leading-[17px] md:mr-[8px]">
-                “ The staff seem genuinely concerned about my progress which I find really refreshing. The program
-                gave me the confidence necessary to be able to go out in the world and present myself as a capable
-                junior developer. The standard is above the rest. You will get the personal attention you need from
+                    class="mt-[15px] text-light-gray text-[13px] leading-[18px] mr-[14px]  md:mt-[24px] md:leading-[18px] md:mr-[8px]">
+                “ The staff seem genuinely concerned about my progress which I find really
+                refreshing. The program
+                gave me the confidence necessary to be able to go out in the world and present
+                myself as a capable
+                junior developer. The standard is above the rest. You will get the personal
+                attention you need from
                 an incredible community of smart and amazing people. ”
             </p>
         </section>
@@ -210,11 +217,11 @@
 
     <!--Kira Whittle-->
     <article
-            class="flex flex-col px-[30px] pt-[24px] pb-[32px]  bg-white rounded-lg md:row-span-2 md:py-[20px] md:order-3 md:col-end-[-1] md:row-start-1">
+            class="flex flex-col px-[30px] pt-[24px] pb-[32px]  bg-white rounded-lg md:row-span-2 md:py-[24px] md:order-3 md:col-end-[-1] md:row-start-1">
         <header class="flex items-center">
             <!--avatar-->
             <figure
-                    class="w-[32px] h-[32px] bg-[hsl(0,0%,100%,0.5)] p-[2px] rounded-full md:w-[30px] md:h-[30px]">
+                    class="w-[32px] h-[32px] bg-[hsl(0,0%,100%,0.5)] p-[2px] rounded-full md:w-[30px] md:h-[30px] md:ml-[6px]">
                 <img src="images/image-kira.jpg" alt="Kira Whittle"
                      class="w-full h-full rounded-full"/>
             </figure>
@@ -230,20 +237,27 @@
         <section class="mx-[3px] md:mx-[2px]">
             <!-- Main Testimonial Quote -->
             <blockquote
-                    class="text-dark-blackish-blue font-semibold text-[20px] mt-[16px] leading-[24px] md:mt-[12px] md:text-[19px] md:leading-[22px] md:tracking-[0.1px]">
+                    class="text-dark-blackish-blue font-semibold text-[20px] mt-[16px] leading-[24px] md:leading-[24px] md:ml-[2px]">
                 Such a life-changing experience. Highly recommended!
             </blockquote>
 
             <!-- Detailed Testimonial -->
             <p
-                    class="mt-[15px] text-dark-grayish-blue text-[13px] leading-[18px] md:text-[12px] md:mt-[22px] md:tracking-[0.2px] md:leading-[16.5px] md:mr-[0px]">
-                “ Before joining the bootcamp, I’ve never written a line of code. I needed some structure from
-                professionals who can help me learn programming step by step. I was encouraged to enroll by a former
-                student of theirs who can only say wonderful things about the program. The entire curriculum and
-                staff did not disappoint. They were very hands-on and I never had to wait long for assistance.
-                The agile team project, in particular, was outstanding. It took my learning to the next level in
-                a way that no tutorial could ever have. In fact, I’ve often referred to it during interviews as
-                an example of my developent experience. It certainly helped me land a job as a full-stack
+                    class="mt-[15px] text-dark-grayish-blue text-[13px] leading-[18px] mr-[14px]  md:mt-[23px] md:leading-[18px] md:mr-0">
+                “ Before joining the bootcamp, I’ve never written a line of code. I needed some
+                structure from
+                professionals who can help me learn programming step by step. I was encouraged to
+                enroll by a former
+                student of theirs who can only say wonderful things about the program. The entire
+                curriculum and
+                staff did not disappoint. They were very hands-on and I never had to wait long for
+                assistance.
+                The agile team project, in particular, was outstanding. It took my learning to the
+                next level in
+                a way that no tutorial could ever have. In fact, I’ve often referred to it during
+                interviews as
+                an example of my developent experience. It certainly helped me land a job as a
+                full-stack
                 developer after receiving multiple offers. 100% recommend! ”
             </p>
         </section>

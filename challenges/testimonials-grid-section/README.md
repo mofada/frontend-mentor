@@ -13,8 +13,8 @@
 
 ### Links
 
-- Solution URL: [testimonials-grid-section](https://www.frontendmentor.io/solutions/four-card-feature-section-with-grid-dv8ol4FUMh)
-- Live Site URL: [testimonials-grid-section](index.html)
+- Solution URL: [testimonials-grid-section](https://www.frontendmentor.io/solutions/testimonials-grid-section-with-tailwind-OfLPO59pNt)
+- Live Site URL: [testimonials-grid-section](https://mofada.github.io/frontend-mentor/challenges/testimonials-grid-section/)
 
 ## Author
 
