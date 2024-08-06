@@ -15,6 +15,7 @@
                     colors: {
                         html: '#e96228',
                         css: '#2862e9',
+                        js: '#f7d723',
                         tailwind: '#38bdf8',
                     }
                 }
@@ -22,171 +23,195 @@
         }
     </script>
 
-    <style>
+    <script>
+        class MentorCard extends HTMLElement {
+            static title = ["title"];
 
-    </style>
+            constructor() {
+                super();
+            }
+
+            connectedCallback() {
+                // title
+                const title = this.getAttribute("title");
+                // screenshot
+                const cover = this.getAttribute("cover");
+                // live url
+                const liveUrl = this.getAttribute("live");
+                // solution url
+                const solutionUrl = this.getAttribute("solution");
+                // tags
+                const isHtml = this.hasAttribute("html");
+                const isCss = this.hasAttribute("css");
+                const isJs = this.hasAttribute("js");
+                const isTailwind = this.hasAttribute("tailwind");
+
+
+                this.className = "flex flex-col rounded-lg bg-white p-4 shadow";
+
+                // cover
+                const coverFigure = document.createElement("figure");
+                coverFigure.onclick = () => window.open(liveUrl, "_blank");
+                this.append(coverFigure);
+
+                const coverImg = document.createElement("img");
+                coverImg.src = cover;
+                coverImg.alt = title;
+                coverImg.className = "w-full aspect-video object-cover rounded-lg cursor-pointer";
+                coverFigure.append(coverImg);
+
+                // title
+                const titleElement = document.createElement("h2");
+                titleElement.className =
+                    "text-lg font-bold mt-2 underline hover:text-blue-500 capitalize cursor-pointer";
+                titleElement.innerText = title;
+                titleElement.onclick = () => window.open(solutionUrl, "_blank");
+                this.append(titleElement);
+
+                // tags
+                let tagsParent = document.createElement("div");
+                tagsParent.className = "text-sm flex gap-1";
+                this.append(tagsParent);
+
+                // html
+                if (isHtml) {
+                    let htmlTag = this.createTag("span", "bg-html", "HTML");
+                    tagsParent.append(htmlTag);
+                }
+
+                // css
+                if (isCss) {
+                    let cssTag = this.createTag("span", "bg-css", "CSS");
+                    tagsParent.append(cssTag);
+                }
+
+                // js
+                if (isJs) {
+                    let jsTag = this.createTag("span", "bg-js", "JS");
+                    tagsParent.append(jsTag);
+                }
+
+                // tailwind
+                if (isTailwind) {
+                    let tailwindTag = this.createTag("span", "bg-tailwind", "Tailwind CSS");
+                    tagsParent.append(tailwindTag);
+                }
+            }
+
+            /**
+             * create tag
+             * @param tagName
+             * @param className
+             * @param text
+             * @returns {HTMLElement}
+             */
+            createTag(tagName, className, text) {
+                let tag = document.createElement(tagName);
+                tag.className = "px-1 text-xs rounded text-white";
+                tag.classList.add(className);
+                tag.innerText = text;
+                return tag;
+            }
+        }
+
+
+        // register web component
+        customElements.define("mentor-card", MentorCard);
+    </script>
 </head>
 <body class="bg-gray-100 w-screen h-screen">
 <main class="p-4 grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4">
-    <!--Qr code component-->
-    <section class="flex flex-col rounded-lg bg-white p-4 shadow">
-        <a href="challenges/qr-code-component" target="_blank">
-            <figure>
-                <img src="challenges/qr-code-component/screenshot/screenshot.png"
-                     alt="QR Code Component"
-                     class="w-full aspect-video object-cover rounded-lg  cursor-pointer "/>
-            </figure>
-        </a>
+    <!--here has some question in webstorm, it's not has prompt-->
 
-        <a href="https://www.frontendmentor.io/solutions/tailwindcss-G5mnzkJKWK" target="_blank">
-            <h2 class="text-lg font-bold mt-2 underline hover:text-blue-500 ">
-                QR Code Component
-            </h2>
-        </a>
-        <p class="text-sm text-gray-500 ">
-            <span class="px-1 text-xs  rounded bg-html text-white">HTML</span>
-            <span class="px-1 text-xs rounded bg-css text-white">CSS</span>
-            <span class="px-1 text-xs rounded bg-tailwind text-white">Tailwind CSS</span>
-        </p>
-    </section>
+    <!--qr code component-->
+    <mentor-card
+            title="qr code component"
+            cover="challenges/qr-code-component/screenshot/screenshot.png"
+            live="challenges/qr-code-component"
+            solution="https://www.frontendmentor.io/solutions/tailwindcss-G5mnzkJKWK"
+            html
+            css
+            tailwind>
+    </mentor-card>
 
-    <!-- blog-preview-card -->
-    <section class="flex flex-col rounded-lg bg-white p-4 shadow">
-        <a href="challenges/blog-preview-card" target="_blank">
-            <figure>
-                <img src="challenges/blog-preview-card/screenshot/screenshot.png"
-                     alt="Blog preview card"
-                     class="w-full aspect-video object-cover rounded-lg  cursor-pointer "/>
-            </figure>
-        </a>
-
-        <a href="https://www.frontendmentor.io/solutions/page-use-flex-and-tailwind-css-Mcd7ljeJBX"
-           target="_blank">
-            <h2 class="text-lg font-bold mt-2 underline hover:text-blue-500 ">
-                Blog preview card
-            </h2>
-        </a>
-        <p class="text-sm text-gray-500 ">
-            <span class="px-1 text-xs  rounded bg-html text-white">HTML</span>
-            <span class="px-1 text-xs rounded bg-css text-white">CSS</span>
-            <span class="px-1 text-xs rounded bg-tailwind text-white">Tailwind CSS</span>
-        </p>
-    </section>
+    <!--blog preview card-->
+    <mentor-card
+            title="blog preview card"
+            cover="challenges/blog-preview-card/screenshot/screenshot.png"
+            live="challenges/blog-preview-card"
+            solution="https://www.frontendmentor.io/solutions/page-use-flex-and-tailwind-css-Mcd7ljeJBX"
+            html
+            css
+            tailwind>
+    </mentor-card>
 
     <!-- social-links-profile -->
-    <section class="flex flex-col rounded-lg bg-white p-4 shadow">
-        <a href="challenges/social-links-profile" target="_blank">
-            <figure>
-                <img src="challenges/social-links-profile/screenshot/screenshot.png"
-                     alt="Social links profile"
-                     class="w-full aspect-video object-cover rounded-lg  cursor-pointer "/>
-            </figure>
-        </a>
-
-        <a href="https://www.frontendmentor.io/solutions/social-links-profile-page-Ip2oSbCmwa"
-           target="_blank">
-            <h2 class="text-lg font-bold mt-2 underline hover:text-blue-500 ">
-                Social links profile
-            </h2>
-        </a>
-        <p class="text-sm text-gray-500 ">
-            <span class="px-1 text-xs  rounded bg-html text-white">HTML</span>
-            <span class="px-1 text-xs rounded bg-css text-white">CSS</span>
-            <span class="px-1 text-xs rounded bg-tailwind text-white">Tailwind CSS</span>
-        </p>
-    </section>
+    <mentor-card
+            title="social links profile"
+            cover="challenges/social-links-profile/screenshot/screenshot.png"
+            live="challenges/social-links-profile"
+            solution="https://www.frontendmentor.io/solutions/social-links-profile-page-Ip2oSbCmwa"
+            html
+            css
+            tailwind>
+    </mentor-card>
 
     <!--recipe-page-->
-    <section class="flex flex-col rounded-lg bg-white p-4 shadow">
-        <a href="challenges/recipe-page" target="_blank">
-            <figure>
-                <img src="challenges/recipe-page/screenshot/screenshot.png"
-                     alt="Recipe page profile"
-                     class="w-full aspect-video object-cover rounded-lg  cursor-pointer "/>
-            </figure>
-        </a>
+    <mentor-card
+            title="recipe page"
+            cover="challenges/recipe-page/screenshot/screenshot.png"
+            live="challenges/recipe-page"
+            solution="https://www.frontendmentor.io/solutions/recipe-page-with-tailwind-css-Ii50a98PKE"
+            html
+            css
+            tailwind>
+    </mentor-card>
 
-        <a href="https://www.frontendmentor.io/solutions/recipe-page-with-tailwind-css-Ii50a98PKE"
-           target="_blank">
-            <h2 class="text-lg font-bold mt-2 underline hover:text-blue-500 ">
-                Recipe page profile
-            </h2>
-        </a>
-        <p class="text-sm text-gray-500 ">
-            <span class="px-1 text-xs  rounded bg-html text-white">HTML</span>
-            <span class="px-1 text-xs rounded bg-css text-white">CSS</span>
-            <span class="px-1 text-xs rounded bg-tailwind text-white">Tailwind CSS</span>
-        </p>
-    </section>
 
     <!--product-preview-card-component-->
-    <section class="flex flex-col rounded-lg bg-white p-4 shadow">
-        <a href="challenges/product-preview-card-component" target="_blank">
-            <figure>
-                <img src="challenges/product-preview-card-component/screenshot/screenshot.png"
-                     alt="Product preview card"
-                     class="w-full aspect-video object-cover rounded-lg  cursor-pointer "/>
-            </figure>
-        </a>
-
-        <a href="https://www.frontendmentor.io/solutions/product-preview-card-with-90-reducibility-c4tH02KHdg"
-           target="_blank">
-            <h2 class="text-lg font-bold mt-2 underline hover:text-blue-500 ">
-                Product preview card
-            </h2>
-        </a>
-        <p class="text-sm text-gray-500 ">
-            <span class="px-1 text-xs  rounded bg-html text-white">HTML</span>
-            <span class="px-1 text-xs rounded bg-css text-white">CSS</span>
-            <span class="px-1 text-xs rounded bg-tailwind text-white">Tailwind CSS</span>
-        </p>
-    </section>
+    <mentor-card
+            title="product preview card"
+            cover="challenges/product-preview-card-component/screenshot/screenshot.png"
+            live="challenges/product-preview-card-component"
+            solution="https://www.frontendmentor.io/solutions/product-preview-card-with-90-reducibility-c4tH02KHdg"
+            html
+            css
+            tailwind>
+    </mentor-card>
 
     <!--four-card-feature-section-->
-    <section class="flex flex-col rounded-lg bg-white p-4 shadow">
-        <a href="challenges/four-card-feature-section" target="_blank">
-            <figure>
-                <img src="challenges/four-card-feature-section/screenshot/screenshot.png"
-                     alt="Four card feature section"
-                     class="w-full aspect-video object-cover rounded-lg  cursor-pointer "/>
-            </figure>
-        </a>
-
-        <a href="https://www.frontendmentor.io/solutions/four-card-feature-section-with-grid-dv8ol4FUMh"
-           target="_blank">
-            <h2 class="text-lg font-bold mt-2 underline hover:text-blue-500 ">
-                Four card feature section
-            </h2>
-        </a>
-        <p class="text-sm text-gray-500 ">
-            <span class="px-1 text-xs  rounded bg-html text-white">HTML</span>
-            <span class="px-1 text-xs rounded bg-css text-white">CSS</span>
-            <span class="px-1 text-xs rounded bg-tailwind text-white">Tailwind CSS</span>
-        </p>
-    </section>
+    <mentor-card
+            title="four card feature section"
+            cover="challenges/four-card-feature-section/screenshot/screenshot.png"
+            live="challenges/four-card-feature-section"
+            solution="https://www.frontendmentor.io/solutions/four-card-feature-section-with-grid-dv8ol4FUMh"
+            html
+            css
+            tailwind>
+    </mentor-card>
 
     <!--testimonials-grid-section-->
-    <section class="flex flex-col rounded-lg bg-white p-4 shadow">
-        <a href="challenges/testimonials-grid-section" target="_blank">
-            <figure>
-                <img src="challenges/testimonials-grid-section/screenshot/screenshot.png"
-                     alt="Testimonials grid section"
-                     class="w-full aspect-video object-cover rounded-lg cursor-pointer "/>
-            </figure>
-        </a>
+    <mentor-card
+            title="testimonials grid section"
+            cover="challenges/testimonials-grid-section/screenshot/screenshot.png"
+            live="challenges/testimonials-grid-section"
+            solution="https://www.frontendmentor.io/solutions/testimonials-grid-section-with-tailwind-OfLPO59pNt"
+            html
+            css
+            tailwind>
+    </mentor-card>
 
-        <a href="https://www.frontendmentor.io/solutions/testimonials-grid-section-with-tailwind-OfLPO59pNt"
-           target="_blank">
-            <h2 class="text-lg font-bold mt-2 underline hover:text-blue-500 ">
-                Testimonials grid section
-            </h2>
-        </a>
-        <p class="text-sm text-gray-500 ">
-            <span class="px-1 text-xs  rounded bg-html text-white">HTML</span>
-            <span class="px-1 text-xs rounded bg-css text-white">CSS</span>
-            <span class="px-1 text-xs rounded bg-tailwind text-white">Tailwind CSS</span>
-        </p>
-    </section>
+    <!--article-preview-component-->
+    <mentor-card
+            title="article preview component"
+            cover="challenges/article-preview-component/screenshot/screenshot.png"
+            live="challenges/article-preview-component"
+            solution=""
+            html
+            css
+            js
+            tailwind>
+    </mentor-card>
 </main>
 </body>
 </html>
