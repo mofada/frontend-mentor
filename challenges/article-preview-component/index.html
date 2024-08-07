@@ -1,36 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Article preview component</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <title>Frontend Mentor | Article preview component</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                colors: {
+                    'dark-grayish-blue': 'hsl(217, 19%, 35%)',
+                    'desaturated-dark-blue': 'hsl(214, 17%, 51%)',
+                    'grayish-blue': 'hsl(212, 23%, 69%)',
+                    'light-grayish-blue': 'hsl(210, 46%, 95%)',
+                    white: 'hsl(0, 0%, 100%)',
+                },
+                fontFamily: {
+                    manrope: ["Manrope", 'sans-serif'],
+                },
+            }
+        }
+    </script>
+    <style>
+        @layer base {
+            @font-face {
+                font-family: 'Manrope';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url("font/Manrope/Manrope-VariableFont_wght.ttf") format('truetype');
+            }
+        }
+    </style>
+
+    <script>
+        function changOpacity() {
+            const container = document.querySelector('main');
+            container.classList.toggle('hidden');
+        }
+
+        function toggleTooltip() {
+            const tooltip = document.querySelector('#tooltip');
+            tooltip.classList.toggle('hidden');
+            window.event.stopPropagation();
+        }
+
+        function hideToggle() {
+            const tooltip = document.querySelector('#tooltip');
+            tooltip.classList.toggle('hidden', true);
+        }
+    </script>
 </head>
-<body>
+<body
+        class="flex flex-col justify-center w-screen h-screen bg-light-grayish-blue text-[13px] leading-4 font-medium font-manrope">
+<!--design template develop use, set screen width 1440px and develop-->
+<!--if screen is mobile, set screen width 375px-->
+<picture>
+    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>
+    <source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>
+    <img src="design/mobile-design.jpg"
+         alt="background" class="w-full z-0 absolute top-0 md:bottom-0 md:h-[900px]"/>
+</picture>
+<button class="fixed right-5 top-5 text-white z-20" onclick="changOpacity()">Toggle</button>
 
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
+<main
+        class=" ">
+    <article
+            id="article"
+            class="bg-white rounded-xl overflow-hidden shadow-lg mx-6 mb-[8px] relative z-10 opacity-65"
+            onclick="hideToggle()">
+        <!--header cover-->
+        <header>
+            <figure>
+                <!--use object position change img position ✔️-->
+                <img src="images/drawers.jpg" alt="drawers"
+                     class="w-full h-[200px] object-cover object-[50%_30%]"/>
+            </figure>
+        </header>
 
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
+        <!--content-->
+        <section class="mt-9 mx-8">
+            <h1 class=" text-[16px] leading-[24px] font-bold text-dark-grayish-blue tracking-[0.6px]">
+                Shift the overall look and feel by adding these wonderful
+                touches to furniture in your home
+            </h1>
 
-  Michelle Appleton
-  28 Jun 2020
+            <p class="mt-3 mr-[1px] leading-5 text-desaturated-dark-blue tracking-[0.2px]">
+                Ever been in a room and felt like something was missing? Perhaps
+                it felt slightly bare and uninviting. I’ve got some simple tips
+                to help you make any room feel complete.
+            </p>
+        </section>
 
-  Share
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+        <!--footer-->
+        <footer class="flex items-center mt-8 mx-8 gap-4 mb-5">
+            <!--avatar-->
+            <figure>
+                <img src="images/avatar-michelle.jpg" alt="avatar"
+                     class="w-[40px] h-[40px] rounded-full"/>
+            </figure>
+
+            <div class="flex flex-col grow gap-1">
+                <h2 class="tracking-[0.4px] text-dark-grayish-blue font-bold">Michelle Appleton</h2>
+                <time datetime="2020-06-28" class="tracking-[0.1px] text-grayish-blue">28 Jun 2020
+                </time>
+            </div>
+
+            <!--action-->
+            <button
+                    class="rounded-full w-[30px] h-[30px] bg-light-grayish-blue flex hover:bg-grayish-blue group"
+                    onclick="toggleTooltip()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13"
+                     class="m-auto text-grayish-blue group-hover:text-white" fill="currentColor">
+                    <path
+                            d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
+                </svg>
+            </button>
+        </footer>
+
+        <!--tooltip I want to use popover api to implement this tooltip, but it's i fail-->
+        <div
+                id="tooltip"
+                class="border-none flex items-center bg-dark-grayish-blue min-h-[80px] mt-3 px-[32px] absolute bottom-0 w-full hidden">
+            <span class="uppercase text-[12px] text-light-grayish-blue tracking-[6px]">Share</span>
+
+            <nav class="ml-4">
+                <ul class="flex gap-4 items-center">
+                    <li>
+                        <a href="#" aria-label="Share on Facebook">
+                            <img src="images/icon-facebook.svg" alt="Facebook"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Share on Twitter">
+                            <img src="images/icon-twitter.svg" alt="Twitter"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Share on Pinterest">
+                            <img src="images/icon-pinterest.svg" alt="Pinterest"/>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button
+                    class="rounded-full w-[30px] h-[30px] bg-light-grayish-blue flex items-center justify-center ml-auto"
+                    onclick="toggleTooltip()">
+                <img src="images/icon-share.svg" alt="share"/>
+            </button>
+        </div>
+    </article>
+</main>
+
+<footer class="text-xs text-center bottom-0 inset-x-0 fixed">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+       class="text-moderate-violet">
+        Frontend Mentor .
+    </a>
+    Coded by
+    <a href="https://www.frontendmentor.io/profile/mofada" class="text-moderate-violet">Fada Mo.</a>
+</footer>
 </body>
 </html>
