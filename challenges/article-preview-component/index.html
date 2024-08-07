@@ -36,23 +36,58 @@
                 src: url("font/Manrope/Manrope-VariableFont_wght.ttf") format('truetype');
             }
         }
+
+        #tooltip:before {
+            /*三角行*/
+            position: absolute;
+            bottom: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 12px solid hsl(217, 19%, 35%);
+        }
     </style>
 
     <script>
-        function changOpacity() {
-            const container = document.querySelector('main');
-            container.classList.toggle('hidden');
-        }
+        // function changOpacity() {
+        //     const container = document.querySelector('main');
+        //     container.classList.toggle('hidden');
+        // }
 
-        function toggleTooltip() {
+        function showTooltip() {
             const tooltip = document.querySelector('#tooltip');
-            tooltip.classList.toggle('hidden');
+            tooltip.classList.toggle('hidden', false);
+            // stop propagation
             window.event.stopPropagation();
+
+            // is mobile reset position
+            if (window.innerWidth < 1024) {
+                tooltip.style.left = `0`;
+                tooltip.style.top = `unset`;
+                return
+            }
+
+            const target = window.event.currentTarget;
+
+            // set position
+            const x = target.offsetLeft + target.offsetWidth / 2 - tooltip.offsetWidth / 2;
+            // 28 is offset
+            const y = target.offsetTop - target.offsetHeight / 2 - tooltip.offsetHeight - 28;
+
+            tooltip.style.left = `${x}px`;
+            tooltip.style.top = `${y}px`;
         }
 
-        function hideToggle() {
+        function hideTooltip() {
             const tooltip = document.querySelector('#tooltip');
             tooltip.classList.toggle('hidden', true);
+
+            // 判断屏幕宽度
+            tooltip.style.left = `0`;
+            tooltip.style.top = `unset`;
         }
     </script>
 </head>
@@ -60,32 +95,32 @@
         class="flex flex-col justify-center w-screen h-screen bg-light-grayish-blue text-[13px] leading-4 font-medium font-manrope">
 <!--design template develop use, set screen width 1440px and develop-->
 <!--if screen is mobile, set screen width 375px-->
-<picture>
-    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>
-    <source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>
-    <img src="design/mobile-design.jpg"
-         alt="background" class="w-full z-0 absolute top-0 md:bottom-0 md:h-[900px]"/>
-</picture>
-<button class="fixed right-5 top-5 text-white z-20" onclick="changOpacity()">Toggle</button>
+<!--<picture>-->
+<!--    <source media="(min-width: 768px)" srcset="design/desktop-active-state.jpg"/>-->
+<!--    <source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>-->
+<!--    <img src="design/mobile-design.jpg"-->
+<!--         alt="background" class="w-full z-0 absolute top-0 md:bottom-0 md:h-[800px]"/>-->
+<!--</picture>-->
+<!--<button class="fixed right-5 top-5 text-white z-20" onclick="changOpacity()">Toggle</button>-->
 
-<main
-        class=" ">
+<main class="m-auto">
     <article
             id="article"
-            class="bg-white rounded-xl overflow-hidden shadow-lg mx-6 mb-[8px] relative z-10 opacity-65"
-            onclick="hideToggle()">
+            class="bg-white rounded-xl shadow-lg mx-6 mb-[8px] relative lg:max-w-[730px] lg:min-h-[280px] lg:flex lg:mb-0"
+            onclick="hideTooltip()">
         <!--header cover-->
-        <header>
-            <figure>
+        <header class="lg:w-[284px] lg:shrink-0">
+            <figure class="lg:h-full rounded-t-xl lg:rounded-s-xl overflow-hidden ">
                 <!--use object position change img position ✔️-->
                 <img src="images/drawers.jpg" alt="drawers"
-                     class="w-full h-[200px] object-cover object-[50%_30%]"/>
+                     class="w-full h-[200px] object-cover object-[50%_30%] lg:h-full"/>
             </figure>
         </header>
 
         <!--content-->
-        <section class="mt-9 mx-8">
-            <h1 class=" text-[16px] leading-[24px] font-bold text-dark-grayish-blue tracking-[0.6px]">
+        <section class="mt-9 mx-8 pb-5 lg:flex lg:flex-col lg:mx-[42px]">
+            <h1
+                    class=" text-[16px] leading-[24px] font-bold text-dark-grayish-blue tracking-[0.6px] lg:text-[20px] lg:leading-[26px]">
                 Shift the overall look and feel by adding these wonderful
                 touches to furniture in your home
             </h1>
@@ -95,38 +130,42 @@
                 it felt slightly bare and uninviting. I’ve got some simple tips
                 to help you make any room feel complete.
             </p>
-        </section>
 
-        <!--footer-->
-        <footer class="flex items-center mt-8 mx-8 gap-4 mb-5">
-            <!--avatar-->
-            <figure>
-                <img src="images/avatar-michelle.jpg" alt="avatar"
-                     class="w-[40px] h-[40px] rounded-full"/>
-            </figure>
+            <!--user info-->
+            <div class="flex items-center mt-8 gap-4 lg:mt-6">
+                <!--avatar-->
+                <figure>
+                    <img src="images/avatar-michelle.jpg" alt="avatar"
+                         class="w-[40px] h-[40px] rounded-full"/>
+                </figure>
 
-            <div class="flex flex-col grow gap-1">
-                <h2 class="tracking-[0.4px] text-dark-grayish-blue font-bold">Michelle Appleton</h2>
-                <time datetime="2020-06-28" class="tracking-[0.1px] text-grayish-blue">28 Jun 2020
-                </time>
+                <div class="flex flex-col grow gap-1">
+                    <h2 class="tracking-[0.4px] text-dark-grayish-blue font-bold">Michelle
+                        Appleton</h2>
+                    <time datetime="2020-06-28" class="tracking-[0.1px] text-grayish-blue">28 Jun
+                        2020
+                    </time>
+                </div>
+
+                <!--action-->
+                <button
+                        class="rounded-full w-[30px] h-[30px] bg-light-grayish-blue flex hover:bg-grayish-blue group"
+                        onclick="showTooltip()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13"
+                         class="m-auto text-grayish-blue group-hover:text-white"
+                         fill="currentColor">
+                        <path
+                                d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
+                    </svg>
+                </button>
             </div>
-
-            <!--action-->
-            <button
-                    class="rounded-full w-[30px] h-[30px] bg-light-grayish-blue flex hover:bg-grayish-blue group"
-                    onclick="toggleTooltip()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13"
-                     class="m-auto text-grayish-blue group-hover:text-white" fill="currentColor">
-                    <path
-                            d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
-                </svg>
-            </button>
-        </footer>
+        </section>
 
         <!--tooltip I want to use popover api to implement this tooltip, but it's i fail-->
         <div
                 id="tooltip"
-                class="border-none flex items-center bg-dark-grayish-blue min-h-[80px] mt-3 px-[32px] absolute bottom-0 w-full hidden">
+                class="border-none flex items-center bg-dark-grayish-blue min-h-[80px]
+                mt-3 px-[32px] absolute bottom-0 w-full hidden rounded-b-xl lg:min-h-[52px] lg:w-[246px] lg:rounded-xl lg:before:content-[''] lg:bottom-[unset]">
             <span class="uppercase text-[12px] text-light-grayish-blue tracking-[6px]">Share</span>
 
             <nav class="ml-4">
@@ -150,8 +189,8 @@
             </nav>
 
             <button
-                    class="rounded-full w-[30px] h-[30px] bg-light-grayish-blue flex items-center justify-center ml-auto"
-                    onclick="toggleTooltip()">
+                    class="rounded-full w-[30px] h-[30px] bg-light-grayish-blue flex items-center justify-center ml-auto lg:hidden"
+                    onclick="hideTooltip()">
                 <img src="images/icon-share.svg" alt="share"/>
             </button>
         </div>
