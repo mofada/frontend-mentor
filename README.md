@@ -74,6 +74,12 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/testimonials-grid-section/)
 
+### 7. [article-preview-component](challenges/article-preview-component)
+
+![Screenshot](challenges/article-preview-component/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/article-preview-component/)
+
 still working...
 
 ## Author

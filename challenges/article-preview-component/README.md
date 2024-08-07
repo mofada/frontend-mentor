@@ -13,7 +13,7 @@
 
 ### Links
 
-- Solution URL: [article-preview-component]()
+- Solution URL: [article-preview-component](https://www.frontendmentor.io/solutions/article-preview-component-with-tailwindcss-ZDtecSd9IJ)
 - Live Site URL: [article-preview-component](https://mofada.github.io/frontend-mentor/challenges/article-preview-component/)
 
 ## Author

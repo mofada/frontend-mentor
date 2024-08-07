@@ -110,10 +110,11 @@
             onclick="hideTooltip()">
         <!--header cover-->
         <header class="lg:w-[284px] lg:shrink-0">
-            <figure class="lg:h-full rounded-t-xl lg:rounded-s-xl overflow-hidden ">
+            <figure
+                    class="lg:h-full rounded-t-xl lg:rounded-s-xl md:rounded-e-none overflow-hidden ">
                 <!--use object position change img position ✔️-->
                 <img src="images/drawers.jpg" alt="drawers"
-                     class="w-full h-[200px] object-cover object-[50%_30%] lg:h-full"/>
+                     class="w-full h-[200px] object-cover object-[0%_30%] lg:h-full"/>
             </figure>
         </header>
 
@@ -150,7 +151,7 @@
                 <!--action-->
                 <button
                         class="rounded-full w-[30px] h-[30px] bg-light-grayish-blue flex hover:bg-grayish-blue group"
-                        onclick="showTooltip()">
+                        onclick="showTooltip()" aria-label="share">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13"
                          class="m-auto text-grayish-blue group-hover:text-white"
                          fill="currentColor">
@@ -190,7 +191,7 @@
 
             <button
                     class="rounded-full w-[30px] h-[30px] bg-light-grayish-blue flex items-center justify-center ml-auto lg:hidden"
-                    onclick="hideTooltip()">
+                    onclick="hideTooltip()" aria-label="share">
                 <img src="images/icon-share.svg" alt="share"/>
             </button>
         </div>
