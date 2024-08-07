@@ -63,8 +63,8 @@
                 // title
                 const titleElement = document.createElement("h2");
                 titleElement.className =
-                    "text-lg font-bold mt-2 underline hover:text-blue-500 capitalize cursor-pointer";
-                titleElement.innerText = title;
+                    "text-lg font-bold mt-2 underline hover:text-blue-500 capitalize cursor-pointer truncate";
+                titleElement.innerText = title?.split("-").join(" ");
                 titleElement.onclick = () => window.open(solutionUrl, "_blank");
                 this.append(titleElement);
 
@@ -170,7 +170,7 @@
 
     <!--product-preview-card-component-->
     <mentor-card
-            title="product preview card"
+            title="product-preview-card-component"
             cover="challenges/product-preview-card-component/screenshot/screenshot.png"
             live="challenges/product-preview-card-component"
             solution="https://www.frontendmentor.io/solutions/product-preview-card-with-90-reducibility-c4tH02KHdg"
