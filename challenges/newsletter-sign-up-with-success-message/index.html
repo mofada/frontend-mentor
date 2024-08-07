@@ -1,52 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                colors: {
+                    tomato: 'hsl(4, 100%, 67%)',
+                    'tomato-30': 'hsl(4, 100%, 67%,0.3)',
+                    'light-pink': 'hsl(345, 98%, 65%)',
+                    'slate-grey': 'hsl(234, 29%, 20%)',
+                    'charcoal-grey': 'hsl(235, 18%, 26%)',
+                    grey: 'hsl(231, 7%, 60%)',
+                    white: 'hsl(0, 0%, 100%)',
+                },
+                fontFamily: {
+                    roboto: ["Roboto", 'sans-serif'],
+                },
+                backgroundImage: theme => ({
+                    'submit': `linear-gradient(to right, ${theme('colors.light-pink')}, ${theme('colors.tomato')})`,
+                }),
+            }
+        }
+    </script>
+    <style>
+        @layer reset, base, components, utilities;
+
+        @layer base {
+            @font-face {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url("assets/fonts/Roboto-Regular.ttf") format('truetype');
+            }
+        }
+    </style>
+
+    <script>
+        function toggleVisible() {
+            const container = document.querySelector('main');
+            container.classList.toggle('hidden');
+        }
+
+        function onSubmit(event) {
+            event.preventDefault()
+
+            const target = event.target;
+            const formData = new FormData(target);
+            const data = Object.fromEntries(formData);
+            console.log(data);
+        }
+    </script>
 </head>
-<body>
+<body
+        class="flex flex-col w-screen h-screen bg-light-grayish-blue text-base text-charcoal-grey font-roboto">
+<!--design template develop use, set screen width 1440px and develop-->
+<!--if screen is mobile, set screen width 375px-->
+<picture>
+    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>
+    <source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>
+    <img src="design/mobile-design.jpg"
+         alt="background" class="w-full z-0 absolute top-0 md:bottom-0 md:h-[800px]"/>
+</picture>
+<button class="fixed right-5 top-5 text-white z-20" onclick="toggleVisible()">Toggle</button>
 
-  <!-- Sign-up form start -->
+<main class="z-10 opacity-85">
+    <article>
+        <!--cover-->
+        <header>
+            <picture>
+                <source media="(min-width: 768px)"
+                        srcset="assets/images/illustration-sign-up-desktop.svg"/>
+                <source media="(max-width: 768px)"
+                        srcset="assets/images/illustration-sign-up-mobile.svg"/>
+                <img src="assets/images/illustration-sign-up-mobile.svg"
+                     alt="background" class="w-full h-[285px]"/>
+            </picture>
+        </header>
 
-  Stay updated!
+        <section class="mx-6 mt-10">
+            <h1 class="text-[40px] leading-10 font-bold text-slate-grey">Stay updated!</h1>
 
-  Join 60,000+ product managers receiving monthly updates on:
+            <p class="mt-6 text-charcoal-grey">Join 60,000+ product managers receiving monthly
+                updates on:</p>
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
+            <!--did some method can change marker position? such as `marker:mt-1`-->
+            <ul
+                    class="mt-5 list-image-[url(assets/images/icon-list.svg)] mx-7 flex flex-col gap-[6px]">
+                <li class="pl-2 ">
+                    Product discovery and building what matters
+                </li>
+                <li class="pl-2 ">
+                    Measuring to ensure updates are a success
+                </li>
+                <li class="pl-2 ">
+                    And much more!
+                </li>
+            </ul>
+        </section>
 
-  Email address
-  email@company.com
+        <!--did some method can not valid first in with not input something?-->
+        <form class="group mx-6 mt-10 flex flex-col" onsubmit="onSubmit(event)">
+            <div class="text-slate-grey text-xs font-bold flex justify-between">
+                <label for="email">Email address</label>
+                <!--did here can change style with input?-->
+                <!--It's working for me! `group-has-[:invalid]:block`-->
+                <span class="text-tomato hidden group-has-[:invalid]:block">Valid email
+                    required</span>
+            </div>
+            <input id="email"
+                   name="email"
+                   class="mt-2 border border-grey h-[58px] outline-none rounded-lg px-6 placeholder-grey focus:border-slate-grey invalid:border-tomato invalid:bg-tomato-30 invalid:text-tomato focus:invalid:border-tomato "
+                   type="email"
+                   required
+                   placeholder="email@company.com"/>
 
-  Subscribe to monthly newsletter
+            <button
+                    class="mt-[22px] h-[58px] rounded-lg text-white font-bold text-base bg-slate-grey hover:bg-submit"
+                    type="submit">
+                Subscribe to monthly newsletter
+            </button>
+        </form>
+    </article>
+</main>
+<!-- Sign-up form start -->
 
-  <!-- Sign-up form end -->
+<!---->
 
-  <!-- Success message start -->
+<!-- Sign-up form end -->
 
-  Thanks for subscribing!
 
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
+<!-- Success message start -->
 
-  Dismiss message
+<!--Thanks for subscribing!-->
 
-  <!-- Success message end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<!--A confirmation email has been sent to ash@loremcompany.com.-->
+<!--Please open it and click the button inside to confirm your subscription.-->
+
+<!--Dismiss message-->
+
+<!-- Success message end -->
+
+<footer class="text-xs text-center bottom-0 inset-x-0 fixed">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+       class="text-slate-grey">
+        Frontend Mentor .
+    </a>
+    Coded by
+    <a href="https://www.frontendmentor.io/profile/mofada" class="text-slate-grey">Fada
+        Mo.</a>
+</footer>
 </body>
 </html>
