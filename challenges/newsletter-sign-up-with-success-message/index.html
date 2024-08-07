@@ -24,6 +24,7 @@
                 },
                 fontFamily: {
                     roboto: ["Roboto", 'sans-serif'],
+                    'roboto-bold': ["Roboto-Bold", 'sans-serif'],
                 },
                 backgroundImage: theme => ({
                     'submit': `linear-gradient(to right, ${theme('colors.light-pink')}, ${theme('colors.tomato')})`,
@@ -41,6 +42,14 @@
                 font-weight: 400;
                 font-display: swap;
                 src: url("assets/fonts/Roboto-Regular.ttf") format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Roboto-Bold';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url("assets/fonts/Roboto-Bold.ttf") format('truetype');
             }
         }
     </style>
@@ -65,12 +74,12 @@
         class="flex flex-col w-screen h-screen bg-light-grayish-blue text-base text-charcoal-grey font-roboto">
 <!--design template develop use, set screen width 1440px and develop-->
 <!--if screen is mobile, set screen width 375px-->
-<picture>
-    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>
-    <source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>
-    <img src="design/mobile-design.jpg"
-         alt="background" class="w-full z-0 absolute top-0 md:bottom-0 md:h-[800px]"/>
-</picture>
+<!--<picture>-->
+<!--    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>-->
+<!--    <source media="(max-width: 768px)" srcset="design/mobile-success.jpg"/>-->
+<!--    <img src="design/mobile-design.jpg"-->
+<!--         alt="background" class="w-full z-0 absolute top-0 md:bottom-0 md:h-[800px]"/>-->
+<!--</picture>-->
 <button class="fixed right-5 top-5 text-white z-20" onclick="toggleVisible()">Toggle</button>
 
 <main class="z-10 opacity-85">
@@ -83,12 +92,12 @@
                 <source media="(max-width: 768px)"
                         srcset="assets/images/illustration-sign-up-mobile.svg"/>
                 <img src="assets/images/illustration-sign-up-mobile.svg"
-                     alt="background" class="w-full h-[285px]"/>
+                     alt="Sign up illustration" class="w-full h-[285px]"/>
             </picture>
         </header>
 
         <section class="mx-6 mt-10">
-            <h1 class="text-[40px] leading-10 font-bold text-slate-grey">Stay updated!</h1>
+            <h1 class="text-[40px] leading-10 font-roboto-bold text-slate-grey">Stay updated!</h1>
 
             <p class="mt-6 text-charcoal-grey">Join 60,000+ product managers receiving monthly
                 updates on:</p>
@@ -114,7 +123,7 @@
                 <label for="email">Email address</label>
                 <!--did here can change style with input?-->
                 <!--It's working for me! `group-has-[:invalid]:block`-->
-                <span class="text-tomato hidden group-has-[:invalid]:block">Valid email
+                <span class="text-tomato hidden group-invalid:block">Valid email
                     required</span>
             </div>
             <input id="email"
@@ -125,11 +134,39 @@
                    placeholder="email@company.com"/>
 
             <button
-                    class="mt-[22px] h-[58px] rounded-lg text-white font-bold text-base bg-slate-grey hover:bg-submit"
+                    class="mt-[22px] h-[58px] rounded-lg text-white font-roboto-bold text-base bg-slate-grey hover:bg-submit"
                     type="submit">
                 Subscribe to monthly newsletter
             </button>
         </form>
+    </article>
+
+    <!--tooltip success-->
+    <article class="tooltip w-screen h-screen absolute top-0 z-20 bg-white flex flex-col hidden">
+        <header class="mt-[150px] mx-6">
+            <figure>
+                <img src="assets/images/icon-success.svg" alt="success icon"/>
+            </figure>
+
+            <h1
+                    class="mt-10 text-[40px] leading-10 font-roboto-bold text-slate-grey">
+                Thanks for subscribing!
+            </h1>
+
+            <p class="mt-6">
+                A confirmation email has been sent to
+                <span class="email font-roboto-bold">ash@loremcompany.com.</span>
+                Please open it and click the button inside to confirm your subscription.
+            </p>
+        </header>
+
+        <footer class="mt-auto mx-6 mb-10">
+            <button
+                    class="w-full h-[56px] rounded-lg text-white font-roboto-bold text-base bg-slate-grey hover:bg-submit"
+                    type="button" aria-label="dismiss">
+                Dismiss message
+            </button>
+        </footer>
     </article>
 </main>
 <!-- Sign-up form start -->
@@ -143,14 +180,12 @@
 
 <!--Thanks for subscribing!-->
 
-<!--A confirmation email has been sent to ash@loremcompany.com.-->
-<!--Please open it and click the button inside to confirm your subscription.-->
 
 <!--Dismiss message-->
 
 <!-- Success message end -->
 
-<footer class="text-xs text-center bottom-0 inset-x-0 fixed">
+<footer class="text-xs text-center bottom-0 inset-x-0 fixed z-50">
     Challenge by
     <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
        class="text-slate-grey">
