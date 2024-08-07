@@ -60,13 +60,32 @@
             container.classList.toggle('hidden');
         }
 
+        /**
+         * submit form
+         * @param event
+         */
         function onSubmit(event) {
             event.preventDefault()
 
             const target = event.target;
             const formData = new FormData(target);
             const data = Object.fromEntries(formData);
-            console.log(data);
+
+            // change email
+            const email = document.querySelector('.email');
+            email.textContent = data.email;
+
+            // show tooltip
+            const tooltip = document.querySelector('.tooltip');
+            tooltip.classList.toggle('hidden', false);
+        }
+
+        /**
+         * hide tooltip
+         */
+        function hideTooltip() {
+            const tooltip = document.querySelector('.tooltip');
+            tooltip.classList.toggle('hidden', true);
         }
     </script>
 </head>
@@ -148,8 +167,7 @@
                 <img src="assets/images/icon-success.svg" alt="success icon"/>
             </figure>
 
-            <h1
-                    class="mt-10 text-[40px] leading-10 font-roboto-bold text-slate-grey">
+            <h1 class="mt-10 text-[40px] leading-10 font-roboto-bold text-slate-grey">
                 Thanks for subscribing!
             </h1>
 
@@ -163,7 +181,7 @@
         <footer class="mt-auto mx-6 mb-10">
             <button
                     class="w-full h-[56px] rounded-lg text-white font-roboto-bold text-base bg-slate-grey hover:bg-submit"
-                    type="button" aria-label="dismiss">
+                    type="button" aria-label="dismiss" onclick="hideTooltip()">
                 Dismiss message
             </button>
         </footer>
