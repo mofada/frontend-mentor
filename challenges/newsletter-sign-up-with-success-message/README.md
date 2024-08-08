@@ -13,7 +13,7 @@
 
 ### Links
 
-- Solution URL: [newsletter-sign-up-with-success-message]()
+- Solution URL: [newsletter-sign-up-with-success-message](https://www.frontendmentor.io/solutions/newsletter-sign-up-with-success-message-with-tailwind-kEkKETpZls)
 - Live Site URL: [newsletter-sign-up-with-success-message](https://mofada.github.io/frontend-mentor/challenges/newsletter-sign-up-with-success-message/)
 
 ## Author
