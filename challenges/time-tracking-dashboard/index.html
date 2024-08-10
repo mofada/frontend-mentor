@@ -34,8 +34,8 @@
 </picture>
 <button class="fixed right-5 top-5 text-white z-20" onclick="toggleVisible()">Toggle</button>
 
-<main class="grid px-6 py-20 md:m-auto opacity-85 z-10">
-	<article class="bg-dark-blue rounded-2xl">
+<main class="grid gap-y-[26px] px-6 py-20 md:m-auto opacity-85 z-10">
+	<section class="bg-dark-blue rounded-2xl">
 		<header
 				class="bg-blue rounded-2xl px-7 py-[32px] grid grid-cols-[auto,minmax(0,1fr)] grid-rows-[min-content,min-content] items-center gap-x-4">
 			<!--avatar-->
@@ -43,7 +43,6 @@
 				<img src="images/image-jeremy.png" alt="avatar"
 				     class="w-full h-full object-cover"/>
 			</figure>
-
 
 			<h2 class="text-[16px] text-pale-blue font-light">
 				Report for
@@ -60,15 +59,39 @@
 				Daily
 			</label>
 			<label class="has-[:checked]:text-white">
-				<input type="radio" name="report" value="daily" checked class="appearance-none">
+				<input type="radio" name="report" value="weekly" checked class="appearance-none">
 				Weekly
 			</label>
 			<label class="has-[:checked]:text-white">
-				<input type="radio" name="report" value="daily" class="appearance-none">
+				<input type="radio" name="report" value="monthly" class="appearance-none">
 				Monthly
 			</label>
 		</footer>
-	</article>
+	</section>
+
+	<section
+			class="bg-work rounded-2xl relative overflow-hidden shadow-xl">
+		<!--decoration-->
+		<img src="images/icon-work.svg" alt="" class="absolute right-4 top-[-10px]">
+
+		<article
+				class="bg-dark-blue px-6 py-[30px] pb-8 mt-[38px] z-10 text-white relative rounded-2xl">
+			<!--header-->
+			<header class="flex justify-between items-center">
+				<h2 class="font-medium leading-[18px]">Work</h2>
+
+				<button aria-label="More options">
+					<img src="images/icon-ellipsis.svg" alt="">
+				</button>
+			</header>
+
+			<!--time-->
+			<section class="flex justify-between items-center mt-3">
+				<h3 class="text-[32px] font-light">32hrs</h3>
+				<p class="text-[15px]  text-desaturated-blue">Last Week - 36hrs</p>
+			</section>
+		</article>
+	</section>
 </main>
 
 
