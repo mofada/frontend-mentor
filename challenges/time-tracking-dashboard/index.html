@@ -21,6 +21,115 @@
             container.classList.toggle('hidden');
         }
 	</script>
+
+	<script type="module">
+        /**
+         * Load data from json file
+         */
+		let data
+        /**
+         * Current data type
+         */
+        let currentType = 'weekly'
+
+        function loadData() {
+            fetch('./data.json')
+                .then((response) => response.json())
+                .then((json) => data = json)
+                .then(() => showData('weekly'))
+        }
+
+        function initContainer() {
+            const mainContainer = document.querySelector("main");
+
+            // work
+            const workSection = createItem('Work', 'bg-work', 'images/icon-work.svg');
+            mainContainer.appendChild(workSection);
+
+            // play
+            const playSection = createItem('Play', 'bg-play', 'images/icon-play.svg');
+            mainContainer.appendChild(playSection);
+
+            // study
+            const studySection = createItem('Study', 'bg-study', 'images/icon-study.svg');
+            mainContainer.appendChild(studySection);
+
+            // exercise
+            const exerciseSection = createItem('Exercise', 'bg-exercise', 'images/icon-exercise.svg');
+            mainContainer.appendChild(exerciseSection);
+
+            // social
+            const socialSection = createItem('Social', 'bg-social', 'images/icon-social.svg');
+            mainContainer.appendChild(socialSection);
+
+            // self care
+            const selfCareSection = createItem('Self Care', 'bg-self-care', 'images/icon-self-care.svg');
+            mainContainer.appendChild(selfCareSection);
+        }
+
+        /**
+         * Create a section element
+         * @param title - section title
+         * @param bgColor - background color
+         * @param icon - icon image
+         * @returns {HTMLElement}
+         */
+        function createItem(title, bgColor, icon) {
+            const sectionElement = document.createElement('section');
+            // set id
+            sectionElement.id = title.toLowerCase();
+            // set class name
+            sectionElement.className = `${bgColor} rounded-2xl relative overflow-hidden shadow-xl`
+            // set content
+            sectionElement.innerHTML =
+                `<!--decoration-->
+					<img src="${icon}" alt="" class="absolute right-4 top-[-10px]">
+
+					<article
+					class="bg-dark-blue px-6 py-[30px] pb-8 mt-[38px] z-10 text-white relative rounded-2xl">
+					<!--header-->
+					<header class="flex justify-between items-center">
+					<h2 class="font-medium leading-[18px]">${title}</h2>
+
+					<button aria-label="More options">
+					<img src="images/icon-ellipsis.svg" alt="">
+					</button>
+					</header>
+
+					<!--time-->
+					<section class="flex justify-between items-center mt-3">
+					<h3 class="text-[32px] font-light">-hrs</h3>
+					<p class="text-[15px]  text-desaturated-blue">Last Week - -hrs</p>
+					</section>
+					</article>
+	            `
+
+            return sectionElement;
+        }
+
+        /**
+         * Show data based on type
+         * @param type {'daily' | 'weekly' | 'monthly'} - data type
+         */
+        function showData(type) {
+            console.log(data);
+        }
+
+        function onTypeChange(){
+            const selectedValue = document.querySelector('input[name="report"]:checked').value;
+			showData(selectedValue)
+        }
+
+        window.onload = () => {
+            // load data
+            loadData()
+
+			initContainer()
+
+            // 获取选中的 radio 按钮的值
+            const selectedValue = document.querySelector('input[name="options"]:checked').value;
+        }
+	</script>
 </head>
 <body
 		class="flex flex-col w-screen h-screen bg-very-dark-blue text-lg font-rubik">
@@ -69,29 +178,27 @@
 		</footer>
 	</section>
 
-	<section
-			class="bg-work rounded-2xl relative overflow-hidden shadow-xl">
-		<!--decoration-->
-		<img src="images/icon-work.svg" alt="" class="absolute right-4 top-[-10px]">
+	<!--use js add container-->
+	<!--	<section-->
+	<!--			class="bg-work rounded-2xl relative overflow-hidden shadow-xl">-->
+	<!--		<img src="images/icon-work.svg" alt="" class="absolute right-4 top-[-10px]">-->
 
-		<article
-				class="bg-dark-blue px-6 py-[30px] pb-8 mt-[38px] z-10 text-white relative rounded-2xl">
-			<!--header-->
-			<header class="flex justify-between items-center">
-				<h2 class="font-medium leading-[18px]">Work</h2>
+	<!--		<article-->
+	<!--				class="bg-dark-blue px-6 py-[30px] pb-8 mt-[38px] z-10 text-white relative rounded-2xl">-->
+	<!--			<header class="flex justify-between items-center">-->
+	<!--				<h2 class="font-medium leading-[18px]">Work</h2>-->
 
-				<button aria-label="More options">
-					<img src="images/icon-ellipsis.svg" alt="">
-				</button>
-			</header>
+	<!--				<button aria-label="More options">-->
+	<!--					<img src="images/icon-ellipsis.svg" alt="">-->
+	<!--				</button>-->
+	<!--			</header>-->
 
-			<!--time-->
-			<section class="flex justify-between items-center mt-3">
-				<h3 class="text-[32px] font-light">32hrs</h3>
-				<p class="text-[15px]  text-desaturated-blue">Last Week - 36hrs</p>
-			</section>
-		</article>
-	</section>
+	<!--			<section class="flex justify-between items-center mt-3">-->
+	<!--				<h3 class="text-[32px] font-light">32hrs</h3>-->
+	<!--				<p class="text-[15px]  text-desaturated-blue">Last Week - 36hrs</p>-->
+	<!--			</section>-->
+	<!--		</article>-->
+	<!--	</section>-->
 </main>
 
 
