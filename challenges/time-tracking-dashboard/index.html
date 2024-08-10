@@ -14,69 +14,115 @@
 
 	<!--use local tailwind-->
 	<script src="tailwindcss/tailwind-config.js" type="module"></script>
+
+	<script>
+        function toggleVisible() {
+            const container = document.querySelector('main');
+            container.classList.toggle('hidden');
+        }
+	</script>
 </head>
 <body
-		class="flex w-screen h-screen bg-very-dark-blue text-lg font-rubik">
-<main class=""></main>
+		class="flex flex-col w-screen h-screen bg-very-dark-blue text-lg font-rubik">
+<!--design template develop use, set screen width 1440px and develop-->
+<!--if screen is mobile, set screen width 375px-->
+<picture>
+	<source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>
+	<source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>
+	<img src="design/mobile-design.jpg"
+	     alt="background" class="w-full z-0 absolute top-0 lg:bottom-0 lg:h-full"/>
+</picture>
+<button class="fixed right-5 top-5 text-white z-20" onclick="toggleVisible()">Toggle</button>
+
+<main class="grid px-6 py-20 md:m-auto opacity-85 z-10">
+	<article class="bg-dark-blue rounded-2xl">
+		<header
+				class="bg-blue rounded-2xl px-7 py-[32px] grid grid-cols-[auto,minmax(0,1fr)] grid-rows-[min-content,min-content] items-center gap-x-4">
+			<!--avatar-->
+			<figure class="w-[70px] row-span-full bg-white rounded-full p-[3px]">
+				<img src="images/image-jeremy.png" alt="avatar"
+				     class="w-full h-full object-cover"/>
+			</figure>
 
 
-Report for
-Jeremy Robson
+			<h2 class="text-[16px] text-pale-blue font-light">
+				Report for
+			</h2>
+			<h1 class="text-[24px] text-white font-light self-start">
+				Jeremy Robson
+			</h1>
+		</header>
 
-Daily
-Weekly
-Monthly
-
-Work
-5hrs <!-- daily -->
-Previous - 7hrs <!-- daily -->
-32hrs <!-- weekly -->
-Previous - 36hrs <!-- weekly -->
-103hrs <!-- monthly -->
-Previous - 128hrs <!-- monthly -->
-
-Play
-1hr <!-- daily -->
-Previous - 2hrs <!-- daily -->
-10hrs <!-- weekly -->
-Previous - 8hrs <!-- weekly -->
-23hrs <!-- monthly -->
-Previous - 29hrs <!-- monthly -->
-
-Study
-0hrs <!-- daily -->
-Previous - 1hr <!-- daily -->
-4hrs <!-- weekly -->
-Previous - 7hrs <!-- weekly -->
-13hrs <!-- monthly -->
-Previous - 19hrs <!-- monthly -->
-
-Exercise
-1hr <!-- daily -->
-Previous - 1hr <!-- daily -->
-4hrs <!-- weekly -->
-Previous - 5hrs <!-- weekly -->
-11hrs <!-- monthly -->
-Previous - 18hrs <!-- monthly -->
-
-Social
-1hr <!-- daily -->
-Previous - 3hrs <!-- daily -->
-5hrs <!-- weekly -->
-Previous - 10hrs <!-- weekly -->
-21hrs <!-- monthly -->
-Previous - 23hrs <!-- monthly -->
-
-Self Care
-0hrs <!-- daily -->
-Previous - 1hr <!-- daily -->
-2hrs <!-- weekly -->
-Previous - 2hrs <!-- weekly -->
-7hrs <!-- monthly -->
-Previous - 11hrs <!-- monthly -->
+		<!--action-->
+		<footer class="text-desaturated-blue py-5 px-5 flex justify-between">
+			<label class="has-[:checked]:text-white">
+				<input type="radio" name="report" value="daily" class="appearance-none">
+				Daily
+			</label>
+			<label class="has-[:checked]:text-white">
+				<input type="radio" name="report" value="daily" checked class="appearance-none">
+				Weekly
+			</label>
+			<label class="has-[:checked]:text-white">
+				<input type="radio" name="report" value="daily" class="appearance-none">
+				Monthly
+			</label>
+		</footer>
+	</article>
+</main>
 
 
-<footer class="text-xs text-center bottom-0 inset-x-0 fixed z-50 text-white">
+<div class="hidden">
+	Work
+	5hrs <!-- daily -->
+	Previous - 7hrs <!-- daily -->
+	32hrs <!-- weekly -->
+	Previous - 36hrs <!-- weekly -->
+	103hrs <!-- monthly -->
+	Previous - 128hrs <!-- monthly -->
+
+	Play
+	1hr <!-- daily -->
+	Previous - 2hrs <!-- daily -->
+	10hrs <!-- weekly -->
+	Previous - 8hrs <!-- weekly -->
+	23hrs <!-- monthly -->
+	Previous - 29hrs <!-- monthly -->
+
+	Study
+	0hrs <!-- daily -->
+	Previous - 1hr <!-- daily -->
+	4hrs <!-- weekly -->
+	Previous - 7hrs <!-- weekly -->
+	13hrs <!-- monthly -->
+	Previous - 19hrs <!-- monthly -->
+
+	Exercise
+	1hr <!-- daily -->
+	Previous - 1hr <!-- daily -->
+	4hrs <!-- weekly -->
+	Previous - 5hrs <!-- weekly -->
+	11hrs <!-- monthly -->
+	Previous - 18hrs <!-- monthly -->
+
+	Social
+	1hr <!-- daily -->
+	Previous - 3hrs <!-- daily -->
+	5hrs <!-- weekly -->
+	Previous - 10hrs <!-- weekly -->
+	21hrs <!-- monthly -->
+	Previous - 23hrs <!-- monthly -->
+
+	Self Care
+	0hrs <!-- daily -->
+	Previous - 1hr <!-- daily -->
+	2hrs <!-- weekly -->
+	Previous - 2hrs <!-- weekly -->
+	7hrs <!-- monthly -->
+	Previous - 11hrs <!-- monthly -->
+</div>
+
+<footer class="text-xs text-center bottom-0 inset-x-0 md:fixed z-50 text-white">
 	Challenge by
 	<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
 	   class="text-pale-blue">
