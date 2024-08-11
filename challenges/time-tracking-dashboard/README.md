@@ -13,7 +13,7 @@
 
 ### Links
 
-- Solution URL: [time-tracking-dashboard]()
+- Solution URL: [time-tracking-dashboard](https://www.frontendmentor.io/solutions/product-preview-card-component-with-tailwind-5RefINCxoS)
 - Live Site URL: [time-tracking-dashboard](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
 
 ## Author

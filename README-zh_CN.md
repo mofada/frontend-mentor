@@ -55,6 +55,36 @@ css让我很困惑。
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/product-preview-card-component/)
 
+### 6. [四卡功能区](challenges/four-card-feature-section)
+
+![Screenshot](challenges/four-card-feature-section/screenshot/screenshot.png)
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/four-card-feature-section/)
+
+### 7. [见证网格部分](challenges/testimonials-grid-section)
+
+![Screenshot](challenges/testimonials-grid-section/screenshot/screenshot.png)
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/testimonials-grid-section/)
+
+### 8. [文章预览组件](challenges/article-preview-component)
+
+![Screenshot](challenges/article-preview-component/screenshot/screenshot.png)
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/article-preview-component/)
+
+### 9. [时事通讯注册成功消息](challenges/newsletter-sign-up-with-success-message)
+
+![Screenshot](challenges/newsletter-sign-up-with-success-message/screenshot/screenshot.png)
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/newsletter-sign-up-with-success-message/)
+
+### 9. [时间跟踪仪表板](challenges/time-tracking-dashboard)
+
+![Screenshot](challenges/time-tracking-dashboard/screenshot/screenshot.png)
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
+
 正在开发中...
 
 ## 作者
