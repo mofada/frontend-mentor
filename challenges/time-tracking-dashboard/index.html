@@ -15,164 +15,205 @@
 	<!--use local tailwind-->
 	<script src="tailwindcss/tailwind-config.js" type="module"></script>
 
+<!--	<script>-->
+<!--        function toggleVisible() {-->
+<!--            const container = document.querySelector('main');-->
+<!--            container.classList.toggle('hidden');-->
+<!--        }-->
+<!--	</script>-->
+
 	<script>
-        function toggleVisible() {
-            const container = document.querySelector('main');
-            container.classList.toggle('hidden');
-        }
+        const App = {
+            data: null,
+            /**
+             * The current timeframe type ('daily', 'weekly', 'monthly').
+             * @type {'daily' | 'weekly' | 'monthly'}
+             */
+            currentType: 'weekly',
+
+            /**
+             * Asynchronously loads data from the JSON file.
+             * It also initializes the display with the 'weekly' timeframe by default.
+             */
+            async loadData() {
+                try {
+                    const response = await fetch('./data.json');
+                    this.data = await response.json();
+                    this.showData('weekly');
+                } catch (error) {
+                    console.error('Error loading data:', error);
+                }
+            },
+
+            /**
+             * Initializes the main container by creating and appending section elements
+             * for each activity type (Work, Play, Study, etc.).
+             */
+            initContainer() {
+                const mainContainer = document.querySelector('main');
+                // Define the sections to be created
+                const sections = [
+                    {title: 'Work', bgColor: 'bg-work', icon: 'images/icon-work.svg'},
+                    {title: 'Play', bgColor: 'bg-play', icon: 'images/icon-play.svg'},
+                    {title: 'Study', bgColor: 'bg-study', icon: 'images/icon-study.svg'},
+                    {title: 'Exercise', bgColor: 'bg-exercise', icon: 'images/icon-exercise.svg'},
+                    {title: 'Social', bgColor: 'bg-social', icon: 'images/icon-social.svg'},
+                    {title: 'Self Care', bgColor: 'bg-self-care', icon: 'images/icon-self-care.svg'}
+                ];
+
+                const fragment = document.createDocumentFragment();
+                sections.forEach(({title, bgColor, icon}) => {
+                    const section = this.createItem(title, bgColor, icon);
+                    fragment.appendChild(section);
+                });
+                mainContainer.appendChild(fragment);
+            },
+
+            /**
+             * Creates a section element for a specific activity type.
+             * @param {string} title - The title of the section (e.g., 'Work', 'Play').
+             * @param {string} bgColor - The background color class for the section.
+             * @param {string} icon - The path to the icon image for the section.
+             * @returns {HTMLElement} - The constructed section element.
+             */
+            createItem(title, bgColor, icon) {
+                // Create a new section element
+                const sectionElement = document.createElement('section');
+                sectionElement.id = title.toLowerCase();
+                // Apply classes to the section element
+                sectionElement.className =
+                    `${bgColor} rounded-2xl relative overflow-hidden shadow-xl lg:min-h-[245px] lg:flex lg:flex-col`;
+                sectionElement.innerHTML = `
+                <img src="${icon}" alt="" class="absolute right-4 top-[-10px]">
+                <!-- Section's icon image -->
+
+                <article class="bg-dark-blue px-6 py-[30px] pb-8 mt-[38px] z-10 text-white relative rounded-2xl lg:grow lg:mt-[46px] lg:px-7">
+                    <header class="flex justify-between items-center">
+                        <!-- Section's title -->
+                        <h2 class="font-medium leading-[18px]">${title}</h2>
+
+
+						<!-- More options button -->
+                        <button aria-label="More options">
+                            <img src="images/icon-ellipsis.svg" alt="">
+                        </button>
+                    </header>
+                    <section class="flex justify-between items-center mt-3 lg:flex lg:flex-col lg:items-start">
+                        <!-- Placeholder for the current timeframe hours -->
+                        <h3 class="text-[32px] font-light lg:text-[56px] lg:leading-[56px] lg:mt-5">-hrs</h3>
+
+                        <!-- Placeholder for the previous timeframe hours -->
+                        <p class="text-[15px] text-desaturated-blue lg:mt-4 lg:leading-[15px]">Last Week - -hrs</p>
+
+                    </section>
+                </article>`;
+                return sectionElement; // Return the created section element
+            },
+
+            /**
+             * Updates the displayed data for each section based on the selected timeframe type.
+             * @param {string} type - The selected timeframe ('daily', 'weekly', 'monthly').
+             */
+            showData(type) {
+                this.data.forEach(datum => {
+                    const {title, timeframes} = datum;
+                    // Get the corresponding section element
+                    const section = document.getElementById(title.toLowerCase());
+                    // Get the current and previous hours for the selected timeframe
+                    const {current, previous} = timeframes[type];
+
+                    if (section) {
+                        // If the section exists, update its content
+                        const timeElement = section.querySelector('h3');
+                        const lastWeekElement = section.querySelector('p');
+                        // Capitalize the first letter of the timeframe type
+                        const typeTitle = type.charAt(0).toUpperCase() + type.slice(1);
+
+                        // Update the current hours
+                        timeElement.textContent = `${current}hrs`;
+                        // Update the previous hours
+                        lastWeekElement.textContent = `Last ${typeTitle} - ${previous}hrs`;
+                    }
+                });
+            },
+
+            /**
+             * Handles the change event when the timeframe type is switched (e.g., daily, weekly, monthly).
+             * Updates the current type and refreshes the displayed data.
+             */
+            onTypeChange() {
+                const selectedValue = document.querySelector('input[name="type"]:checked').value;
+                this.currentType = selectedValue;
+                this.showData(selectedValue);
+            },
+
+            /**
+             * Initializes the application by loading data, initializing the container, and setting up event listeners.
+             */
+            init() {
+                window.onload = () => {
+                    // Load data from the JSON file
+                    this.loadData();
+                    // Initialize the main container with sections
+                    this.initContainer();
+                    document.querySelectorAll('input[name="type"]').forEach(input => {
+                        // Add event listeners to the timeframe radio buttons
+                        input.addEventListener('change', () => this.onTypeChange());
+                    });
+                };
+            }
+        };
+
+        App.init(); // Initialize the app
 	</script>
 
-	<script type="module">
-        /**
-         * Load data from json file
-         */
-		let data
-        /**
-         * Current data type
-         */
-        let currentType = 'weekly'
-
-        function loadData() {
-            fetch('./data.json')
-                .then((response) => response.json())
-                .then((json) => data = json)
-                .then(() => showData('weekly'))
-        }
-
-        function initContainer() {
-            const mainContainer = document.querySelector("main");
-
-            // work
-            const workSection = createItem('Work', 'bg-work', 'images/icon-work.svg');
-            mainContainer.appendChild(workSection);
-
-            // play
-            const playSection = createItem('Play', 'bg-play', 'images/icon-play.svg');
-            mainContainer.appendChild(playSection);
-
-            // study
-            const studySection = createItem('Study', 'bg-study', 'images/icon-study.svg');
-            mainContainer.appendChild(studySection);
-
-            // exercise
-            const exerciseSection = createItem('Exercise', 'bg-exercise', 'images/icon-exercise.svg');
-            mainContainer.appendChild(exerciseSection);
-
-            // social
-            const socialSection = createItem('Social', 'bg-social', 'images/icon-social.svg');
-            mainContainer.appendChild(socialSection);
-
-            // self care
-            const selfCareSection = createItem('Self Care', 'bg-self-care', 'images/icon-self-care.svg');
-            mainContainer.appendChild(selfCareSection);
-        }
-
-        /**
-         * Create a section element
-         * @param title - section title
-         * @param bgColor - background color
-         * @param icon - icon image
-         * @returns {HTMLElement}
-         */
-        function createItem(title, bgColor, icon) {
-            const sectionElement = document.createElement('section');
-            // set id
-            sectionElement.id = title.toLowerCase();
-            // set class name
-            sectionElement.className = `${bgColor} rounded-2xl relative overflow-hidden shadow-xl`
-            // set content
-            sectionElement.innerHTML =
-                `<!--decoration-->
-					<img src="${icon}" alt="" class="absolute right-4 top-[-10px]">
-
-					<article
-					class="bg-dark-blue px-6 py-[30px] pb-8 mt-[38px] z-10 text-white relative rounded-2xl">
-					<!--header-->
-					<header class="flex justify-between items-center">
-					<h2 class="font-medium leading-[18px]">${title}</h2>
-
-					<button aria-label="More options">
-					<img src="images/icon-ellipsis.svg" alt="">
-					</button>
-					</header>
-
-					<!--time-->
-					<section class="flex justify-between items-center mt-3">
-					<h3 class="text-[32px] font-light">-hrs</h3>
-					<p class="text-[15px]  text-desaturated-blue">Last Week - -hrs</p>
-					</section>
-					</article>
-	            `
-
-            return sectionElement;
-        }
-
-        /**
-         * Show data based on type
-         * @param type {'daily' | 'weekly' | 'monthly'} - data type
-         */
-        function showData(type) {
-            console.log(data);
-        }
-
-        function onTypeChange(){
-            const selectedValue = document.querySelector('input[name="report"]:checked').value;
-			showData(selectedValue)
-        }
-
-        window.onload = () => {
-            // load data
-            loadData()
-
-			initContainer()
-
-            // 获取选中的 radio 按钮的值
-            const selectedValue = document.querySelector('input[name="options"]:checked').value;
-        }
-	</script>
 </head>
 <body
 		class="flex flex-col w-screen h-screen bg-very-dark-blue text-lg font-rubik">
 <!--design template develop use, set screen width 1440px and develop-->
 <!--if screen is mobile, set screen width 375px-->
-<picture>
-	<source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>
-	<source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>
-	<img src="design/mobile-design.jpg"
-	     alt="background" class="w-full z-0 absolute top-0 lg:bottom-0 lg:h-full"/>
-</picture>
-<button class="fixed right-5 top-5 text-white z-20" onclick="toggleVisible()">Toggle</button>
+<!--<picture>-->
+<!--	<source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>-->
+<!--	<source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>-->
+<!--	<img src="design/mobile-design.jpg"-->
+<!--	     alt="background" class="w-full z-0 absolute top-0 lg:bottom-0 lg:h-full"/>-->
+<!--</picture>-->
+<!--<button class="fixed right-5 top-5 text-white z-20" onclick="toggleVisible()">Toggle</button>-->
 
-<main class="grid gap-y-[26px] px-6 py-20 md:m-auto opacity-85 z-10">
-	<section class="bg-dark-blue rounded-2xl">
+<main
+		class="grid gap-y-[26px] px-6 py-20 lg:m-auto lg:grid-cols-4 lg:grid-rows-2 lg:gap-[30px] lg:w-[1110px] lg:p-0">
+	<section class="bg-dark-blue rounded-2xl lg:row-span-full flex flex-col">
 		<header
-				class="bg-blue rounded-2xl px-7 py-[32px] grid grid-cols-[auto,minmax(0,1fr)] grid-rows-[min-content,min-content] items-center gap-x-4">
+				class="bg-blue rounded-2xl px-7 py-[32px] grid grid-cols-[auto,minmax(0,1fr)] grid-rows-[min-content,min-content] items-center gap-x-4 lg:grid-cols-1 lg:grid-rows-[repeat(3,min-content)] lg:grow lg:items-start lg:px-[30px]">
 			<!--avatar-->
-			<figure class="w-[70px] row-span-full bg-white rounded-full p-[3px]">
+			<figure
+					class="w-[70px] row-span-full bg-white rounded-full p-[3px] lg:w-[84px] lg:h-[84px] lg:row-span-1">
 				<img src="images/image-jeremy.png" alt="avatar"
 				     class="w-full h-full object-cover"/>
 			</figure>
 
-			<h2 class="text-[16px] text-pale-blue font-light">
+			<h2 class="text-[16px] text-pale-blue font-light lg:mt-9">
 				Report for
 			</h2>
-			<h1 class="text-[24px] text-white font-light self-start">
+			<h1
+					class="text-[24px] text-white font-light self-start lg:text-[40px] leading-[46px]">
 				Jeremy Robson
 			</h1>
 		</header>
 
 		<!--action-->
-		<footer class="text-desaturated-blue py-5 px-5 flex justify-between">
+		<footer
+				class="text-desaturated-blue p-5 flex justify-between flex lg:flex-col lg:py-7 lg:px-7 lg:gap-y-3">
 			<label class="has-[:checked]:text-white">
-				<input type="radio" name="report" value="daily" class="appearance-none">
+				<input type="radio" name="type" value="daily" class="appearance-none"/>
 				Daily
 			</label>
 			<label class="has-[:checked]:text-white">
-				<input type="radio" name="report" value="weekly" checked class="appearance-none">
+				<input type="radio" name="type" value="weekly" checked class="appearance-none"/>
 				Weekly
 			</label>
 			<label class="has-[:checked]:text-white">
-				<input type="radio" name="report" value="monthly" class="appearance-none">
+				<input type="radio" name="type" value="monthly" class="appearance-none"/>
 				Monthly
 			</label>
 		</footer>
