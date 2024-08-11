@@ -86,6 +86,12 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/newsletter-sign-up-with-success-message/)
 
+### 9. [time-tracking-dashboard](challenges/time-tracking-dashboard)
+
+![Screenshot](challenges/time-tracking-dashboard/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
+
 still working...
 
 ## Author

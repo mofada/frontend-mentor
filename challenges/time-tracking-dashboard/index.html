@@ -82,28 +82,27 @@
                 sectionElement.id = title.toLowerCase();
                 // Apply classes to the section element
                 sectionElement.className =
-                    `${bgColor} rounded-2xl relative overflow-hidden shadow-xl lg:min-h-[245px] lg:flex lg:flex-col`;
+                    `${bgColor} rounded-2xl relative overflow-hidden shadow-xl xl:min-h-[245px] xl:flex xl:flex-col`;
                 sectionElement.innerHTML = `
                 <img src="${icon}" alt="" class="absolute right-4 top-[-10px]">
                 <!-- Section's icon image -->
 
-                <article class="bg-dark-blue px-6 py-[30px] pb-8 mt-[38px] z-10 text-white relative rounded-2xl lg:grow lg:mt-[46px] lg:px-7">
+                <article class="bg-dark-blue px-6 py-[30px] pb-8 mt-[38px] z-10 text-white relative rounded-2xl xl:grow xl:mt-[46px] xl:px-7">
                     <header class="flex justify-between items-center">
                         <!-- Section's title -->
                         <h2 class="font-medium leading-[18px]">${title}</h2>
-
 
 						<!-- More options button -->
                         <button aria-label="More options">
                             <img src="images/icon-ellipsis.svg" alt="">
                         </button>
                     </header>
-                    <section class="flex justify-between items-center mt-3 lg:flex lg:flex-col lg:items-start">
+                    <section class="flex justify-between items-center mt-3 xl:flex xl:flex-col xl:items-start">
                         <!-- Placeholder for the current timeframe hours -->
-                        <h3 class="text-[32px] font-light lg:text-[56px] lg:leading-[56px] lg:mt-5">-hrs</h3>
+                        <h3 class="text-[32px] font-light xl:text-[56px] xl:leading-[56px] xl:mt-5">-hrs</h3>
 
                         <!-- Placeholder for the previous timeframe hours -->
-                        <p class="text-[15px] text-desaturated-blue lg:mt-4 lg:leading-[15px]">Last Week - -hrs</p>
+                        <p class="text-[15px] text-desaturated-blue xl:mt-4 xl:leading-[15px]">Last Week - -hrs</p>
 
                     </section>
                 </article>`;
@@ -181,29 +180,30 @@
 <!--<button class="fixed right-5 top-5 text-white z-20" onclick="toggleVisible()">Toggle</button>-->
 
 <main
-		class="grid gap-y-[26px] px-6 py-20 lg:m-auto lg:grid-cols-4 lg:grid-rows-2 lg:gap-[30px] lg:w-[1110px] lg:p-0">
-	<section class="bg-dark-blue rounded-2xl lg:row-span-full flex flex-col">
+		class="grid gap-y-[26px] px-6 py-20 md:m-auto md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-2 md:gap-[30px] xl:w-[1110px] xl:p-0">
+	<section
+			class="bg-dark-blue rounded-2xl md:col-span-full xl:col-span-1 xl:row-span-full flex flex-col">
 		<header
-				class="bg-blue rounded-2xl px-7 py-[32px] grid grid-cols-[auto,minmax(0,1fr)] grid-rows-[min-content,min-content] items-center gap-x-4 lg:grid-cols-1 lg:grid-rows-[repeat(3,min-content)] lg:grow lg:items-start lg:px-[30px]">
+				class="bg-blue rounded-2xl px-7 py-[32px] grid grid-cols-[auto,minmax(0,1fr)] grid-rows-[min-content,min-content] items-center gap-x-4 xl:grid-cols-1 xl:grid-rows-[repeat(3,min-content)] xl:grow xl:items-start xl:px-[30px]">
 			<!--avatar-->
 			<figure
-					class="w-[70px] row-span-full bg-white rounded-full p-[3px] lg:w-[84px] lg:h-[84px] lg:row-span-1">
+					class="w-[70px] row-span-full bg-white rounded-full p-[3px] xl:w-[84px] xl:h-[84px] xl:row-span-1">
 				<img src="images/image-jeremy.png" alt="avatar"
 				     class="w-full h-full object-cover"/>
 			</figure>
 
-			<h2 class="text-[16px] text-pale-blue font-light lg:mt-9">
+			<h2 class="text-[16px] text-pale-blue font-light xl:mt-9">
 				Report for
 			</h2>
 			<h1
-					class="text-[24px] text-white font-light self-start lg:text-[40px] leading-[46px]">
+					class="text-[24px] text-white font-light self-start xl:text-[40px] leading-[46px]">
 				Jeremy Robson
 			</h1>
 		</header>
 
 		<!--action-->
 		<footer
-				class="text-desaturated-blue p-5 flex justify-between flex lg:flex-col lg:py-7 lg:px-7 lg:gap-y-3">
+				class="text-desaturated-blue p-5 flex justify-between flex xl:flex-col xl:py-7 xl:px-7 xl:gap-y-3">
 			<label class="has-[:checked]:text-white">
 				<input type="radio" name="type" value="daily" class="appearance-none"/>
 				Daily
@@ -241,57 +241,6 @@
 	<!--		</article>-->
 	<!--	</section>-->
 </main>
-
-
-<div class="hidden">
-	Work
-	5hrs <!-- daily -->
-	Previous - 7hrs <!-- daily -->
-	32hrs <!-- weekly -->
-	Previous - 36hrs <!-- weekly -->
-	103hrs <!-- monthly -->
-	Previous - 128hrs <!-- monthly -->
-
-	Play
-	1hr <!-- daily -->
-	Previous - 2hrs <!-- daily -->
-	10hrs <!-- weekly -->
-	Previous - 8hrs <!-- weekly -->
-	23hrs <!-- monthly -->
-	Previous - 29hrs <!-- monthly -->
-
-	Study
-	0hrs <!-- daily -->
-	Previous - 1hr <!-- daily -->
-	4hrs <!-- weekly -->
-	Previous - 7hrs <!-- weekly -->
-	13hrs <!-- monthly -->
-	Previous - 19hrs <!-- monthly -->
-
-	Exercise
-	1hr <!-- daily -->
-	Previous - 1hr <!-- daily -->
-	4hrs <!-- weekly -->
-	Previous - 5hrs <!-- weekly -->
-	11hrs <!-- monthly -->
-	Previous - 18hrs <!-- monthly -->
-
-	Social
-	1hr <!-- daily -->
-	Previous - 3hrs <!-- daily -->
-	5hrs <!-- weekly -->
-	Previous - 10hrs <!-- weekly -->
-	21hrs <!-- monthly -->
-	Previous - 23hrs <!-- monthly -->
-
-	Self Care
-	0hrs <!-- daily -->
-	Previous - 1hr <!-- daily -->
-	2hrs <!-- weekly -->
-	Previous - 2hrs <!-- weekly -->
-	7hrs <!-- monthly -->
-	Previous - 11hrs <!-- monthly -->
-</div>
 
 <footer class="text-xs text-center bottom-0 inset-x-0 md:fixed z-50 text-white">
 	Challenge by
