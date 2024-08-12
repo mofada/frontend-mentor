@@ -92,6 +92,12 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
 
+### 10. [tip-calculator-app](challenges/tip-calculator-app)
+
+![Screenshot](challenges/tip-calculator-app/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
+
 still working...
 
 ## Author
