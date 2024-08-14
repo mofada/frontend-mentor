@@ -50,6 +50,11 @@ function addToggleButton() {
 }
 
 window.addEventListener('load', () => {
+    // only run in localhost
+    if (!location.hostname.includes('localhost')) {
+        return;
+    }
+
     addPictureElement();
     addToggleButton();
 

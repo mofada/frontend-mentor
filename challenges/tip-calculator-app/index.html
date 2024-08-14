@@ -35,173 +35,175 @@
 	</style>
 
 	<script>
-        const App = {
+        const TipCalculatorApp = {
             /**
              * @type {HTMLFormElement}
              */
-            formElement: null,
+            form: null,
             /**
              * @type {HTMLInputElement}
              */
-            billElement: null,
+            billInput: null,
             /**
-             * @type {Array<HTMLInputElement>}
+             * @type {NodeListOf<HTMLInputElement>}
              */
-            tipElements: null,
-            /**
-             * @type {HTMLInputElement}
-             */
-            customElement: null,
+            tipOptions: null,
             /**
              * @type {HTMLInputElement}
              */
-            peopleElement: null,
+            customTipInput: null,
+            /**
+             * @type {HTMLInputElement}
+             */
+            peopleCountInput: null,
             /**
              * @type {HTMLDivElement}
              */
-            tipAmountElement: null,
+            tipAmountDisplay: null,
             /**
              * @type {HTMLDivElement}
              */
-            totalElement: null,
+            totalAmountDisplay: null,
             /**
              * @type {HTMLButtonElement}
              */
-            resetButton: null,
+            resetBtn: null,
 
             /**
-             * init component
+             * Initialize the component
              */
             init() {
-                this.formElement = document.querySelector('form');
-                this.billElement = this.formElement.querySelector('#bill');
-                this.tipElements = Array.from(this.formElement.querySelectorAll('input[name="tip"]'));
-                this.customElement = this.formElement.querySelector('#custom');
-                this.peopleElement = this.formElement.querySelector('#people');
+                this.form = document.querySelector('form');
+                this.billInput = this.form.querySelector('#bill');
+                this.tipOptions = this.form.querySelectorAll('input[name="tip"]');
+                this.customTipInput = this.form.querySelector('#custom');
+                this.peopleCountInput = this.form.querySelector('#people');
 
-                this.tipAmountElement = document.body.querySelector('.tip-amount');
-                this.totalElement = document.body.querySelector('.tip-total');
-                this.resetButton = document.body.querySelector('#reset');
+                this.tipAmountDisplay = document.querySelector('.tip-amount');
+                this.totalAmountDisplay = document.querySelector('.tip-total');
+                this.resetBtn = document.querySelector('#reset');
 
-                // check if elements are not null
-                console.assert(this.formElement !== null, 'formElement is null');
-                console.assert(this.billElement !== null, 'billElement is null');
-                console.assert(this.tipElements !== null, 'tipRadioElements is null');
-                console.assert(this.customElement !== null, 'customElement is null');
-                console.assert(this.peopleElement !== null, 'peopleElement is null');
-
-                console.assert(this.tipAmountElement !== null, 'tipAmountElement is null');
-                console.assert(this.totalElement !== null, 'totalElement is null');
-                console.assert(this.resetButton !== null, 'resetButton is null');
-            },
-
-            initEvent() {
-                // this.formElement.addEventListener('submit', this.calculateTip.bind(this));
-                this.resetButton.addEventListener('click', this.reset.bind(this));
-                this.customElement.addEventListener('click', this.toggleCustom.bind(this));
-
-                this.billElement.addEventListener('input', this.calculateTip.bind(this));
-                this.tipElements.forEach((element) => {
-                    element.addEventListener('click', this.toggleRadio.bind(this, element));
-                });
-                this.peopleElement.addEventListener('input', this.calculateTip.bind(this));
-                this.customElement.addEventListener('input', this.calculateTip.bind(this));
-            },
-
-            removeEvent() {
-                // this.formElement.removeEventListener('submit', this.calculateTip.bind(this));
-                this.resetButton.removeEventListener('click', this.reset.bind(this));
-                this.customElement.removeEventListener('click', this.toggleCustom.bind(this));
-
-                this.billElement.removeEventListener('input', this.calculateTip.bind(this));
-                this.tipElements.forEach((element) => {
-                    element.removeEventListener('click', this.toggleRadio.bind(this));
-                })
-                this.peopleElement.removeEventListener('input', this.calculateTip.bind(this));
-                this.customElement.removeEventListener('input', this.calculateTip.bind(this));
-
+                // Ensure all elements are initialized
+                console.assert(this.form !== null, 'form is null');
+                console.assert(this.billInput !== null, 'billInput is null');
+                console.assert(this.tipOptions !== null, 'tipOptions is null');
+                console.assert(this.customTipInput !== null, 'customTipInput is null');
+                console.assert(this.peopleCountInput !== null, 'peopleCountInput is null');
+                console.assert(this.tipAmountDisplay !== null, 'tipAmountDisplay is null');
+                console.assert(this.totalAmountDisplay !== null, 'totalAmountDisplay is null');
+                console.assert(this.resetBtn !== null, 'resetBtn is null');
             },
 
             /**
-             * toggle radio
-             * @param element {HTMLInputElement}
+             * Initialize event listeners
              */
-            toggleRadio(element) {
-                element.checked = true;
-                this.calculateTip(null);
+            initEvents() {
+                this.resetBtn.addEventListener('click', this.reset.bind(this));
+                this.customTipInput.addEventListener('click', this.activateCustomTip.bind(this));
+
+                this.billInput.addEventListener('input', this.calculateTip.bind(this));
+                this.tipOptions.forEach(option => {
+                    option.addEventListener('click', this.handleTipOptionClick.bind(this, option));
+                });
+                this.peopleCountInput.addEventListener('input', this.calculateTip.bind(this));
+                this.customTipInput.addEventListener('input', this.calculateTip.bind(this));
             },
 
             /**
-             * calculate tip
-             * @param {Event} event
+             * Remove event listeners
+             */
+            removeEvents() {
+                this.resetBtn.removeEventListener('click', this.reset.bind(this));
+                this.customTipInput.removeEventListener('click', this.activateCustomTip.bind(this));
+
+                this.billInput.removeEventListener('input', this.calculateTip.bind(this));
+                this.tipOptions.forEach(option => {
+                    option.removeEventListener('click', this.handleTipOptionClick.bind(this));
+                });
+                this.peopleCountInput.removeEventListener('input', this.calculateTip.bind(this));
+                this.customTipInput.removeEventListener('input', this.calculateTip.bind(this));
+            },
+
+            /**
+             * Handle tip option click
+             * @param {HTMLInputElement} option
+             */
+            handleTipOptionClick(option) {
+                option.checked = true;
+                this.calculateTip();
+            },
+
+            /**
+             * Calculate the tip and update the display
+             * @param {Event} [event]
              */
             calculateTip(event) {
                 event?.preventDefault();
-                const bill = this.billElement.value;
-                const tip = this.getTipValue();
-                const people = this.peopleElement.value;
 
-                this.resetButton.disabled = false;
+                const billValue = parseFloat(this.billInput.value) || 0;
+                const tipPercent = parseFloat(this.getSelectedTipValue()) || 0;
+                const peopleCount = parseFloat(this.peopleCountInput.value) || 0;
 
-                if (bill === '' || people === '' || tip === '') {
-                    // form is not complete
-                    this.tipAmountElement.textContent = `$0.00`;
-                    this.totalElement.textContent = `$0.00`;
+                this.resetBtn.disabled = false;
+
+                if (billValue === 0 || peopleCount === 0) {
+                    this.updateDisplay(0, 0);
                     return;
                 }
 
-                // get value
-                const billValue = parseFloat(bill);
-                const peopleValue = parseFloat(people);
-                const tipValue = parseFloat(tip) / 100;
+                const tipAmount = (billValue * tipPercent) / 100 / peopleCount;
+                const totalAmount = (billValue / peopleCount) + tipAmount;
 
-                // calculate tip amount
-                const tipAmount = (billValue * tipValue) / peopleValue;
-                const total = tipAmount + billValue / peopleValue;
-
-                this.resetButton.disabled = false;
-                this.tipAmountElement.textContent = `$${tipAmount.toFixed(2)}`;
-                this.totalElement.textContent = `$${total.toFixed(2)}`;
+                this.updateDisplay(tipAmount, totalAmount);
             },
 
             /**
-             * get tip value
+             * Get the selected tip percentage
              * @returns {string}
              */
-            getTipValue() {
-                const tipRadioElement = document.querySelector('input[name="tip"]:checked');
-                if (tipRadioElement?.value === 'custom') {
-                    return this.customElement.value;
-                }
-                return tipRadioElement?.value;
+            getSelectedTipValue() {
+                const selectedTip = document.querySelector('input[name="tip"]:checked');
+                return selectedTip?.value === 'custom' ? this.customTipInput.value : selectedTip?.value;
             },
 
             /**
-             * reset form
+             * Update the tip and total amounts on the display
+             * @param {number} tipAmount
+             * @param {number} totalAmount
              */
-            reset() {
-                this.formElement.reset();
-                this.tipAmountElement.textContent = '$0.00';
-                this.totalElement.textContent = '$0.00';
-                this.resetButton.disabled = true;
+            updateDisplay(tipAmount, totalAmount) {
+                this.tipAmountDisplay.textContent = `$${tipAmount.toFixed(2)}`;
+                this.totalAmountDisplay.textContent = `$${totalAmount.toFixed(2)}`;
             },
 
-            toggleCustom() {
-                // get last radio
-                const radioElement = this.tipElements.slice(-1)[0];
-                this.toggleRadio(radioElement);
-            }
-        }
+            /**
+             * Reset the form and display
+             */
+            reset() {
+                this.form.reset();
+                this.updateDisplay(0, 0);
+                this.resetBtn.disabled = true;
+            },
 
+            /**
+             * Activate custom tip input
+             */
+            activateCustomTip() {
+                const customTipOption = this.tipOptions[this.tipOptions.length - 1];
+                this.handleTipOptionClick(customTipOption);
+            }
+        };
 
         window.addEventListener('load', () => {
-            App.init();
-            App.initEvent();
+            TipCalculatorApp.init();
+            TipCalculatorApp.initEvents();
         });
+
         window.addEventListener('unload', () => {
-            App.removeEvent();
-        })
+            TipCalculatorApp.removeEvents();
+        });
 	</script>
+
 </head>
 <body class="flex flex-col w-screen h-screen text-2xl font-space-mono bg-cyan-200">
 
