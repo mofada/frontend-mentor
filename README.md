@@ -98,6 +98,12 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
 
+### 11. [interactive-rating-component](challenges/interactive-rating-component)
+
+![Screenshot](challenges/interactive-rating-component/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/interactive-rating-component/)
+
 still working...
 
 ## Author

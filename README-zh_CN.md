@@ -83,6 +83,19 @@ css让我很困惑。
 
 ![Screenshot](challenges/time-tracking-dashboard/screenshot/screenshot.png)
 
+### 10. [小费计算器应用程序](challenges/tip-calculator-app)
+
+![Screenshot](challenges/tip-calculator-app/screenshot/screenshot.png)
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
+
+### 11. [互动评级组件](challenges/interactive-rating-component)
+
+![Screenshot](challenges/interactive-rating-component/screenshot/screenshot.png)
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/interactive-rating-component/)
+
+
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
 
 正在开发中...
