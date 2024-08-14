@@ -13,7 +13,7 @@
 
 ### Links
 
-- Solution URL: [tip-calculator-app]()
+- Solution URL: [tip-calculator-app](https://www.frontendmentor.io/solutions/tip-calculator-app-with-tailwind-EKGqumiF0K)
 - Live Site URL: [tip-calculator-app](https://mofada.github.io/frontend-mentor/challenges/tip-calculator-app/)
 
 ## Author

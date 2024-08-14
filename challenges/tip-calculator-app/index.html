@@ -13,11 +13,26 @@
 	<link href="fonts/space-mono.css" rel="stylesheet">
 
 	<!--debug-->
-	<!--	<script src="design/debug.js"></script>-->
+	<!--<script src="design/debug.js"></script>-->
 
 	<!--use local tailwind-->
 	<script src="tailwindcss/tailwindcss-3.4.5.min.js"></script>
 	<script src="tailwindcss/tailwind-config.js"></script>
+
+	<style>
+        @layer  base {
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                /* display: none; <- Crashes Chrome on hover */
+                -webkit-appearance: none;
+                margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+            }
+
+            input[type=number] {
+                -moz-appearance: textfield; /* Firefox */
+            }
+        }
+	</style>
 
 	<script>
         const App = {
@@ -155,10 +170,10 @@
              */
             getTipValue() {
                 const tipRadioElement = document.querySelector('input[name="tip"]:checked');
-                if (tipRadioElement.value === 'custom') {
+                if (tipRadioElement?.value === 'custom') {
                     return this.customElement.value;
                 }
-                return tipRadioElement.value;
+                return tipRadioElement?.value;
             },
 
             /**
@@ -231,7 +246,7 @@
 
 				<label
 						class="w-full h-12 flex items-center justify-center text-white font-bold bg-cyan-900 rounded-md has-[:checked]:bg-cyan has-[:checked]:text-cyan-900 transition-colors">
-					<input type="radio" name="tip" value="15" class="appearance-none" checked>
+					<input type="radio" name="tip" value="15" class="appearance-none">
 					<span>15%</span>
 				</label>
 
@@ -270,7 +285,8 @@
 			</div>
 		</form>
 
-		<section class="bg-cyan-900 p-6 rounded-2xl lg:basis-[412px] lg:shrink-0 flex flex-col">
+		<section
+				class="bg-cyan-900 p-6 rounded-2xl lg:basis-[412px] lg:shrink-0 lg:p-10 flex flex-col">
 			<!--Tip Amount-->
 			<section
 					class="grid grid-cols-[auto,1fr] grid-rows-2 justify-between grid-flow-col mt-4">
@@ -278,25 +294,25 @@
 				<p class="text-[13px] leading-4  text-cyan-50">/ person</p>
 
 				<h3
-						class="tip-amount text-3xl font-bold text-cyan row-span-full text-right self-center">
+						class="tip-amount text-3xl font-bold text-cyan row-span-full text-right self-center lg:text-5xl">
 					$0.00</h3>
 			</section>
 
 			<!--Tip People-->
 			<section
-					class="grid grid-cols-[auto,1fr] grid-rows-2 justify-between grid-flow-col mt-5">
+					class="grid grid-cols-[auto,1fr] grid-rows-2 justify-between grid-flow-col mt-5 lg:mt-12">
 				<h2 class="text-base font-bold text-white">Total</h2>
 				<p class="text-[13px] leading-4  text-cyan-50">/ person</p>
 
 				<h3
-						class="tip-total text-3xl font-bold text-cyan row-span-full text-right self-center">
+						class="tip-total text-3xl font-bold text-cyan row-span-full text-right self-center lg:text-5xl">
 					$0.00
 				</h3>
 			</section>
 
 
-			<button type="reset" id="reset" disabled
-			        class="uppercase w-full h-12 mt-7 rounded-md bg-cyan hover:bg-cyan-200 disabled:opacity-60 transition-colors text-cyan-900 text-xl leading-4 font-bold lg:mt-auto">
+			<button type="reset" id="reset" disabled="disabled"
+			        class="uppercase w-full h-12 mt-7 rounded-md bg-cyan enabled:hover:bg-cyan-200 disabled:opacity-60 transition-colors text-cyan-900 text-xl leading-4 font-bold lg:mt-auto">
 				reset
 			</button>
 		</section>
