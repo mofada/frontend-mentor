@@ -15,6 +15,9 @@ tailwind.config = {
         },
         fontFamily: {
             'overpass': ['Overpass', 'sans-serif'],
-        }
+        },
+        backgroundImage: theme => ({
+            'container': 'linear-gradient(to bottom, #222933, #131E28)',
+        }),
     }
 }
