@@ -3,13 +3,15 @@ function toggleVisible() {
     container.classList.toggle('hidden');
 }
 
-// 动态创建并添加HTML代码
-function createPictureElement() {
+/**
+ * dynamic create picture
+ */
+function addPictureElement() {
     const picture = document.createElement("picture");
 
     const sourceDesktop = document.createElement("source");
     sourceDesktop.media = "(min-width: 768px)";
-    sourceDesktop.srcset = "design/desktop-design.jpg";
+    sourceDesktop.srcset = "design/desktop-design-completed.jpg";
 
     const sourceMobile = document.createElement("source");
     sourceMobile.media = "(max-width: 768px)";
@@ -18,7 +20,7 @@ function createPictureElement() {
     const img = document.createElement("img");
     img.src = "design/mobile-design.jpg";
     img.alt = "background";
-    img.className = "w-full z-0 absolute top-0 lg:bottom-0 lg:h-full";
+    img.className = "w-full z-0 absolute top-0 object-cover";
 
     picture.appendChild(sourceDesktop);
     picture.appendChild(sourceMobile);
@@ -27,8 +29,29 @@ function createPictureElement() {
     document.body.appendChild(picture);
 }
 
-window.onload = () => {
-    createPictureElement();
+/**
+ * create toggle button
+ */
+function addToggleButton() {
+    const container = document.querySelector('main');
+    // add class to main
+    container && container.classList.add('opacity-65');
+    container && container.classList.add('z-10');
 
-    document.body
+    const button = document.createElement("button");
+    button.className = "fixed top-4 right-4 z-20 p-1 rounded-full shadow-md" +
+        " text-base bg-[hsl(0_0%_100%/0.6)]";
+    button.innerHTML = "Toggle";
+    button.onclick = () => {
+        container && container.classList.toggle('hidden');
+    };
+
+    document.body.appendChild(button);
 }
+
+window.addEventListener('load', () => {
+    addPictureElement();
+    addToggleButton();
+
+    console.log('Debugging...');
+})

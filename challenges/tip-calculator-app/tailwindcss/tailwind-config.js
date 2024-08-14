@@ -1,5 +1,3 @@
-import "./tailwindcss-3.4.5.min.js"
-
 tailwind.config = {
     theme: {
         colors: {
@@ -16,13 +14,14 @@ tailwind.config = {
                 700: 'hsl(186, 14%, 43%)',
                 // Very dark cyan
                 900: 'hsl(183, 100%, 15%)',
-                DEFAULT: 'hsl(172, 67%, 45%)', // White
+                // default color no with suffix
+                DEFAULT: 'hsl(172, 67%, 45%)',
             },
             // White
             white: 'hsl(0, 0%, 100%)',
         },
         fontFamily: {
-            'space-mono': ['Space-Mono', 'sans-serif'],
+            'space-mono': ['Space Mono', 'sans-serif'],
         }
     }
 }

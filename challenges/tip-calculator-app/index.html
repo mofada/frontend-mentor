@@ -12,48 +12,308 @@
 	<!--loading font-->
 	<link href="fonts/space-mono.css" rel="stylesheet">
 
+	<!--debug-->
+	<!--	<script src="design/debug.js"></script>-->
+
 	<!--use local tailwind-->
 	<script src="tailwindcss/tailwindcss-3.4.5.min.js"></script>
 	<script src="tailwindcss/tailwind-config.js"></script>
 
-		<script>
-	        function toggleVisible() {
-	            const container = document.querySelector('main');
-	            container.classList.toggle('hidden');
-	        }
-		</script>
+	<script>
+        const App = {
+            /**
+             * @type {HTMLFormElement}
+             */
+            formElement: null,
+            /**
+             * @type {HTMLInputElement}
+             */
+            billElement: null,
+            /**
+             * @type {Array<HTMLInputElement>}
+             */
+            tipElements: null,
+            /**
+             * @type {HTMLInputElement}
+             */
+            customElement: null,
+            /**
+             * @type {HTMLInputElement}
+             */
+            peopleElement: null,
+            /**
+             * @type {HTMLDivElement}
+             */
+            tipAmountElement: null,
+            /**
+             * @type {HTMLDivElement}
+             */
+            totalElement: null,
+            /**
+             * @type {HTMLButtonElement}
+             */
+            resetButton: null,
+
+            /**
+             * init component
+             */
+            init() {
+                this.formElement = document.querySelector('form');
+                this.billElement = this.formElement.querySelector('#bill');
+                this.tipElements = Array.from(this.formElement.querySelectorAll('input[name="tip"]'));
+                this.customElement = this.formElement.querySelector('#custom');
+                this.peopleElement = this.formElement.querySelector('#people');
+
+                this.tipAmountElement = document.body.querySelector('.tip-amount');
+                this.totalElement = document.body.querySelector('.tip-total');
+                this.resetButton = document.body.querySelector('#reset');
+
+                // check if elements are not null
+                console.assert(this.formElement !== null, 'formElement is null');
+                console.assert(this.billElement !== null, 'billElement is null');
+                console.assert(this.tipElements !== null, 'tipRadioElements is null');
+                console.assert(this.customElement !== null, 'customElement is null');
+                console.assert(this.peopleElement !== null, 'peopleElement is null');
+
+                console.assert(this.tipAmountElement !== null, 'tipAmountElement is null');
+                console.assert(this.totalElement !== null, 'totalElement is null');
+                console.assert(this.resetButton !== null, 'resetButton is null');
+            },
+
+            initEvent() {
+                // this.formElement.addEventListener('submit', this.calculateTip.bind(this));
+                this.resetButton.addEventListener('click', this.reset.bind(this));
+                this.customElement.addEventListener('click', this.toggleCustom.bind(this));
+
+                this.billElement.addEventListener('input', this.calculateTip.bind(this));
+                this.tipElements.forEach((element) => {
+                    element.addEventListener('click', this.toggleRadio.bind(this, element));
+                });
+                this.peopleElement.addEventListener('input', this.calculateTip.bind(this));
+                this.customElement.addEventListener('input', this.calculateTip.bind(this));
+            },
+
+            removeEvent() {
+                // this.formElement.removeEventListener('submit', this.calculateTip.bind(this));
+                this.resetButton.removeEventListener('click', this.reset.bind(this));
+                this.customElement.removeEventListener('click', this.toggleCustom.bind(this));
+
+                this.billElement.removeEventListener('input', this.calculateTip.bind(this));
+                this.tipElements.forEach((element) => {
+                    element.removeEventListener('click', this.toggleRadio.bind(this));
+                })
+                this.peopleElement.removeEventListener('input', this.calculateTip.bind(this));
+                this.customElement.removeEventListener('input', this.calculateTip.bind(this));
+
+            },
+
+            /**
+             * toggle radio
+             * @param element {HTMLInputElement}
+             */
+            toggleRadio(element) {
+                element.checked = true;
+                this.calculateTip(null);
+            },
+
+            /**
+             * calculate tip
+             * @param {Event} event
+             */
+            calculateTip(event) {
+                event?.preventDefault();
+                const bill = parseFloat(this.billElement.value);
+                const tip = parseFloat(this.getTipValue()) / 100;
+                const people = parseFloat(this.peopleElement.value);
+
+                if (isNaN(bill) || isNaN(tip) || isNaN(people) || people === 0) {
+                    this.tipAmountElement.textContent = `$0.00`;
+                    this.totalElement.textContent = `$0.00`;
+                    this.resetButton.disabled = true;
+                    return;
+                }
+
+                const tipAmount = (bill * tip) / people;
+                const total = (bill * (1 + tip)) / people;
+
+                this.resetButton.disabled = false;
+                this.tipAmountElement.textContent = `$${tipAmount.toFixed(2)}`;
+                this.totalElement.textContent = `$${total.toFixed(2)}`;
+            },
+
+            /**
+             * get tip value
+             * @returns {string}
+             */
+            getTipValue() {
+                const tipRadioElement = document.querySelector('input[name="tip"]:checked');
+                if (tipRadioElement.value === 'custom') {
+                    return this.customElement.value;
+                }
+                return tipRadioElement.value;
+            },
+
+            /**
+             * reset form
+             */
+            reset() {
+                this.formElement.reset();
+                this.tipAmountElement.textContent = '$0.00';
+                this.totalElement.textContent = '$0.00';
+            },
+
+            toggleCustom() {
+                // get last radio
+                const radioElement = this.tipElements.slice(-1)[0];
+                this.toggleRadio(radioElement);
+            }
+        }
+
+
+        window.addEventListener('load', () => {
+            App.init();
+            App.initEvent();
+        });
+        window.addEventListener('unload', () => {
+            App.removeEvent();
+        })
+	</script>
 </head>
-<body class="bg-cyan-200">
+<body class="flex flex-col w-screen h-screen text-2xl font-space-mono bg-cyan-200">
 
-Bill
+<main class="flex flex-col mt-[50px] lg:m-auto">
+	<!--title-->
+	<h1 class="sr-only" aria-label="Tip calculator app">Tip calculator app</h1>
 
-Select Tip %
-5%
-10%
-15%
-25%
-50%
-Custom
+	<!--logo-->
+	<figure class="self-center">
+		<img src="images/logo.svg" alt="splitter" class=" " loading="lazy">
+	</figure>
 
-Number of People
+	<article
+			class="flex flex-col gap-6 mt-10 bg-white rounded-ss-3xl rounded-se-3xl p-6 lg:w-[920px] lg:h-[480px] lg:flex-row lg:mt-[90px] lg:p-8 lg:gap-10 lg:rounded-3xl">
+		<form class="p-2 flex flex-col lg:flex-1 lg:pl-4 lg:pt-3">
+			<!--Bill-->
+			<label for="bill" class="text-base font-bold text-cyan-700">Bill</label>
+			<div
+					class="flex items-center bg-cyan-50 mt-[6px] h-12 rounded px-4 font-bold text-cyan-900 font-bold focus-within:outline-cyan">
+				<span class="text-cyan-600">$</span>
+				<input
+						class="placeholder:text-cyan-600 bg-white/0 outline-none text-right w-full"
+						id="bill" max="99999999"
+						type="number" name="bill" placeholder="0"/>
+			</div>
 
-Tip Amount
-/ person
+			<!--Select tip-->
+			<label class="mt-8 text-base font-bold text-cyan-700 lg:mt-10">Select Tip %</label>
+			<fieldset
+					class="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3 md:gap-[14px]">
+				<label
+						class="w-full h-12 flex items-center justify-center text-white font-bold bg-cyan-900 rounded-md has-[:checked]:bg-cyan has-[:checked]:text-cyan-900 transition-colors">
+					<input type="radio" name="tip" value="5" class="appearance-none">
+					<span>5%</span>
+				</label>
 
-Total
-/ person
+				<label
+						class="w-full h-12 flex items-center justify-center text-white font-bold bg-cyan-900 rounded-md has-[:checked]:bg-cyan has-[:checked]:text-cyan-900 transition-colors">
+					<input type="radio" name="tip" value="10" class="appearance-none">
+					<span>10%</span>
+				</label>
 
-Reset
+				<label
+						class="w-full h-12 flex items-center justify-center text-white font-bold bg-cyan-900 rounded-md has-[:checked]:bg-cyan has-[:checked]:text-cyan-900 transition-colors">
+					<input type="radio" name="tip" value="15" class="appearance-none" checked>
+					<span>15%</span>
+				</label>
 
-<footer class="text-xs text-center bottom-0 inset-x-0 md:fixed z-50 text-cyan-900">
+				<label
+						class="w-full h-12 flex items-center justify-center text-white font-bold bg-cyan-900 rounded-md has-[:checked]:bg-cyan has-[:checked]:text-cyan-900 transition-colors">
+					<input type="radio" name="tip" value="25" class="appearance-none">
+					<span>25%</span>
+				</label>
+
+				<label
+						class="w-full h-12 flex items-center justify-center text-white font-bold bg-cyan-900 rounded-md has-[:checked]:bg-cyan has-[:checked]:text-cyan-900 transition-colors">
+					<input type="radio" name="tip" value="50" class="appearance-none">
+					<span>50%</span>
+				</label>
+
+				<!--todo here some question, when i click, i can't check radio-->
+				<label
+						class="w-full h-12 flex items-center justify-center text-cyan-600 font-bold bg-cyan-50 rounded-md  has-[:checked]:bg-cyan has-[:checked]:text-cyan-900 has-[:checked]:outline-cyan transition-colors">
+					<input type="radio" name="tip" value="custom" class="appearance-none z-10">
+					<input type="number" placeholder="Custom" id="custom"
+					       class="w-full h-full text-right px-4 bg-white/0 rounded-md placeholder:text-cyan-600 focus:outline-cyan"/>
+				</label>
+			</fieldset>
+
+			<!--Number of People-->
+			<label for="people" class="mt-8 text-base font-bold text-cyan-700 lg:mt-10">
+				Number of People
+			</label>
+			<div
+					class="flex items-center bg-cyan-50 mt-[6px] h-12 rounded px-4 font-bold text-cyan-900 font-bold focus-within:outline-cyan">
+				<img src="images/icon-person.svg" alt=""/>
+				<input
+						class="placeholder:text-cyan-600 bg-white/0 outline-none text-right w-full"
+						id="people" max="99999999"
+						type="number" name="people" placeholder="0"/>
+			</div>
+		</form>
+
+		<section class="bg-cyan-900 p-6 rounded-2xl lg:basis-[412px] lg:shrink-0 flex flex-col">
+			<!--Tip Amount-->
+			<section
+					class="grid grid-cols-[auto,1fr] grid-rows-2 justify-between grid-flow-col mt-4">
+				<h2 class="text-base font-bold text-white">Tip Amount</h2>
+				<p class="text-[13px] leading-4  text-cyan-50">/ person</p>
+
+				<h3
+						class="tip-amount text-3xl font-bold text-cyan row-span-full text-right self-center">
+					$0.00</h3>
+			</section>
+
+			<!--Tip People-->
+			<section
+					class="grid grid-cols-[auto,1fr] grid-rows-2 justify-between grid-flow-col mt-5">
+				<h2 class="text-base font-bold text-white">Total</h2>
+				<p class="text-[13px] leading-4  text-cyan-50">/ person</p>
+
+				<h3
+						class="tip-total text-3xl font-bold text-cyan row-span-full text-right self-center">
+					$0.00
+				</h3>
+			</section>
+
+
+			<button type="reset" id="reset" disabled
+			        class="uppercase w-full h-12 mt-7 rounded-md bg-cyan hover:bg-cyan-200 disabled:opacity-60 transition-colors text-cyan-900 text-xl leading-4 font-bold lg:mt-auto">
+				reset
+			</button>
+		</section>
+	</article>
+</main>
+
+<!--Number of People-->
+
+<!--Tip Amount-->
+<!--/ person-->
+
+<!--Total-->
+<!--/ person-->
+
+<!--Reset-->
+
+<footer
+		class="text-xs text-center bottom-0 inset-x-0 z-50 text-cyan-900 bg-white lg:fixed lg:bg-white/0">
 	Challenge by
 	<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-	   class="text-cyan-500">
+	   class="text-cyan">
 		Frontend Mentor .
 	</a>
 	Coded by
 	<a href="https://www.frontendmentor.io/profile/mofada"
-	   class="text-cyan-500">
+	   class="text-cyan">
 		Fada Mo.
 	</a>
 </footer>
