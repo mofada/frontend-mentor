@@ -122,19 +122,27 @@
              */
             calculateTip(event) {
                 event?.preventDefault();
-                const bill = parseFloat(this.billElement.value);
-                const tip = parseFloat(this.getTipValue()) / 100;
-                const people = parseFloat(this.peopleElement.value);
+                const bill = this.billElement.value;
+                const tip = this.getTipValue();
+                const people = this.peopleElement.value;
 
-                if (isNaN(bill) || isNaN(tip) || isNaN(people) || people === 0) {
+                this.resetButton.disabled = false;
+
+                if (bill === '' || people === '' || tip === '') {
+                    // form is not complete
                     this.tipAmountElement.textContent = `$0.00`;
                     this.totalElement.textContent = `$0.00`;
-                    this.resetButton.disabled = true;
                     return;
                 }
 
-                const tipAmount = (bill * tip) / people;
-                const total = (bill * (1 + tip)) / people;
+                // get value
+                const billValue = parseFloat(bill);
+                const peopleValue = parseFloat(people);
+                const tipValue = parseFloat(tip) / 100;
+
+                // calculate tip amount
+                const tipAmount = (billValue * tipValue) / peopleValue;
+                const total = tipAmount + billValue / peopleValue;
 
                 this.resetButton.disabled = false;
                 this.tipAmountElement.textContent = `$${tipAmount.toFixed(2)}`;
@@ -160,6 +168,7 @@
                 this.formElement.reset();
                 this.tipAmountElement.textContent = '$0.00';
                 this.totalElement.textContent = '$0.00';
+                this.resetButton.disabled = true;
             },
 
             toggleCustom() {
