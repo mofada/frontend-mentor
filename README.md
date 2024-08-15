@@ -104,6 +104,12 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/interactive-rating-component/)
 
+### 12. [faq-accordion](challenges/faq-accordion)
+
+![Screenshot](challenges/faq-accordion/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/faq-accordion/)
+
 still working...
 
 ## Author

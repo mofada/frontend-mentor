@@ -29,6 +29,7 @@ css让我很困惑。
 ## 概览
 
 ### 1. [二维码组件](challenges/qr-code-component)
+
 ![screenshot](challenges/qr-code-component/screenshot/screenshot.png)
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/qr-code-component/)
 
@@ -37,12 +38,10 @@ css让我很困惑。
 ![Screenshot](challenges/blog-preview-card/screenshot/screenshot.png)
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/blog-preview-card/)
 
-
 ### 3. [社交媒体主页](challenges/social-links-profile)
 
 ![Screenshot](challenges/social-links-profile/screenshot/screenshot.png)
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/social-links-profile/)
-
 
 ### 4. [食谱页面](challenges/recipe-page)
 
@@ -51,7 +50,7 @@ css让我很困惑。
 
 ### 5. [产品预览卡片](challenges/product-preview-card-component)
 
-![Screenshot](challenges/product-preview-card-component/screenshot/screenshot.png)  
+![Screenshot](challenges/product-preview-card-component/screenshot/screenshot.png)
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/product-preview-card-component/)
 
@@ -83,6 +82,8 @@ css让我很困惑。
 
 ![Screenshot](challenges/time-tracking-dashboard/screenshot/screenshot.png)
 
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
+
 ### 10. [小费计算器应用程序](challenges/tip-calculator-app)
 
 ![Screenshot](challenges/tip-calculator-app/screenshot/screenshot.png)
@@ -95,8 +96,11 @@ css让我很困惑。
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/interactive-rating-component/)
 
+### 12. [常见问题-手风琴](challenges/faq-accordion)
 
-[在线预览](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
+![Screenshot](challenges/faq-accordion/screenshot/screenshot.png)
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/faq-accordion/)
 
 正在开发中...
 
