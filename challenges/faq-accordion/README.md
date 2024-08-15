@@ -55,6 +55,7 @@ Users should be able to:
 - [20 Simple Ways to Style the HTML details Element](https://www.sitepoint.com/style-html-details-element/) - This helped me for learn `details` tag.
 - [details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details).  
 - [summary](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary).
+- [Details and summary](https://web.dev/learn/html/details?hl=zh-cn).
 
 ## Author
 

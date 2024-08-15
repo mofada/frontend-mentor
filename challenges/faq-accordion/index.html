@@ -13,7 +13,7 @@
 	<link href="css/overpass.css" rel="stylesheet">
 
 	<!--debug-->
-	<script src="js/debug.js"></script>
+<!--	<script src="js/debug.js"></script>-->
 
 	<!--use local tailwind-->
 	<script src="js/tailwindcss-3.4.5.min.js"></script>
@@ -21,34 +21,88 @@
 
 	<!--logic js-->
 </head>
-<body class="flex flex-col w-screen h-screen text-[15px] font-pink bg-blue-900">
+<body
+		class="flex flex-col w-screen min-h-screen overflow-y-auto text-base bg-pink font-overpass bg-blue-900">
 
-FAQs
+<!--background-->
+<picture class="absolute top-0 w-full">
+	<source media="(min-width: 768px)"
+	        srcset="assets/images/background-pattern-desktop.svg">
+	<source media="(max-width: 768px)"
+	        srcset="assets/images/background-pattern-mobile.svg">
+	<img src="assets/images/background-pattern-mobile.svg" alt="Decorative background pattern"
+	     class="w-full object-cover">
+</picture>
 
-What is Frontend Mentor, and how will it help me?
+<!-- Main Content -->
+<main
+		class="bg-white mx-6 mt-[142px] px-6 py-8 pb-0 rounded-xl md:rounded-2xl md:w-[600px] md:m-auto md:mt-[168px] md:px-10 md:pt-[52px] md:pb-4 z-10">
+	<!-- Title Section -->
+	<header class="flex gap-6">
+		<img src="assets/images/icon-star.svg" alt="Star icon" class="w-6 h-6 md:w-10 md:h-10">
+		<h1 class="font-bold text-[32px] leading-6 md:text-[56px] md:leading-10">
+			FAQs
+		</h1>
+	</header>
 
-Frontend Mentor offers realistic coding challenges to help developers improve their
-frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for
-all levels and ideal for portfolio building.
+	<!-- FAQ Articles -->
+	<article class="mt-3 md:mt-[22px]">
+		<details class="group border-b-pink border-b py-5 md:py-6" open>
+			<summary
+					class="list-none w-full text-purple-900 cursor-pointer hover:text-purple-500 text-base leading-[18px] font-semibold flex justify-between items-center after:w-[30px] after:h-[30px] after:ml-6 after:shrink-0 after:bg-[url('assets/images/icon-plus.svg')] group-open:after:bg-[url('assets/images/icon-minus.svg')] md:text-[18px] transition-colors">
+				What is Frontend Mentor, and how will it help me?
+			</summary>
 
-Is Frontend Mentor free?
+			<p class="text-sm mt-6 leading-[21px] md:text-base">
+				Frontend Mentor offers realistic coding challenges to help developers improve their
+				frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for
+				all levels and ideal for portfolio building.
+			</p>
 
-Yes, Frontend Mentor offers both free and premium coding challenges, with the free
-option providing access to a range of projects suitable for all skill levels.
+		</details>
 
-Can I use Frontend Mentor projects in my portfolio?
+		<details class="group border-b-pink border-b py-5 md:py-6">
+			<summary
+					class="list-none w-full text-purple-900 cursor-pointer hover:text-purple-500 text-base leading-[18px] font-semibold flex justify-between items-center after:w-[30px] after:h-[30px] after:ml-6 after:shrink-0 after:bg-[url('assets/images/icon-plus.svg')] group-open:after:bg-[url('assets/images/icon-minus.svg')] md:text-[18px] transition-colors">
+				Is Frontend Mentor free?
+			</summary>
 
-Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
-way to showcase your skills to potential employers!
+			<p class="text-sm mt-6 leading-[21px] md:text-base">
+				Yes, Frontend Mentor offers both free and premium coding challenges, with the free
+				option providing access to a range of projects suitable for all skill levels.
+			</p>
+		</details>
 
-How can I get help if I'm stuck on a Frontend Mentor challenge?
+		<details class="group border-b-pink border-b py-5 md:py-6">
+			<summary
+					class="list-none w-full text-purple-900 cursor-pointer hover:text-purple-500 text-base leading-[18px] font-semibold flex justify-between items-center after:w-[30px] after:h-[30px] after:ml-6 after:shrink-0 after:bg-[url('assets/images/icon-plus.svg')] group-open:after:bg-[url('assets/images/icon-minus.svg')] md:text-[18px] transition-colors">
+				Can I use Frontend Mentor projects in my portfolio?
+			</summary>
 
-The best place to get help is inside Frontend Mentor's Discord community. There's a help
-channel where you can ask questions and seek support from other community members.
+			<p class="text-sm mt-6 leading-[21px] md:text-base">
+				Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an
+				excellent way to showcase your skills to potential employers!
+			</p>
+		</details>
 
+		<details class="group py-5 md:py-6">
+			<summary
+					class="list-none w-full text-purple-900 cursor-pointer hover:text-purple-500 text-base leading-[18px] font-semibold flex justify-between items-center after:w-[30px] after:h-[30px] after:ml-6 after:shrink-0 after:bg-[url('assets/images/icon-plus.svg')] group-open:after:bg-[url('assets/images/icon-minus.svg')] md:text-[18px] transition-colors">
+				How can I get help if I'm stuck on a challenge?
+			</summary>
 
+			<p class="text-sm mt-6 leading-[21px] md:text-base">
+				The best place to get help is inside Frontend Mentor's Discord community. There's a
+				help
+				channel where you can ask questions and seek support from other community members.
+			</p>
+		</details>
+	</article>
+</main>
+
+<!-- Footer Section -->
 <footer
-		class="text-xs text-center bottom-2 inset-x-0 z-50 text-purple-500 md:fixed">
+		class="text-xs text-center bottom-2 inset-x-0 z-50 text-purple-500 mt-auto">
 	Challenge by
 	<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
 	   class="text-purple-900">
