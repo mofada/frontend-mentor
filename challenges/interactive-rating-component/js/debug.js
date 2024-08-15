@@ -11,11 +11,13 @@ function addPictureElement() {
 
     const sourceDesktop = document.createElement("source");
     sourceDesktop.media = "(min-width: 768px)";
-    sourceDesktop.srcset = "design/desktop-design.jpg";
+    // sourceDesktop.srcset = "design/desktop-design.jpg";
+    sourceDesktop.srcset = "design/desktop-thank-you-state.jpg";
 
     const sourceMobile = document.createElement("source");
     sourceMobile.media = "(max-width: 768px)";
     sourceMobile.srcset = "design/mobile-design.jpg";
+    // sourceMobile.srcset = "design/mobile-thank-you-state.jpg";
 
     const img = document.createElement("img");
     img.src = "design/mobile-design.jpg";

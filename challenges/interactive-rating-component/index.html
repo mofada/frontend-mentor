@@ -13,79 +13,102 @@
 	<link href="css/overpass.css" rel="stylesheet">
 
 	<!--debug-->
-	<script src="js/debug.js"></script>
+	<!--	<script src="js/debug.js"></script>-->
 
 	<!--use local tailwind-->
 	<script src="js/tailwindcss-3.4.5.min.js"></script>
 	<script src="js/tailwind-config.js"></script>
+
+	<!--logic js-->
+	<script src="js/app.js"></script>
 </head>
 <body class="flex flex-col w-screen h-screen text-[15px] font-overpass bg-blue-900">
 
-<main class="mt-[155px] mx-6">
-	<form class="h-[360px] bg-container rounded-xl shadow-xl p-6">
-		<figure class="w-10 h-10 bg-blue-800 rounded-full flex justify-center items-center shadow">
-			<img src="images/icon-star.svg" alt="star">
-		</figure>
+<main class="mt-[155px] mx-6 md:max-w-[410px] md:m-auto">
+	<!--rating-->
+	<section
+			class="rating-container h-[360px] md:h-[410px] bg-container rounded-xl shadow-xl p-6 md:p-8 md:rounded-3xl"
+			aria-labelledby="rating">
+		<form class="rating-form flex flex-col">
+			<figure
+					class="w-10 h-10 bg-blue-800 rounded-full flex justify-center items-center shadow md:w-[48px] md:h-[48px]">
+				<img src="images/icon-star.svg" alt="star">
+			</figure>
 
-		<!--title-->
-		<h1 class="mt-5 text-2xl text-white font-bold">How did we do?</h1>
+			<!--title-->
+			<h1 class="mt-5 text-2xl text-white font-bold md:mt-[38px] md:text-[28px]">
+				How did we do?
+			</h1>
 
-		<!--description-->
-		<p class="mt-3 text-grey text-sm leading-[22px]">
-			Please let us know how we did with your support request. All feedback is appreciated
-			to help us improve our offering!
+			<!--description-->
+			<p class="mt-3 text-grey text-sm leading-[22px] md:text-[15px] leading-[24px]">
+				Please let us know how we did with your support request. All feedback is appreciated
+				to help us improve our offering!
+			</p>
+
+			<!--rating-->
+			<fieldset
+					class="grid grid-cols-[repeat(5,auto)] justify-between gap-3 mt-6 text-white text-sm md:mr-2">
+				<legend class="sr-only">Rate our service</legend>
+
+				<label
+						class="w-10 h-10 font-bold cursor-pointer bg-blue-800 rounded-full flex justify-center items-center shadow has-[:checked]:bg-white has-[:checked]:text-blue-900 hover:bg-orange hover:text-blue-900 md:w-[50px] md:h-[50px]">
+					<input type="radio" name="rating" value="1" class="appearance-none" required/>
+					<span>1</span>
+				</label>
+
+				<label class="w-10 h-10 font-bold cursor-pointer bg-blue-800 rounded-full flex justify-center items-center shadow has-[:checked]:bg-white has-[:checked]:text-blue-900 hover:bg-orange hover:text-blue-900 md:w-[50px] md:h-[50px]">
+					<input type="radio" name="rating" value="2" class="appearance-none"/>
+					<span>2</span>
+				</label>
+
+				<label class="w-10 h-10 font-bold cursor-pointer bg-blue-800 rounded-full flex justify-center items-center shadow has-[:checked]:bg-white has-[:checked]:text-blue-900 hover:bg-orange hover:text-blue-900 md:w-[50px] md:h-[50px]">
+					<input type="radio" name="rating" value="3" class="appearance-none"/>
+					<span>3</span>
+				</label>
+
+				<label class="w-10 h-10 font-bold cursor-pointer bg-blue-800 rounded-full flex justify-center items-center shadow has-[:checked]:bg-white has-[:checked]:text-blue-900 hover:bg-orange hover:text-blue-900 md:w-[50px] md:h-[50px]">
+					<input type="radio" name="rating" value="4" class="appearance-none"/>
+					<span>4</span>
+				</label>
+
+				<label class="w-10 h-10 font-bold cursor-pointer bg-blue-800 rounded-full flex justify-center items-center shadow has-[:checked]:bg-white has-[:checked]:text-blue-900 hover:bg-orange hover:text-blue-900 md:w-[50px] md:h-[50px]">
+					<input type="radio" name="rating" value="5" class="appearance-none"/>
+					<span>5</span>
+				</label>
+			</fieldset>
+
+			<!--submit-->
+			<button
+					class="w-full h-[44px] mt-6 rounded-3xl text-blue-900 text-[15px] leading-[15px] tracking-[1.5px] font-bold uppercase bg-orange hover:bg-white md:mt-8 md:max-w-[340px]"
+					type="submit" aria-label="Submit your rating">
+				Submit
+			</button>
+		</form>
+	</section>
+
+	<!--success-->
+	<section
+			class="success-container h-[360px] md:h-[410px] bg-container rounded-xl shadow-xl p-6 md:p-8 md:rounded-3xl flex flex-col items-center hidden">
+		<img src="images/illustration-thank-you.svg" alt="Thank you illustration"
+		     class="w-[145px] mt-[10px] md:w-[160px] md:mt-3">
+
+		<p
+				class="rating-score mt-[24px] w-[168px] h-[32px] flex justify-center items-center bg-blue-800 text-orange text-[13px] rounded-full md:w-[195px] md:mt-9 md:text-[15px]">
+			You selected 4 out of 5
 		</p>
 
-		<!--rating-->
-		<section
-				class="grid grid-cols-[repeat(5,auto)] justify-between gap-3 mt-6 text-white text-sm">
-			<label
-					class="w-10 h-10 font-bold cursor-pointer bg-blue-800 rounded-full flex justify-center items-center shadow has-[:checked]:bg-white has-[:checked]:text-blue-900 hover:bg-orange hover:text-blue-900">
-				<span>1</span>
-				<input type="radio" name="rating" value="1" class="appearance-none"/>
-			</label>
+		<h1 class="mt-7 text-white text-2xl md:mt-9 md:text-3xl">
+			Thank you!
+		</h1>
 
-			<label class="w-10 h-10 font-bold cursor-pointer bg-blue-800 rounded-full flex justify-center items-center shadow has-[:checked]:bg-white has-[:checked]:text-blue-900 hover:bg-orange hover:text-blue-900">
-				<span>2</span>
-				<input type="radio" name="rating" value="2" class="appearance-none"/>
-			</label>
-
-			<label class="w-10 h-10 font-bold cursor-pointer bg-blue-800 rounded-full flex justify-center items-center shadow has-[:checked]:bg-white has-[:checked]:text-blue-900 hover:bg-orange hover:text-blue-900">
-				<span>3</span>
-				<input type="radio" name="rating" value="3" class="appearance-none"/>
-			</label>
-
-			<label class="w-10 h-10 font-bold cursor-pointer bg-blue-800 rounded-full flex justify-center items-center shadow has-[:checked]:bg-white has-[:checked]:text-blue-900 hover:bg-orange hover:text-blue-900">
-				<span>4</span>
-				<input type="radio" name="rating" value="4" class="appearance-none"/>
-			</label>
-
-			<label class="w-10 h-10 font-bold cursor-pointer bg-blue-800 rounded-full flex justify-center items-center shadow has-[:checked]:bg-white has-[:checked]:text-blue-900 hover:bg-orange hover:text-blue-900">
-				<span>5</span>
-				<input type="radio" name="rating" value="5" class="appearance-none"/>
-			</label>
-		</section>
-
-		<!--submit-->
-		<button
-				class="w-full h-[44px] mt-6 rounded-3xl text-blue-900 text-[15px] leading-[15px] tracking-[1.5px] font-bold uppercase bg-orange hover:bg-white"
-				type="submit" aria-label="submit">
-			Submit
-		</button>
-	</form>
+		<p
+				class="mt-3 text-grey text-sm leading-[22px] text-center md:mt-[10px] md:text-[15px] md:px-1 md:leading-[24px]">
+			We appreciate you taking the time to give a rating. If you ever need more support,
+			don’t hesitate to get in touch!
+		</p>
+	</section>
 </main>
-
-<!-- Thank you state start -->
-
-You selected <!-- Add rating here --> out of 5
-
-Thank you!
-
-We appreciate you taking the time to give a rating. If you ever need more support,
-don’t hesitate to get in touch!
-
-<!-- Thank you state end -->
-
 
 <footer
 		class="text-xs text-center bottom-2 inset-x-0 z-50 text-grey fixed">
