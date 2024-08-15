@@ -13,7 +13,7 @@
 
 ### Links
 
-- Solution URL: [interactive-rating-component]()
+- Solution URL: [interactive-rating-component](https://www.frontendmentor.io/solutions/interactive-rating-component-with-tailwind-css-7fAYoIhjVf)
 - Live Site URL: [interactive-rating-component](https://mofada.github.io/frontend-mentor/challenges/interactive-rating-component/)
 
 ## Author
