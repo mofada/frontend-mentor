@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [faq-accordion]()
+- Solution URL: [faq-accordion](https://www.frontendmentor.io/solutions/faq-accordion-with-tailwind-css-flZpKt8yQs)
 - Live Site URL: [faq-accordion](https://mofada.github.io/frontend-mentor/challenges/faq-accordion/)
 
 ## My process
