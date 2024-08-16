@@ -6,6 +6,7 @@ tailwind.config = {
                 css: '#2862e9',
                 js: '#f7d723',
                 tailwind: '#38bdf8',
+                rebeccapurple: '#663399',
             }
         }
     }
