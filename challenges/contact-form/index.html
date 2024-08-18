@@ -20,54 +20,54 @@
 	<script src="js/tailwind-config.js"></script>
 </head>
 <body
-		class="flex flex-col w-screen min-h-screen overflow-y-auto text-base bg-pink font-overpass bg-green-200">
+		class="flex flex-col w-screen min-h-screen overflow-y-auto text-base text-grey-900 bg-pink font-overpass bg-green-200">
 
 <main class="mx-4 my-8 px-6 py-6 rounded-xl bg-white">
 	<!--header title-->
 	<header>
-		<h1 class="text-[30px] leading-8 font-bold text-grey-900">Contact Us</h1>
+		<h1 class="text-[30px] leading-8 font-bold">Contact Us</h1>
 	</header>
 
-	<form class="mt-8 grid ">
+	<form class="mt-8 grid">
 		<!--first name-->
-		<label for="first-name" class="text-grey-900">
+		<label for="first-name">
 			First Name
 			<span class="text-green-600 ml-1">*</span>
 		</label>
 		<input type="text" id="first-name" name="first-name"
-		       class="mt-2 w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
+		       class="peer/first-name mt-2 w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
 		       autocomplete="given-name"
-		       required>
-		<p class="text-red text-sm mt-1 hidden  invisible peer-invalid:visible">
+		       required/>
+		<p class="text-red text-sm mt-1 hidden peer-[:focus-within:invalid]/first-name:block">
 			This field is required
 		</p>
 
 		<!--last name-->
-		<label for="last-name" class="text-grey-900 mt-6">
+		<label for="last-name" class="mt-6">
 			Last Name
 			<span class="text-green-600 ml-1">*</span>
 		</label>
 		<input type="text" id="last-name" name="last-name"
-		       class="mt-[10px] w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
-		       autocomplete="family-name" required>
-		<p class="text-red text-sm mt-1 hidden  invisible peer-invalid:visible">
+		       class="peer/last-name mt-[10px] w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
+		       autocomplete="family-name" required/>
+		<p class="text-red text-sm mt-1 hidden peer-[:focus-within:invalid]/last-name:block">
 			This field is required
 		</p>
 
 		<!--Email Address-->
-		<label for="email" class="text-grey-900 mt-6">
+		<label for="email" class="mt-6">
 			Email Address
 			<span class="text-green-600 ml-1">*</span>
 		</label>
-		<input type="text" id="email" name="email"
-		       class="mt-[10px] w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
-		       autocomplete="email" required>
-		<p class="text-red text-sm mt-1 hidden  invisible peer-invalid:visible">
+		<input type="email" id="email" name="email"
+		       class="peer/email mt-[10px] w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
+		       autocomplete="email" required />
+		<p class="text-red text-sm mt-1 hidden peer-[:focus-within:invalid]/email:block">
 			This field is required
 		</p>
 
 		<!--Query Type-->
-		<fieldset class="text-grey-900 mt-6 grid gap-y-4">
+		<fieldset class="peer/type mt-6 grid gap-y-4">
 			<legend>
 				Query Type
 				<span class="text-green-600 ml-1">*</span>
@@ -77,20 +77,51 @@
 			       class="mt-[16px] h-[50px] text-[18px] flex gap-4 items-center px-6 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 has-[:checked]:outline-green-600 has-[:checked]:bg-green-200">
 				<input type="radio" id="general" name="query-type" value="general"
 				       class="w-5 h-5 accent-green-600 outline-grey-600"
-				       required>
+				       required/>
 				General Enquiry
 			</label>
 
 			<label for="support"
 			       class="h-[50px] text-[18px] flex gap-4 items-center px-6 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 has-[:checked]:outline-green-600 has-[:checked]:bg-green-200">
 				<input type="radio" id="support" name="query-type" value="general"
-				       class="w-5 h-5 accent-green-600" required>
+				       class="w-5 h-5 accent-green-600" required/>
 				Support Request
 			</label>
 		</fieldset>
-		<p class="text-red text-sm mt-1 hidden  invisible peer-invalid:visible">
+		<p class="text-red text-sm mt-1 hidden peer-[:focus-within:invalid]/type:block">
 			Please select a query type
 		</p>
+
+		<!--Message-->
+		<label for="message" class="mt-6">
+			Message
+			<span class="text-green-600 ml-1">*</span>
+		</label>
+		<textarea id="message" name="message"
+		          class="peer/message mt-[10px] w-full min-h-[238px] px-4 py-2 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
+		          autocomplete="email" required></textarea>
+		<p class="text-red text-sm mt-1 hidden peer-[:focus-within:invalid]/message:block">
+			This field is required
+		</p>
+
+		<!--I consent to being contacted by the team-->
+		<label for="consent" class="peer/checkbox mt-10 flex items-center gap-5 px-1">
+			<input id="consent" type="checkbox" class="w-5 h-5 accent-green-600" required/>
+
+			<span>
+				I consent to being contacted by the team
+				<span class="text-green-600">*</span>
+			</span>
+		</label>
+		<p class="text-red text-sm mt-1 hidden peer-[:focus-within:invalid]/checkbox:block">
+			To submit this form, please consent to being contacted
+		</p>
+
+		<!--Submit-->
+		<button type="submit"
+		        class="mt-10 w-full h-[60px] text-[18px] rounded-lg bg-green-600 text-white hover:bg-green-900">
+			Submit
+		</button>
 	</form>
 </main>
 
@@ -123,7 +154,7 @@
 
 <!-- Footer Section -->
 <footer
-		class="text-xs text-center bottom-2 inset-x-0 z-50 text-grey-900 mt-auto">
+		class="text-xs text-center bottom-2 inset-x-0 z-50 mt-auto">
 	Challenge by
 	<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
 	   class="text-grey-500">

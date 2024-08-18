@@ -6,13 +6,15 @@ tailwind.config = {
                 200: 'hsl(148, 38%, 91%)',
                 // Green 600 (medium)
                 600: 'hsl(169, 82%, 27%)',
+                // Green 900 (darker)
+                900: 'hsl(171, 83%, 14%)',
             },
             // Red
             red: 'hsl(0, 66%, 54%)',
             // White
             white: 'hsl(0, 0%, 100%)',
-            // Grey 500 (medium)
             grey: {
+                // Grey 500 (medium)
                 500: 'hsl(186, 15%, 59%)',
                 // Grey 900 (darker)
                 900: 'hsl(187, 24%, 22%)',
