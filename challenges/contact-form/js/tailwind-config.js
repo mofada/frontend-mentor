@@ -19,7 +19,7 @@ tailwind.config = {
             },
         },
         fontFamily: {
-            'karla': ['Karla', 'sans-serif'],
+            'overpass': ['Overpass', 'sans-serif'],
         }
     }
 }

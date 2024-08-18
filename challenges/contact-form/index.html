@@ -22,33 +22,104 @@
 <body
 		class="flex flex-col w-screen min-h-screen overflow-y-auto text-base bg-pink font-overpass bg-green-200">
 
-Contact Us
+<main class="mx-4 my-8 px-6 py-6 rounded-xl bg-white">
+	<!--header title-->
+	<header>
+		<h1 class="text-[30px] leading-8 font-bold text-grey-900">Contact Us</h1>
+	</header>
 
-First Name
-This field is required
+	<form class="mt-8 grid ">
+		<!--first name-->
+		<label for="first-name" class="text-grey-900">
+			First Name
+			<span class="text-green-600 ml-1">*</span>
+		</label>
+		<input type="text" id="first-name" name="first-name"
+		       class="mt-2 w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
+		       autocomplete="given-name"
+		       required>
+		<p class="text-red text-sm mt-1 hidden  invisible peer-invalid:visible">
+			This field is required
+		</p>
 
-Last Name
-This field is required
+		<!--last name-->
+		<label for="last-name" class="text-grey-900 mt-6">
+			Last Name
+			<span class="text-green-600 ml-1">*</span>
+		</label>
+		<input type="text" id="last-name" name="last-name"
+		       class="mt-[10px] w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
+		       autocomplete="family-name" required>
+		<p class="text-red text-sm mt-1 hidden  invisible peer-invalid:visible">
+			This field is required
+		</p>
 
-Email Address
-Please enter a valid email address
-This field is required
+		<!--Email Address-->
+		<label for="email" class="text-grey-900 mt-6">
+			Email Address
+			<span class="text-green-600 ml-1">*</span>
+		</label>
+		<input type="text" id="email" name="email"
+		       class="mt-[10px] w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
+		       autocomplete="email" required>
+		<p class="text-red text-sm mt-1 hidden  invisible peer-invalid:visible">
+			This field is required
+		</p>
 
-Query Type
-General Enquiry
-Support Request
-Please select a query type
+		<!--Query Type-->
+		<fieldset class="text-grey-900 mt-6 grid gap-y-4">
+			<legend>
+				Query Type
+				<span class="text-green-600 ml-1">*</span>
+			</legend>
 
-Message
-This field is required
+			<label for="general"
+			       class="mt-[16px] h-[50px] text-[18px] flex gap-4 items-center px-6 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 has-[:checked]:outline-green-600 has-[:checked]:bg-green-200">
+				<input type="radio" id="general" name="query-type" value="general"
+				       class="w-5 h-5 accent-green-600 outline-grey-600"
+				       required>
+				General Enquiry
+			</label>
 
-I consent to being contacted by the team
-To submit this form, please consent to being contacted
+			<label for="support"
+			       class="h-[50px] text-[18px] flex gap-4 items-center px-6 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 has-[:checked]:outline-green-600 has-[:checked]:bg-green-200">
+				<input type="radio" id="support" name="query-type" value="general"
+				       class="w-5 h-5 accent-green-600" required>
+				Support Request
+			</label>
+		</fieldset>
+		<p class="text-red text-sm mt-1 hidden  invisible peer-invalid:visible">
+			Please select a query type
+		</p>
+	</form>
+</main>
 
-Submit
 
-Message Sent!
-Thanks for completing the form. We'll be in touch soon!
+<!--First Name-->
+<!--This field is required-->
+
+<!--Last Name-->
+<!--This field is required-->
+
+<!--Email Address-->
+<!--Please enter a valid email address-->
+<!--This field is required-->
+
+<!--Query Type-->
+<!--General Enquiry-->
+<!--Support Request-->
+<!--Please select a query type-->
+
+<!--Message-->
+<!--This field is required-->
+
+<!--I consent to being contacted by the team-->
+<!--To submit this form, please consent to being contacted-->
+
+<!--Submit-->
+
+<!--Message Sent!-->
+<!--Thanks for completing the form. We'll be in touch soon!-->
 
 <!-- Footer Section -->
 <footer
