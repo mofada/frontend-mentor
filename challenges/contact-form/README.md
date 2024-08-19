@@ -2,19 +2,21 @@
 
 ![Design preview for the Contact form coding challenge](./design/desktop-preview.jpg)
 
-This is a solution to the [Contact form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to
+the [Contact form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj).
+Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
 - [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -28,8 +30,8 @@ Users should be able to:
 
 - Complete the form and see a success toast message upon successful submission
 - Receive form validation messages if:
-  - A required field has been missed
-  - The email address is not formatted correctly
+    - A required field has been missed
+    - The email address is not formatted correctly
 - Complete the form only using their keyboard
 - Have inputs, error messages, and the success message announced on their screen reader
 - View the optimal layout for the interface depending on their device's screen size
@@ -46,7 +48,6 @@ Users should be able to:
 - Solution URL: [contact-form]()
 - Live Site URL: [contact-form](https://mofada.github.io/frontend-mentor/challenges/contact-form/)
 
-
 ## My process
 
 ### Built with
@@ -60,13 +61,14 @@ Users should be able to:
 
 ### What I learned
 
-
 ### Continued development
-
 
 ### Useful resources
 
-- [Building accessible forms](https://www.frontendmentor.io/learning-paths/introduction-to-web-accessibility-mXu-9PHVsd/steps/66bc6d9f3c19191dc3df72ff/article/read)
+- [Building accessible forms](https://www.frontendmentor.io/learning-paths/introduction-to-web-accessibility-mXu-9PHVsd/steps/66bc6d9f3c19191dc3df72ff/article/read) -
+  This helped me for form accessibility. 
+- [ValidityState](https://developer.mozilla.org/zh-CN/docs/Web/API/ValidityState) - This helped me
+  for form validation.
 
 ## Author
 

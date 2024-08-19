@@ -1,8 +1,3 @@
-function toggleVisible() {
-    const container = document.querySelector('main');
-    container.classList.toggle('hidden');
-}
-
 /**
  * dynamic create picture
  */
@@ -11,7 +6,8 @@ function addPictureElement() {
 
     const sourceDesktop = document.createElement("source");
     sourceDesktop.media = "(min-width: 768px)";
-    sourceDesktop.srcset = "design/desktop-design.jpg";
+    // sourceDesktop.srcset = "design/desktop-design.jpg";
+    sourceDesktop.srcset = "design/error-state.jpg";
 
     const sourceMobile = document.createElement("source");
     sourceMobile.media = "(max-width: 768px)";
@@ -41,9 +37,11 @@ function addToggleButton() {
     const button = document.createElement("button");
     button.className = "fixed top-4 right-4 z-20 p-1 rounded-full shadow-md" +
         " text-base bg-[hsl(0_0%_100%/0.6)]";
-    button.innerHTML = "Toggle";
+    button.innerHTML = "Hide";
     button.onclick = () => {
         container && container.classList.toggle('hidden');
+
+        button.innerHTML = container.classList.contains('hidden') ? 'Show' : 'Hide';
     };
 
     document.body.appendChild(button);

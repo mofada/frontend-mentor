@@ -13,68 +13,81 @@
 	<link href="css/font.css" rel="stylesheet">
 
 	<!--debug-->
-	<script src="js/debug.js"></script>
+<!--	<script src="js/debug.js" defer></script>-->
 
 	<!--use local tailwind-->
 	<script src="js/tailwindcss-3.4.5.min.js"></script>
 	<script src="js/tailwind-config.js"></script>
+
+	<!--app -->
+	<script src="js/app.js" defer></script>
 </head>
 <body
-		class="flex flex-col w-screen min-h-screen overflow-y-auto text-base text-grey-900 bg-pink font-overpass bg-green-200">
+		class="flex flex-col w-screen min-h-screen overflow-y-auto text-base text-grey-900 font-overpass bg-green-200">
 
-<main class="mx-4 my-8 px-6 py-6 rounded-xl bg-white">
+<main
+		class="mx-4 my-8 p-6 rounded-xl bg-white md:w-[736px] md:mx-auto lg:my-auto md:rounded-2xl lg:p-10">
 	<!--header title-->
 	<header>
 		<h1 class="text-[30px] leading-8 font-bold">Contact Us</h1>
 	</header>
 
-	<form class="mt-8 grid">
+	<form class="mt-8 gap-y-6 grid md:grid-cols-2 md:gap-x-4">
 		<!--first name-->
-		<label for="first-name">
-			First Name
-			<span class="text-green-600 ml-1">*</span>
-		</label>
-		<input type="text" id="first-name" name="first-name"
-		       class="peer/first-name mt-2 w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
-		       autocomplete="given-name"
-		       required/>
-		<p class="text-red text-sm mt-1 hidden peer-[:focus-within:invalid]/first-name:block">
-			This field is required
-		</p>
+		<section>
+			<label for="first-name" class="cols-1">
+				First Name
+				<span class="text-green-600 ml-1">*</span>
+			</label>
+			<input type="text" id="first-name" name="first-name"
+			       class="peer/first-name mt-2 w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600 focus:invalid:outline-red"
+			       autocomplete="given-name"
+			       required/>
+			<p class="text-red text-base mt-2 hidden peer-[:focus-within:invalid]/first-name:block">
+				This field is required
+			</p>
+		</section>
+
 
 		<!--last name-->
-		<label for="last-name" class="mt-6">
-			Last Name
-			<span class="text-green-600 ml-1">*</span>
-		</label>
-		<input type="text" id="last-name" name="last-name"
-		       class="peer/last-name mt-[10px] w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
-		       autocomplete="family-name" required/>
-		<p class="text-red text-sm mt-1 hidden peer-[:focus-within:invalid]/last-name:block">
-			This field is required
-		</p>
+		<section>
+			<label for="last-name">
+				Last Name
+				<span class="text-green-600 ml-1">*</span>
+			</label>
+			<input type="text" id="last-name" name="last-name"
+			       class="peer/last-name mt-[10px] w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600 focus:invalid:outline-red"
+			       autocomplete="family-name" required/>
+			<p class="text-red text-base mt-2 hidden peer-[:focus-within:invalid]/last-name:block">
+				This field is required
+			</p>
+		</section>
+
 
 		<!--Email Address-->
-		<label for="email" class="mt-6">
-			Email Address
-			<span class="text-green-600 ml-1">*</span>
-		</label>
-		<input type="email" id="email" name="email"
-		       class="peer/email mt-[10px] w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
-		       autocomplete="email" required />
-		<p class="text-red text-sm mt-1 hidden peer-[:focus-within:invalid]/email:block">
-			This field is required
-		</p>
+		<section class="col-span-full">
+			<label for="email">
+				Email Address
+				<span class="text-green-600 ml-1">*</span>
+			</label>
+			<input type="email" id="email" name="email"
+			       class="peer/email mt-[10px] w-full h-[50px] px-4 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600 focus:invalid:outline-red"
+			       autocomplete="email" required/>
+			<p id="email-error"
+			   class="text-red text-base mt-2 hidden peer-[:focus-within:invalid]/email:block">
+				This field is required
+			</p>
+		</section>
 
 		<!--Query Type-->
-		<fieldset class="peer/type mt-6 grid gap-y-4">
+		<fieldset class="peer/type grid gap-y-4 col-span-full md:grid-cols-2 md:gap-x-4 pt-4">
 			<legend>
 				Query Type
 				<span class="text-green-600 ml-1">*</span>
 			</legend>
 
 			<label for="general"
-			       class="mt-[16px] h-[50px] text-[18px] flex gap-4 items-center px-6 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 has-[:checked]:outline-green-600 has-[:checked]:bg-green-200">
+			       class="h-[50px] text-[18px] flex gap-4 items-center px-6 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 has-[:checked]:outline-green-600 has-[:checked]:bg-green-200">
 				<input type="radio" id="general" name="query-type" value="general"
 				       class="w-5 h-5 accent-green-600 outline-grey-600"
 				       required/>
@@ -83,78 +96,72 @@
 
 			<label for="support"
 			       class="h-[50px] text-[18px] flex gap-4 items-center px-6 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 has-[:checked]:outline-green-600 has-[:checked]:bg-green-200">
-				<input type="radio" id="support" name="query-type" value="general"
+				<input type="radio" id="support" name="query-type" value="support"
 				       class="w-5 h-5 accent-green-600" required/>
 				Support Request
 			</label>
 		</fieldset>
-		<p class="text-red text-sm mt-1 hidden peer-[:focus-within:invalid]/type:block">
+		<p class="text-red text-base mt-2 hidden peer-[:focus-within:invalid]/type:block">
 			Please select a query type
 		</p>
 
 		<!--Message-->
-		<label for="message" class="mt-6">
-			Message
-			<span class="text-green-600 ml-1">*</span>
-		</label>
-		<textarea id="message" name="message"
-		          class="peer/message mt-[10px] w-full min-h-[238px] px-4 py-2 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600"
-		          autocomplete="email" required></textarea>
-		<p class="text-red text-sm mt-1 hidden peer-[:focus-within:invalid]/message:block">
-			This field is required
-		</p>
+		<section class="col-span-full">
+			<label for="message">
+				Message
+				<span class="text-green-600 ml-1">*</span>
+			</label>
+			<textarea id="message" name="message"
+			          class="peer/message mt-[10px] w-full min-h-[238px] lg:min-h-[102px] px-4 py-2 rounded-lg outline outline-1 outline-grey-500 hover:outline-green-600 focus:outline-green-600 focus:invalid:outline-red"
+			          autocomplete="email" required></textarea>
+			<p class="text-red text-base mt-2 hidden peer-[:focus-within:invalid]/message:block">
+				This field is required
+			</p>
+		</section>
+
 
 		<!--I consent to being contacted by the team-->
-		<label for="consent" class="peer/checkbox mt-10 flex items-center gap-5 px-1">
-			<input id="consent" type="checkbox" class="w-5 h-5 accent-green-600" required/>
+		<section class="mt-3 col-span-full">
+			<label for="consent" class="peer/checkbox flex items-center gap-5 px-1">
+				<input id="consent" type="checkbox" class="w-5 h-5 accent-green-600 md:w-4 md:h-4"
+				       required/>
 
-			<span>
+				<span>
 				I consent to being contacted by the team
 				<span class="text-green-600">*</span>
 			</span>
-		</label>
-		<p class="text-red text-sm mt-1 hidden peer-[:focus-within:invalid]/checkbox:block">
-			To submit this form, please consent to being contacted
-		</p>
+			</label>
+			<p class="text-red text-base mt-2 hidden peer-[:focus-within:invalid]/checkbox:block">
+				To submit this form, please consent to being contacted
+			</p>
+		</section>
+
 
 		<!--Submit-->
 		<button type="submit"
-		        class="mt-10 w-full h-[60px] text-[18px] rounded-lg bg-green-600 text-white hover:bg-green-900">
+		        class="mt-3 w-full h-[60px] text-[18px] rounded-lg bg-green-600 text-white hover:bg-green-900 col-span-full">
 			Submit
 		</button>
 	</form>
+
+	<!-- Success Dialog -->
+	<dialog id="success-dialog"
+	        class="z-50 mt-6 p-6 w-full md:w-[450px] min-h-[106px] gap-2 justify-center bg-green-900 rounded-xl shadow-lg">
+		<header class="flex items-center gap-3">
+			<img src="assets/images/icon-success-check.svg" alt=""
+			     class="w-5 h-5 ">
+			<h2 class="text-white text-[18px] font-bold">Message Sent!</h2>
+		</header>
+
+		<p class="text-green-200">
+			Thanks for completing the form. We'll be in touch soon!
+		</p>
+	</dialog>
 </main>
 
-
-<!--First Name-->
-<!--This field is required-->
-
-<!--Last Name-->
-<!--This field is required-->
-
-<!--Email Address-->
-<!--Please enter a valid email address-->
-<!--This field is required-->
-
-<!--Query Type-->
-<!--General Enquiry-->
-<!--Support Request-->
-<!--Please select a query type-->
-
-<!--Message-->
-<!--This field is required-->
-
-<!--I consent to being contacted by the team-->
-<!--To submit this form, please consent to being contacted-->
-
-<!--Submit-->
-
-<!--Message Sent!-->
-<!--Thanks for completing the form. We'll be in touch soon!-->
-
-<!-- Footer Section -->
+<!-- Footer -->
 <footer
-		class="text-xs text-center bottom-2 inset-x-0 z-50 mt-auto">
+		class="text-xs text-center bottom-2 inset-x-0 z-50 mt-auto lg:fixed">
 	Challenge by
 	<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
 	   class="text-grey-500">
