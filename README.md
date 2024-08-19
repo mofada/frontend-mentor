@@ -43,7 +43,6 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/blog-preview-card/)
 
-
 ### 3. [Social links profile](challenges/social-links-profile)
 
 ![Screenshot](challenges/social-links-profile/screenshot/screenshot.png)
@@ -115,6 +114,12 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 ![Screenshot](challenges/contact-form/screenshot/screenshot.png)
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/contact-form/)
+
+### 14. [news-homepage](challenges/news-homepage)
+
+![Screenshot](challenges/news-homepage/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/news-homepage/)
 
 still working...
 

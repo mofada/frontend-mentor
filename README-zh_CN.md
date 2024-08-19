@@ -108,6 +108,14 @@ css让我很困惑。
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/contact-form/)
 
+
+### 14. [新闻首页](challenges/news-homepage)
+
+![Screenshot](challenges/news-homepage/screenshot/screenshot.png)
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/news-homepage/)
+
+
 正在开发中...
 
 ## 作者
