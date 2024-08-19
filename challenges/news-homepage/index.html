@@ -13,17 +13,47 @@
 	<link href="css/font.css" rel="stylesheet">
 
 	<!--debug-->
-	<!--	<script src="js/debug.js" defer></script>-->
+	<script src="js/debug.js" defer></script>
 
 	<!--use local tailwind-->
 	<script src="js/tailwindcss-3.4.5.min.js"></script>
 	<script src="js/tailwind-config.js"></script>
 
 	<!--app -->
-	<script src="js/app.js" defer></script>
-</head >
+	<!--	<script src="js/app.js" defer></script>-->
+</head>
 <body
 		class="flex flex-col w-screen min-h-screen overflow-y-auto text-base text-[15px] font-inter text-blue-900 bg-white">
+
+<header class="flex items-center mx-4 mt-7">
+	<h1 class="sr-only">News Homepage</h1>
+
+	<!--logo-->
+	<img src="assets/images/logo.svg" alt="logo" class="w-12 mr-2"/>
+
+	<!--menu-->
+	<img src="assets/images/icon-menu.svg" alt="menu" aria-label="menu" class="ml-auto w-10 h-4"/>
+</header>
+
+<main class="mx-4 mt-[30px]">
+	<header>
+		<picture>
+			<source srcset="assets/images/image-web-3-desktop.jpg" media="(min-width: 768px)"/>
+			<source srcset="assets/images/image-web-3-mobile.jpg" media="(max-width: 768px)"/>
+			<img src="assets/images/image-web-3-mobile.jpg" alt=""/>
+		</picture>
+
+		<h1 class="text-[40px] text-blue-900 leading-10 font-extrabold mt-6">
+			The Bright Future of Web 3.0?
+		</h1>
+
+		<p class="text-blue-600  mt-4">
+			We dive into the next evolution of the web that claims to put the power of the platforms back into
+			the hands of the people.
+			But is it really fulfilling its promise?
+		</p>
+	</header>
+</main>
 
 Home
 New
@@ -31,11 +61,8 @@ Popular
 Trending
 Categories
 
-The Bright Future of Web 3.0?
 
-We dive into the next evolution of the web that claims to put the power of the platforms back into
-the hands of the people.
-But is it really fulfilling its promise?
+
 
 Read more
 

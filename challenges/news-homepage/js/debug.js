@@ -6,8 +6,7 @@ function addPictureElement() {
 
     const sourceDesktop = document.createElement("source");
     sourceDesktop.media = "(min-width: 768px)";
-    // sourceDesktop.srcset = "design/desktop-design.jpg";
-    sourceDesktop.srcset = "design/error-state.jpg";
+    sourceDesktop.srcset = "design/desktop-design.jpg";
 
     const sourceMobile = document.createElement("source");
     sourceMobile.media = "(max-width: 768px)";
