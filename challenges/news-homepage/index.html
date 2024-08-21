@@ -13,31 +13,34 @@
 	<link href="css/font.css" rel="stylesheet">
 
 	<!--debug-->
-	<script src="js/debug.js" defer></script>
+<!--	<script src="js/debug.js" defer></script>-->
 
 	<!--use local tailwind-->
 	<script src="js/tailwindcss-3.4.5.min.js"></script>
 	<script src="js/tailwind-config.js"></script>
 
 	<!--app -->
-	<!--	<script src="js/app.js" defer></script>-->
+	<script src="js/app.js" defer></script>
 </head>
 <body
-		class="flex flex-col w-screen min-h-screen overflow-y-auto text-[15px] leading-[26px] font-inter text-blue-900 bg-white">
+		class="flex flex-col w-screen min-h-screen text-[15px] leading-[26px] font-inter text-blue-900 bg-white">
 
+<!--header: logo and menu-->
 <header class="flex items-center mx-4 mt-7">
 	<!--logo-->
 	<img src="assets/images/logo.svg" alt="logo" class="w-12 mr-2"/>
 
 	<!--menu-->
-	<img src="assets/images/icon-menu.svg" alt="menu" aria-label="menu" class="ml-auto w-10 h-4"/>
+	<img src="assets/images/icon-menu.svg" alt="menu" aria-label="menu"
+	     class="menu-button ml-auto w-10 h-4"/>
 </header>
 
 <!--menu-->
-<aside class="fixed left-0 right-0 top-0 bottom-0 bg-blue-300/50 z-50 overscroll-contain hidden">
-	<section class="w-[255px] h-full bg-white ml-auto p-5 py-7 opacity-50">
+<aside
+		class="menu-aside fixed left-0 right-0 top-0 bottom-0 bg-blue-300/50 z-50 overscroll-contain hidden">
+	<section class="w-[255px] h-full bg-white ml-auto p-5 py-7">
 		<img src="assets/images/icon-menu-close.svg" alt="close" aria-label="close menu"
-		     class="ml-auto w-8 h-8"/>
+		     class="menu-close-button ml-auto w-8 h-8"/>
 
 		<nav class="mt-[84px] ml-1">
 			<ul class="*:text-blue-900 *:text-[18px] flex flex-col gap-[22px]">
@@ -51,12 +54,13 @@
 	</section>
 </aside>
 
-<main class="mx-4 mt-[30px]">
+<main class="mx-4 mt-[30px] mb-20">
 	<header>
 		<picture>
 			<source srcset="assets/images/image-web-3-desktop.jpg" media="(min-width: 768px)"/>
 			<source srcset="assets/images/image-web-3-mobile.jpg" media="(max-width: 768px)"/>
-			<img src="assets/images/image-web-3-mobile.jpg" alt="A visualization of the Web 3.0 future"/>
+			<img src="assets/images/image-web-3-mobile.jpg"
+			     alt="A visualization of the Web 3.0 future"/>
 		</picture>
 
 		<h1 class="text-[40px] text-blue-900 leading-10 font-extrabold mt-6">
@@ -151,7 +155,7 @@
 
 <!-- Footer -->
 <footer
-		class="text-xs text-center bottom-2 inset-x-0 z-50 mt-auto lg:fixed">
+		class="text-xs text-center bottom-2 inset-x-0 z-20 mt-auto lg:fixed">
 	Challenge by
 	<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
 	   class="text-red">

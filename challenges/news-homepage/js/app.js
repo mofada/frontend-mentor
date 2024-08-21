@@ -1,58 +1,38 @@
 const App = {
     /**
-     * @type {HTMLFormElement}
+     * @type {HTMLButtonElement}
      */
-    form: null,
+    menuButton: null,
     /**
-     * @type {HTMLDialogElement}
+     * @type {HTMLButtonElement}
      */
-    dialog: null,
+    menuCloseButton: null,
     /**
-     * @type {HTMLInputElement}
+     * @type {HTMLElement}
      */
-    emailInput: null,
-    /**
-     * @type {HTMLDivElement}
-     */
-    emailError: null,
-
+    menuAside: null,
 
     init() {
-        this.form = document.querySelector('form')
-        this.dialog = document.querySelector('dialog')
-        this.emailInput = document.querySelector('#email')
-        this.emailError = document.querySelector('#email-error')
+        this.menuButton = document.querySelector('.menu-button')
+        this.menuCloseButton = document.querySelector('.menu-close-button')
+        this.menuAside = document.querySelector('.menu-aside')
 
-        this.form.addEventListener('submit', this.submit.bind(this))
-        this.emailInput.addEventListener('input', this.validateEmail.bind(this))
-        this.emailInput.addEventListener('focus', this.validateEmail.bind(this))
+        // check if elements exist
+        console.assert(this.menuButton !== null, 'MenuButton element not found')
+        console.assert(this.menuCloseButton !== null, 'MenuCloseButton element not found')
+        console.assert(this.menuAside !== null, 'MenuAside element not found')
+
+        // add event listener
+        this.menuButton.addEventListener('click', () => {
+            this.menuAside.classList.toggle('hidden', false)
+            document.body.classList.toggle('overflow-y-hidden', true)
+        })
+        this.menuCloseButton.addEventListener('click', () => {
+            this.menuAside.classList.toggle('hidden', true)
+            document.body.classList.toggle('overflow-y-hidden', false)
+        })
     },
 
-    /**
-     * @param {Event} event
-     */
-    submit(event) {
-        event.preventDefault()
-
-        const formData = new FormData(this.form)
-        const data = Object.fromEntries(formData)
-        console.log(data)
-
-        this.dialog.showModal()
-    },
-    /**
-     * @param {Event} event
-     */
-    validateEmail(event) {
-        let target = event.target;
-        let validity = target.validity;
-        // Display different error texts according to the type
-        if (validity.typeMismatch) {
-            this.emailError.textContent = 'Please enter a valid email address.'
-        } else if (validity.valueMissing) {
-            this.emailError.textContent = 'This field is required.'
-        }
-    }
 }
 
 window.addEventListener('load', () => {
