@@ -1,0 +1,23 @@
+{
+  "name": "frontend-mentor",
+  "version": "1.0.0",
+  "description": "Frontend Mentor challenges",
+  "main": "index.js",
+  "scripts": {
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mofada/frontend-mentor.git"
+  },
+  "keywords": [
+    "front-mentor"
+  ],
+  "author": "fada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mofada/frontend-mentor/issues"
+  },
+  "homepage": "https://github.com/mofada/frontend-mentor#readme",
+  "web-types": "./web-types.json"
+}

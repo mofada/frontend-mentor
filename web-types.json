@@ -1,0 +1,84 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
+  "name": "mentor-card-library",
+  "version": "1.0.0",
+  "js-types-syntax": "typescript",
+  "description-markup": "markdown",
+  "contributions": {
+    "html": {
+      "elements": [
+        {
+          "name": "mentor-card",
+          "description": "Use the MentorCard component to display a mentor's project information with a cover image, title, and relevant tags for technologies used.",
+          "doc-url": "https://example.com/docs/mentor-card",
+          "attributes": [
+            {
+              "name": "title",
+              "description": "The title of the mentor card, displayed as the card's header.",
+              "required": true,
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "cover",
+              "description": "The URL of the cover image to be displayed on the card.",
+              "required": true,
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "live",
+              "description": "The URL of the live version of the mentor's work. Clicking the cover image will open this URL.",
+              "required": false,
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "solution",
+              "description": "The URL of the solution or detailed version of the mentor's work. Clicking the title will open this URL.",
+              "required": false,
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "html",
+              "description": "Indicates if the mentor's work includes HTML.",
+              "required": false,
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "css",
+              "description": "Indicates if the mentor's work includes CSS.",
+              "required": false,
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "js",
+              "description": "Indicates if the mentor's work includes JavaScript.",
+              "required": false,
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "tailwind",
+              "description": "Indicates if the mentor's work includes Tailwind CSS.",
+              "required": false,
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
