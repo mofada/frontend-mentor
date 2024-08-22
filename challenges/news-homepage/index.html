@@ -13,7 +13,7 @@
 	<link href="css/font.css" rel="stylesheet">
 
 	<!--debug-->
-	<!--	<script src="js/debug.js" defer></script>-->
+<!--	<script src="js/debug.js" defer></script>-->
 
 	<!--use local tailwind-->
 	<script src="js/tailwindcss-3.4.5.min.js"></script>
@@ -23,61 +23,74 @@
 	<script src="js/app.js" defer></script>
 </head>
 <body
-		class="flex flex-col w-screen min-h-screen text-[15px] leading-[26px] font-inter text-blue-900 bg-white">
+		class="flex flex-col w-screen min-h-screen text-[15px] leading-[26px] font-inter text-blue-900 bg-white md:justify-center">
 
-<main
-		class="mx-4 mt-7 mb-20 grid lg:grid-cols-[1fr_350px] max-w-[1110px] md:mx-auto md:gap-x-[30px] md:my-7 lg:my-auto">
-	<!--header: logo and menu-->
-	<header class="flex items-center z-20 col-span-full">
-		<!--logo-->
-		<img src="assets/images/logo.svg" alt="logo" class="w-12 mr-2 md:w-16"/>
+<!--header: logo and menu-->
+<header
+		class="mx-4 flex items-center md:max-w-[1110px] mt-7 md:mt-[90px] md:w-full md:mx-auto"
+        aria-label="header">
+	<!--logo-->
+	<img src="assets/images/logo.svg" alt="logo" class="w-12 mr-2 md:w-16"/>
 
-		<nav class="hidden md:inline-block ml-auto">
-			<ul class="*:text-blue-600 flex gap-[41px]">
-				<li class="hover:text-orange transition-colors duration-200"><a href="#">Home</a>
-				</li>
+	<nav class="hidden md:inline-block ml-auto">
+		<ul class="*:text-blue-600 flex gap-[41px]">
+			<li class="hover:text-orange transition-colors duration-200"><a href="#">Home</a>
+			</li>
+			<li class="hover:text-orange transition-colors duration-200"><a href="#">New</a>
+			</li>
+			<li class="hover:text-orange transition-colors duration-200"><a href="#">Popular</a>
+			</li>
+			<li class="hover:text-orange transition-colors duration-200"><a
+					href="#">Trending</a></li>
+			<li class="hover:text-orange transition-colors duration-200"><a
+					href="#">Categories</a></li>
+		</ul>
+	</nav>
+
+	<!--menu-->
+	<button class="menu-button ml-auto md:hidden" aria-label="open-menu">
+		<img src="assets/images/icon-menu.svg" alt="menu"
+		     class="w-10 h-4"/>
+	</button>
+
+</header>
+
+<!--menu， hidden on desktop-->
+<aside
+		class="menu-aside fixed left-0 right-0 top-0 bottom-0 bg-blue-300/50 z-50 overscroll-contain hidden">
+	<div class="w-[255px] h-full bg-white ml-auto p-5 py-7">
+		<!--close-->
+		<button aria-label="close menu" class="menu-close-button ml-auto">
+			<img src="assets/images/icon-menu-close.svg" alt="close"
+			     class="w-8 h-8"/>
+		</button>
+
+
+		<nav class="mt-[84px] ml-1">
+			<ul class="*:text-blue-900 *:text-[18px] flex flex-col gap-[22px]">
+				<li class="hover:text-orange transition-colors duration-200"><a
+						href="#">Home</a></li>
 				<li class="hover:text-orange transition-colors duration-200"><a href="#">New</a>
 				</li>
-				<li class="hover:text-orange transition-colors duration-200"><a href="#">Popular</a>
+				<li class="hover:text-orange transition-colors duration-200"><a
+						href="#">Popular</a></li>
+				<li class="hover:text-orange transition-colors duration-200"><a
+						href="#">Trending</a>
 				</li>
 				<li class="hover:text-orange transition-colors duration-200"><a
-						href="#">Trending</a></li>
-				<li class="hover:text-orange transition-colors duration-200"><a
-						href="#">Categories</a></li>
+						href="#">Categories</a>
+				</li>
 			</ul>
 		</nav>
+	</div>
+</aside>
 
-		<!--menu-->
-		<img src="assets/images/icon-menu.svg" alt="menu" aria-label="menu"
-		     class="menu-button ml-auto w-10 h-4 md:hidden"/>
-	</header>
-
-	<!--menu， hidden on desktop-->
-	<aside
-			class="menu-aside fixed left-0 right-0 top-0 bottom-0 bg-blue-300/50 z-50 overscroll-contain hidden">
-		<section class="w-[255px] h-full bg-white ml-auto p-5 py-7">
-			<img src="assets/images/icon-menu-close.svg" alt="close" aria-label="close menu"
-			     class="menu-close-button ml-auto w-8 h-8"/>
-
-			<nav class="mt-[84px] ml-1">
-				<ul class="*:text-blue-900 *:text-[18px] flex flex-col gap-[22px]">
-					<li class="hover:text-orange transition-colors duration-200"><a
-							href="#">Home</a></li>
-					<li class="hover:text-orange transition-colors duration-200"><a href="#">New</a>
-					</li>
-					<li class="hover:text-orange transition-colors duration-200"><a
-							href="#">Popular</a></li>
-					<li class="hover:text-orange transition-colors duration-200"><a href="#">Trending</a>
-					</li>
-					<li class="hover:text-orange transition-colors duration-200"><a href="#">Categories</a>
-					</li>
-				</ul>
-			</nav>
-		</section>
-	</aside>
-
+<main
+		class="mx-4 mt-[30px] mb-20 grid lg:grid-cols-[1fr_350px] max-w-[1110px] md:gap-x-[30px] md:mx-auto lg:mt-[55px] ">
+	<!--banner-->
 	<article
-			class="mt-[30px] lg:mt-[54px] grid md:grid-cols-2 md:grid-rows-[auto_auto_auto] gap-x-7">
+			class="grid md:grid-cols-2 md:grid-rows-[auto_auto_auto] gap-x-7"
+			aria-label="banner">
 		<picture class="col-span-full">
 			<source srcset="assets/images/image-web-3-desktop.jpg" media="(min-width: 768px)"/>
 			<source srcset="assets/images/image-web-3-mobile.jpg" media="(max-width: 768px)"/>
@@ -104,13 +117,19 @@
 		</button>
 	</article>
 
-	<article class="bg-blue-900 mt-16 px-[20px] pt-[22px] flex flex-col md:px-[24px]">
+	<!--new-->
+	<article class="bg-blue-900 mt-16 px-[20px] pt-[22px] flex flex-col md:px-[24px] lg:mt-0"
+	         aria-labelledby="news">
 		<header>
-			<h2 class="text-orange text-[32px] leading-10 font-extrabold md:text-[40px]">New</h2>
+			<h2 id="news"
+			    class="text-orange text-[32px] leading-10 font-extrabold md:text-[40px] md:mt-3">
+				New</h2>
 		</header>
 
-		<section class="py-[28px] border-b border-b-blue-600 md:mt-2">
-			<h3 class="text-white text-[20px] font-extrabold hover:text-orange transition-colors duration-200">
+		<section class="py-[28px] border-b border-b-blue-600 md:py-[30px]"
+		         aria-labelledby="electric-cars">
+			<h3 id="electric-cars"
+			    class="text-white text-[20px] font-extrabold hover:text-orange transition-colors duration-200">
 				<a href="#">Hydrogen VS Electric Cars</a>
 			</h3>
 			<p class="text-blue-300 mt-2 text-[15px]">
@@ -118,8 +137,9 @@
 			</p>
 		</section>
 
-		<section class="py-[28px] border-b border-b-blue-600">
-			<h3 class="text-white text-[20px] font-extrabold hover:text-orange transition-colors duration-200">
+		<section class="py-[28px] border-b border-b-blue-600" aria-labelledby="ai-artistry">
+			<h3 id="ai-artistry"
+			    class="text-white text-[20px] font-extrabold hover:text-orange transition-colors duration-200">
 				<a href="#">The Downsides of AI Artistry</a>
 			</h3>
 			<p class="text-blue-300 mt-2 text-[15px]">
@@ -127,53 +147,61 @@
 			</p>
 		</section>
 
-		<section class="py-[28px]">
-			<h3 class="text-white text-[20px] font-extrabold hover:text-orange transition-colors duration-200">
+		<section class="py-[28px] md:py-[30px]" aria-labelledby="vc-funding">
+			<h3 id="vc-funding"
+			    class="text-white text-[20px] font-extrabold hover:text-orange transition-colors duration-200">
 				<a href="#">Is VC Funding Drying Up?</a>
 			</h3>
-			<p class="text-blue-300 mt-1 text-[15px]">
+			<p class="text-blue-300 mt-2 text-[15px]">
 				Private funding by VC firms is down 50% YOY. We take a look at what that means.
 			</p>
 		</section>
 	</article>
 
+	<!---->
 	<article
 			class="mt-[62px] flex flex-col gap-y-[32px] md:flex-row md:justify-start col-span-full md:mt-[74px] md:gap-x-[32px]">
-		<section class="grid grid-cols-[auto_1fr] grid-rows-[auto_auto_1fr] gap-x-6 flex-1">
+		<section class="grid grid-cols-[auto_1fr] grid-rows-[auto_auto_1fr] gap-x-6 flex-1"
+		         aria-labelledby="retro-pcs">
 			<img src="assets/images/image-retro-pcs.jpg" alt="a retro pc"
 			     class="row-span-full w-[100px] h-[128px]"/>
 
 			<h2
 					class="text-red text-[32px] leading-8 font-extrabold">01</h2>
-			<h3 class="text-blue-900 text-[18px] leading-[18px] font-extrabold mt-4 hover:text-orange transition-colors duration-200">
-				Reviving Retro PCs
+			<h3 id="retro-pcs"
+			    class="text-blue-900 text-[18px] leading-[18px] font-extrabold mt-4 hover:text-orange transition-colors duration-200">
+				<a href="#">Reviving Retro PCs</a>
 			</h3>
 			<p class="text-blue-600 leading-[24px] mt-3">
 				What happens when old PCs are given modern upgrades?
 			</p>
 		</section>
 
-		<section class="grid grid-cols-[auto_1fr] grid-rows-[auto_auto_1fr] gap-x-6 flex-1">
+		<section class="grid grid-cols-[auto_1fr] grid-rows-[auto_auto_1fr] gap-x-6 flex-1"
+		         aria-labelledby="laptops">
 			<img src="assets/images/image-top-laptops.jpg" alt="a laptop"
 			     class="row-span-full w-[100px] h-[128px]"/>
 
 			<h2 class="text-red text-[32px] leading-8 font-extrabold">02</h2>
-			<h3 class="text-blue-900 text-[18px] leading-[18px] font-extrabold mt-4 hover:text-orange transition-colors duration-200">
-				Top 10 Laptops of 2022
+			<h3 id="laptops"
+			    class="text-blue-900 text-[18px] leading-[18px] font-extrabold mt-4 hover:text-orange transition-colors duration-200">
+				<a href="#">Top 10 Laptops of 2022</a>
 			</h3>
 			<p class="text-blue-600 leading-[24px] mt-3">
 				Our best picks for various needs and budgets.
 			</p>
 		</section>
 
-		<section class="grid grid-cols-[auto_1fr] grid-rows-[auto_auto_1fr] gap-x-6 flex-1">
+		<section class="grid grid-cols-[auto_1fr] grid-rows-[auto_auto_1fr] gap-x-6 flex-1"
+		         aria-labelledby="game-growth">
 			<img src="assets/images/image-gaming-growth.jpg" alt="a hand with a game controller"
 			     class="row-span-full w-[100px] h-[128px]"/>
 
 			<h2 class="text-red text-[32px] leading-8 font-extrabold">03</h2>
-			<h3 class="text-blue-900 text-[18px] leading-[18px] font-extrabold mt-4 hover:text-orange transition-colors duration-200">
-				The Growth of
-				Gaming</h3>
+			<h3 id="game-growth"
+			    class="text-blue-900 text-[18px] leading-[18px] font-extrabold mt-4 hover:text-orange transition-colors duration-200">
+				<a href="#">The Growth of Gaming</a>
+			</h3>
 			<p class="text-blue-600 leading-[25px] mt-3">How the pandemic has sparked fresh
 				opportunities.</p>
 		</section>
