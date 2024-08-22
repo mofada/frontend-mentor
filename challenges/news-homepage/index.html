@@ -13,7 +13,7 @@
 	<link href="css/font.css" rel="stylesheet">
 
 	<!--debug-->
-	<script src="js/debug.js" defer></script>
+<!--	<script src="js/debug.js" defer></script>-->
 
 	<!--use local tailwind-->
 	<script src="js/tailwindcss-3.4.5.min.js"></script>
@@ -23,14 +23,14 @@
 	<script src="js/app.js" defer></script>
 </head>
 <body
-		class="flex flex-col w-screen min-h-screen text-[15px] leading-[26px] font-inter text-blue-900 bg-white md:justify-center">
+		class="flex flex-col w-screen min-h-screen text-[15px] leading-[26px] font-inter text-blue-900 bg-white md:justify-center overflow-x-hidden">
 
 <!--header: logo and menu-->
 <header
 		class="mx-4 flex items-center md:max-w-[1110px] mt-7 md:w-full md:mx-auto"
         aria-label="header">
 	<!--logo-->
-	<img src="assets/images/logo.svg" alt="logo" class="w-12 mr-2 md:w-16"/>
+	<img src="assets/images/logo.svg" alt="logo" class="w-12 md:w-16"/>
 
 	<nav class="hidden md:inline-block ml-auto">
 		<ul class="*:text-blue-600 flex gap-[41px]">
@@ -210,7 +210,7 @@
 
 <!-- Footer -->
 <footer
-		class="text-xs text-center bottom-2 inset-x-0 z-20 mt-auto lg:fixed">
+		class="text-xs text-center bottom-2 inset-x-0 mt-auto lg:fixed">
 	Challenge by
 	<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
 	   class="text-red">
