@@ -14,7 +14,6 @@
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -34,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [news-homepage]()
-- Live Site URL: [news-homepage](index.html)
+- Live Site URL: [news-homepage](https://mofada.github.io/frontend-mentor/challenges/news-homepage/)
 
 ## My process
 

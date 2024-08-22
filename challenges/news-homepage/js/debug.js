@@ -35,7 +35,7 @@ function addToggleButton() {
     container && container.classList.add('z-10');
 
     const button = document.createElement("button");
-    button.className = "fixed top-4 left-4 z-20 p-1 rounded-full shadow-md" +
+    button.className = "fixed top-4 right-4 z-20 p-1 rounded-full shadow-md" +
         " text-base bg-[hsl(0_0%_100%/0.6)]";
     button.innerHTML = "Hide";
     button.onclick = () => {
