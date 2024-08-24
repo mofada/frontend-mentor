@@ -1,6 +1,6 @@
-# Frontend Mentor - News homepage
+# Frontend Mentor - E-commerce product page
 
-![Design preview for the News homepage coding challenge](./design/desktop-preview.jpg)
+![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)
 
 ## Table of contents
 
@@ -14,6 +14,7 @@
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
 - [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -21,8 +22,12 @@
 
 Users should be able to:
 
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Open a lightbox gallery by clicking on the large product image
+- Switch the large product image by clicking on the small thumbnail images
+- Add items to the cart
+- View the cart and remove items from it
 
 ### Screenshot
 
@@ -32,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [news-homepage](https://www.frontendmentor.io/solutions/news-homepage-with-tailwind-css-OLapxfr2wi)
-- Live Site URL: [news-homepage](https://mofada.github.io/frontend-mentor/challenges/news-homepage/)
+- Solution URL: [ecommerce-product-page]()
+- Live Site URL: [ecommerce-product-page](https://mofada.github.io/frontend-mentor/challenges/ecommerce-product-page/)
 
 ## My process
 
@@ -46,11 +51,15 @@ Users should be able to:
 - Mobile-first workflow
 - [Tailwind css](https://tailwindui.com/) - For styles
 
+
 ### What I learned
+
 
 ### Continued development
 
+
 ### Useful resources
+
 
 ## Author
 

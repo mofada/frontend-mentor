@@ -115,6 +115,12 @@ css让我很困惑。
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/news-homepage/)
 
+### 15. [电子商务产品页面](challenges/ecommerce-product-page)
+
+![Screenshot](challenges/ecommerce-product-page/screenshot/screenshot.png)
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/ecommerce-product-page/)
+
 
 正在开发中...
 
