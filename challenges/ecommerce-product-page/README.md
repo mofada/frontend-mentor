@@ -59,7 +59,8 @@ Users should be able to:
 
 
 ### Useful resources
-
+- [Create a Responsive Hamburger Menu with HTML and CSS](https://medium.com/@mukundkumra.io/create-a-responsive-hamburger-menu-with-html-and-css-a-step-by-step-tutorial-c63e44fcee2e) - Helped me for hamburger menu.
+- [Mobile Nav](https://codepen.io/shieldsma91/pen/zLpbLX) - Helped me for hamburger menu.
 
 ## Author
 
