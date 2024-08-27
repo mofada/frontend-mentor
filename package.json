@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Frontend Mentor challenges",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "private": true,
   "repository": {
     "type": "git",
@@ -19,5 +18,8 @@
     "url": "https://github.com/mofada/frontend-mentor/issues"
   },
   "homepage": "https://github.com/mofada/frontend-mentor#readme",
-  "web-types": "./web-types.json"
+  "web-types": "./web-types.json",
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
 }
