@@ -23,6 +23,7 @@ tailwind.config = {
             white: 'hsl(0, 0%, 100%)',
             // Black
             black: 'hsl(0, 0%, 0%)',
+            transparent: 'transparent',
         },
         fontFamily: {
             'kumbh-sans': ['Kumbh Sans', 'sans-serif'],
