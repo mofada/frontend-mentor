@@ -66,8 +66,10 @@
 	     class="ml-[22px] w-6 h-6 lg:w-[50px] lg:h-[50px] lg:ml-12"/>
 </header>
 
-<main class="">
-	<article class="relative flex items-center">
+<hr class="w-[1000px] mx-auto text-blue-100 hidden lg:block"/>
+
+<main class="flex flex-col max-w-[1014px] mx-auto md:mt-[92px] lg:flex-row lg:gap-[126px]">
+	<article class="relative flex items-center lg:hidden">
 		<img src="images/image-product-1.jpg" alt="product image"
 		     class="w-full h-[300px] object-cover"/>
 
@@ -88,14 +90,63 @@
 		</button>
 	</article>
 
-	<article class="px-6 py-5 flex flex-col">
-		<h2 class="text-blue font-bold text-[12px] uppercase tracking-[2px]">
+	<article class="hidden basis-[444px] lg:block shrink-0">
+		<!---->
+		<img src="images/image-product-1.jpg" alt="product image"
+		     class="w-full object-cover rounded-2xl"/>
+
+		<!--radio-->
+		<fieldset class="mt-[33px] flex justify-between">
+			<legend class="sr-only"></legend>
+
+			<label
+					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange"
+					for="product-1">
+				<input id="product-1" type="radio" name="product" value="1" checked
+				       class="peer appearance-none">
+				<img src="images/image-product-1-thumbnail.jpg" alt="product image 1"
+				     class="w-full h-full object-cover"/>
+			</label>
+
+			<label
+					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange"
+					for="product-2">
+				<input id="product-2" type="radio" name="product" value="2"
+				       class="peer appearance-none">
+				<img src="images/image-product-2-thumbnail.jpg" alt="product image 2"
+				     class="w-full h-full object-cover"/>
+			</label>
+
+			<label
+					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange"
+					for="product-3">
+				<input id="product-3" type="radio" name="product" value="3"
+				       class="peer appearance-none">
+				<img src="images/image-product-3-thumbnail.jpg" alt="product image 3"
+				     class="w-full h-full object-cover"/>
+			</label>
+
+			<label
+					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange"
+					for="product-4">
+				<input id="product-4" type="radio" name="product" value="4"
+				       class="peer appearance-none">
+				<img src="images/image-product-4-thumbnail.jpg" alt="product image 4"
+				     class="w-full h-full object-cover"/>
+			</label>
+		</fieldset>
+	</article>
+
+	<article class="px-6 py-5 flex flex-col lg:p-0">
+		<h2
+				class="text-blue font-bold text-[12px] uppercase tracking-[2px] md:mt-[58px] md:text-[13px]">
 			Sneaker Company
 		</h2>
-		<h1 class="mt-2 text-blue-900 font-bold text-[28px] leading-[32px]">
+		<h1
+				class="mt-2 text-blue-900 font-bold text-[28px] leading-[32px] md:text-[44px] md:leading-[48px] md:mt-4">
 			Fall Limited Edition Sneakers
 		</h1>
-		<p class="mt-4 text-[15px] leading-[25px]">
+		<p class="mt-4 text-[15px] leading-[25px] md:mt-[35px] md:text-[16px] md:leading-[26px]">
 			These low-profile sneakers are your perfect casual wear companion. Featuring a durable
 			rubber outer sole, they’ll withstand everything the weather can offer.
 		</p>
@@ -111,29 +162,30 @@
 				50%
 			</span>
 
-			<s class="ml-auto font-bold text-[17px] mt-[2px] text-blue">
+			<s class="ml-auto font-bold text-[17px] mt-[2px] text-blue md:w-full md:mt-[10px]">
 				$250.00
 			</s>
 		</section>
 
 		<!--quantity-->
-		<div class="flex flex-col mt-8">
-			<section class="flex items-center h-12 px-6 gap-4 bg-blue-100 rounded-lg">
+		<div class="flex flex-col mt-8 md:flex-row md:mt-[34px] md:gap-[14px]">
+			<section
+					class="flex items-center h-12 px-6 gap-4 bg-blue-100 rounded-lg md:w-[160px] md:px-4">
 				<button>
-					<img src="images/icon-minus.svg" alt="star" class="w-4"/>
+					<img src="images/icon-minus.svg" alt="star" class="w-4 md:w-6"/>
 				</button>
 				<input type="number"
 				       aria-label="quantity"
 				       class="w-full outline-0 text-center bg-transparent font-bold caret-orange text-blue-900"
 				       placeholder="0"/>
 				<button>
-					<img src="images/icon-plus.svg" alt="star" class="w-4"/>
+					<img src="images/icon-plus.svg" alt="star" class="w-4 md:w-6"/>
 				</button>
 			</section>
 
 			<!--add to cart-->
 			<button
-					class="flex gap-4 items-center justify-center bg-orange text-blue-900 font-bold rounded-md mt-5 h-[52px] shadow shadow-orange hover:bg-orange-100  hover:shadow-orange-100">
+					class="flex gap-4 items-center justify-center bg-orange text-blue-900 font-bold rounded-md mt-5 h-[52px] shadow shadow-orange hover:bg-orange-100  hover:shadow-orange-100 md:mt-0 md:w-[270px]">
 				<svg width="16" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"
 				     fill="currentColor">
 					<path

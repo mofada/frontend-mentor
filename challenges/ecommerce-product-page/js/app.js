@@ -2,11 +2,11 @@ const App = {
     /**
      * @type {HTMLButtonElement}
      */
-    menuButton: null,
+    previousButton: null,
     /**
      * @type {HTMLButtonElement}
      */
-    menuCloseButton: null,
+    nextButton: null,
     /**
      * @type {HTMLElement}
      */
