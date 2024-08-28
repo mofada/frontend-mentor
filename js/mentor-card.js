@@ -1,5 +1,5 @@
 class MentorCard extends HTMLElement {
-    static title = ["title"];
+    static observedAttributes = ["title", "cover", "live", "solution", "html", "css", "js", "tailwind"];
 
     constructor() {
         super();
