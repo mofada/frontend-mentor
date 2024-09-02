@@ -10,28 +10,52 @@ const App = {
     /**
      * @type {HTMLElement}
      */
-    menuAside: null,
+    shopCart: null,
+    /**
+     * @type {HTMLElement}
+     */
+    shopCartContainer: null,
 
     init() {
-        this.menuButton = document.querySelector('.menu-button')
-        this.menuCloseButton = document.querySelector('.menu-close-button')
-        this.menuAside = document.querySelector('.menu-aside')
+        this.previousButton = document.querySelector('#previous')
+        this.nextButton = document.querySelector('#next')
+        this.shopCart = document.querySelector('.shop-cart')
+        this.shopCartContainer = document.querySelector('.shop-cart-container')
 
         // check if elements exist
-        console.assert(this.menuButton !== null, 'MenuButton element not found')
-        console.assert(this.menuCloseButton !== null, 'MenuCloseButton element not found')
-        console.assert(this.menuAside !== null, 'MenuAside element not found')
+        console.assert(this.previousButton !== null, 'previousButton element not found')
+        console.assert(this.nextButton !== null, 'nextButton element not found')
+        console.assert(this.shopCart !== null, 'shopCart element not found')
+        console.assert(this.shopCartContainer !== null, 'shopCartContainer element not found')
 
-        // add event listener
-        this.menuButton.addEventListener('click', () => {
-            this.menuAside.classList.toggle('hidden', false)
-            document.body.classList.toggle('overflow-y-hidden', true)
+        this.shopCart.addEventListener('click', (event) => {
+            const target = event.currentTarget.parentElement;
+
+            // set position
+            const x = target.offsetLeft + target.offsetWidth / 2 + 5 + 180;
+            // 28 is offset
+            const y = target.offsetTop + target.offsetHeight + 24;
+            const windowWidth = window.innerWidth;
+
+            const right = Math.max(windowWidth - x, 8);
+
+            this.shopCartContainer.style.right = `${right}px`;
+            this.shopCartContainer.style.top = `${y}px`;
+
+            // toggle shop cart
+            this.shopCartContainer.classList.toggle('hidden')
+            this.shopCartContainer.classList.toggle('flex')
         })
-        this.menuCloseButton.addEventListener('click', () => {
-            this.menuAside.classList.toggle('hidden', true)
-            document.body.classList.toggle('overflow-y-hidden', false)
+
+        // hide shop cart container
+        this.previousButton.addEventListener('click', () => {
+            this.shopCartContainer.classList.toggle('hidden')
         })
-    },
+        this.nextButton.addEventListener('click', () => {
+            this.shopCartContainer.classList.toggle('hidden')
+        })
+    }
+
 
 }
 
