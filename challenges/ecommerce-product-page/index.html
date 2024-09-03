@@ -13,7 +13,7 @@
 	<link href="css/font.css" rel="stylesheet">
 
 	<!--debug-->
-	<script src="js/debug.js" defer></script>
+	<!--	<script src="js/debug.js" defer></script>-->
 
 	<!--use local tailwind-->
 	<script src="js/tailwindcss-3.4.5.min.js"></script>
@@ -62,6 +62,10 @@
 			<path
 					d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"/>
 		</svg>
+
+		<span
+				id="shop-count"
+				class="absolute -top-2 -right-2 px-[6px] h-4 rounded-full bg-orange text-white text-[11px] flex items-center justify-center font-bold hidden">2</span>
 	</button>
 
 	<!--avatar-->
@@ -80,29 +84,7 @@
 	<!---->
 	<article id="card-list"
 	         class="flex-1 flex flex-col items-center gap-7 p-6 py-7 ">
-		<!--				<span class="font-bold">Your cart is empty.</span>-->
-
-		<section
-				class="self-stretch h-[50px] grid grid-cols-[auto,1fr,auto] grid-rows-[auto,auto] gap-x-4">
-			<img src="images/image-product-1-thumbnail.jpg" alt=""
-			     class="w-[50px] h-[50px] row-span-2 rounded"/>
-
-			<h3 class="row-span-1 text-blue">
-				Fall Limited Edition Sneakers
-			</h3>
-
-			<button class="row-span-2 self-center">
-				<img src="images/icon-delete.svg" alt="delete icon"/>
-			</button>
-
-			<p class="text-[16px] text-blue">$125.00 x 3
-				<span class="text-blue-900 font-bold ml-[5px] text-[17px]">$375.00</span>
-			</p>
-		</section>
-
-		<button class="bg-orange text-blue-900 rounded-lg px-4 py-2 h-[52px] self-stretch font-bold">
-			Checkout
-		</button>
+		<span class="font-bold m-auto">Your cart is empty.</span>
 	</article>
 </aside>
 
@@ -110,13 +92,14 @@
 
 <main class="flex flex-col max-w-[1014px] mx-auto md:mt-[92px] lg:flex-row lg:gap-[126px]">
 	<article class="relative flex items-center lg:hidden">
-		<img src="images/image-product-1.jpg" alt="product image"
+		<img src="images/image-product-1.jpg" alt="product image" id="banner"
 		     class="w-full h-[300px] object-cover"/>
 
 		<!--previous-->
 		<button
 				id="previous"
-				class="bg-white w-10 h-10 absolute left-4 flex justify-center items-center rounded-full">
+				disabled
+				class="bg-white w-10 h-10 absolute left-4 flex justify-center items-center rounded-full disabled:bg-white/50">
 			<img src="images/icon-previous.svg" alt="Previous image"
 			     class="w-[9px] h-[14px] text-blue">
 		</button>
@@ -124,52 +107,53 @@
 		<!--next-->
 		<button
 				id="next"
-				class="bg-white w-10 h-10 absolute right-4 flex justify-center items-center rounded-full">
+				class="bg-white w-10 h-10 absolute right-4 flex justify-center items-center rounded-full disabled:bg-white/50">
 			<img src="images/icon-next.svg" alt="Next image"
 			     class="w-[9px] h-[14px] text-blue">
 		</button>
 	</article>
 
-	<article class="hidden basis-[444px] lg:block shrink-0">
+	<article class=" hidden basis-[444px] lg:block shrink-0">
 		<!---->
 		<img src="images/image-product-1.jpg" alt="product image"
-		     class="w-full object-cover rounded-2xl"/>
+		     class="main-image w-full object-cover rounded-2xl"/>
 
 		<!--radio-->
-		<fieldset class="mt-[33px] flex justify-between">
+		<fieldset class="thumbnail-container mt-[33px] flex justify-between">
 			<legend class="sr-only"></legend>
 
 			<label
-					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange"
+					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange cursor-pointer"
 					for="product-1">
-				<input id="product-1" type="radio" name="product" value="1" checked
+				<input id="product-1" type="radio" name="product" value="images/image-product-1.jpg"
+				       checked
 				       class="peer appearance-none">
 				<img src="images/image-product-1-thumbnail.jpg" alt="product image 1"
 				     class="w-full h-full object-cover"/>
 			</label>
 
 			<label
-					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange"
+					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange cursor-pointer"
 					for="product-2">
-				<input id="product-2" type="radio" name="product" value="2"
+				<input id="product-2" type="radio" name="product" value="images/image-product-2.jpg"
 				       class="peer appearance-none">
 				<img src="images/image-product-2-thumbnail.jpg" alt="product image 2"
 				     class="w-full h-full object-cover"/>
 			</label>
 
 			<label
-					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange"
+					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange cursor-pointer"
 					for="product-3">
-				<input id="product-3" type="radio" name="product" value="3"
+				<input id="product-3" type="radio" name="product" value="images/image-product-3.jpg"
 				       class="peer appearance-none">
 				<img src="images/image-product-3-thumbnail.jpg" alt="product image 3"
 				     class="w-full h-full object-cover"/>
 			</label>
 
 			<label
-					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange"
+					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange cursor-pointer"
 					for="product-4">
-				<input id="product-4" type="radio" name="product" value="4"
+				<input id="product-4" type="radio" name="product" value="images/image-product-4.jpg"
 				       class="peer appearance-none">
 				<img src="images/image-product-4-thumbnail.jpg" alt="product image 4"
 				     class="w-full h-full object-cover"/>
@@ -210,21 +194,24 @@
 		<!--quantity-->
 		<div class="flex flex-col mt-8 md:flex-row md:mt-[34px] md:gap-[14px]">
 			<section
-					class="flex items-center h-12 px-6 gap-4 bg-blue-100 rounded-lg md:w-[160px] md:px-4">
-				<button>
+					class="actions flex items-center h-12 px-6 gap-4 bg-blue-100 rounded-lg md:w-[160px] md:px-4">
+				<button id="minus">
 					<img src="images/icon-minus.svg" alt="star" class="w-4 md:w-6"/>
 				</button>
 				<input type="number"
+				       id="quantity"
 				       aria-label="quantity"
-				       class="w-full outline-0 text-center bg-transparent font-bold caret-orange text-blue-900"
+				       min="1"
+				       class="w-full outline-0 text-center bg-transparent font-bold caret-orange text-blue-900 appearance-none"
 				       placeholder="0"/>
-				<button>
+				<button id="plus">
 					<img src="images/icon-plus.svg" alt="star" class="w-4 md:w-6"/>
 				</button>
 			</section>
 
 			<!--add to cart-->
 			<button
+					id="add-to-cart"
 					class="flex gap-4 items-center justify-center bg-orange text-blue-900 font-bold rounded-md mt-5 h-[52px] shadow shadow-orange hover:bg-orange-100  hover:shadow-orange-100 md:mt-0 md:w-[270px]">
 				<svg width="16" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"
 				     fill="currentColor">
