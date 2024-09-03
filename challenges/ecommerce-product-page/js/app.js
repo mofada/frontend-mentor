@@ -137,6 +137,51 @@ const App = {
             banner.src = `images/image-product-${index}.jpg`
         }
     },
+    initLightBox() {
+        const mainImage = document.querySelector('.main-image');
+
+        const lightBox = document.querySelector('#lightbox')
+
+        const closeButton = lightBox.querySelector('.close-button')
+        const previousButton = lightBox.querySelector('.previous-button')
+        const nextButton = lightBox.querySelector('.next-button')
+
+        const productImage = document.querySelector('.product-image')
+        const radios = lightBox.querySelectorAll('input[type="radio"]')
+
+        mainImage.addEventListener('click', () => {
+            lightBox.classList.toggle('lg:flex', true)
+        })
+
+        closeButton.addEventListener('click', () => {
+            lightBox.classList.toggle('lg:flex', false)
+        })
+
+        previousButton.addEventListener('click', () => {
+            this.currentPicture -= 1
+            updatePicture(this.currentPicture)
+        })
+
+        nextButton.addEventListener('click', () => {
+            this.currentPicture += 1
+            updatePicture(this.currentPicture)
+        })
+
+        radios.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', (event) => {
+                this.currentPicture = index + 1
+                updatePicture(this.currentPicture)
+            })
+        })
+
+        function updatePicture(index) {
+            radios[index - 1].checked = true
+
+            previousButton.disabled = index <= 1
+            nextButton.disabled = index >= 4
+            productImage.src = `images/image-product-${index}.jpg`
+        }
+    }
 }
 
 window.addEventListener('load', () => {
@@ -144,5 +189,6 @@ window.addEventListener('load', () => {
     App.initShopCart()
     App.initQuantity()
     App.initPicture()
+    App.initLightBox()
     console.log('App is running...')
 })

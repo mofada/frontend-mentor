@@ -88,6 +88,87 @@
 	</article>
 </aside>
 
+<!--light box-->
+<aside id="lightbox" class="absolute left-0 right-0 top-0 bottom-0 bg-blue/50 z-50 hidden">
+	<div class="w-[550px] flex flex-col items-center m-auto">
+		<button class="close-button self-end text-white hover:text-orange" aria-label="close">
+			<svg class="w-5 h-5" width="14" height="15" viewBox="0 0 14 15"
+			     xmlns="http://www.w3.org/2000/svg">
+				<path
+						d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+						fill="currentColor" fill-rule="evenodd"/>
+			</svg>
+		</button>
+
+		<!--product image-->
+		<figure class="mt-5 relative">
+			<img src="images/image-product-1.jpg" alt="product image"
+			     class="product-image w-full h-[550px] object-cover  rounded-xl"/>
+
+			<!--previous-->
+			<button
+					disabled
+					class="previous-button bg-white hover:bg-orange w-14 h-14 absolute -left-7 flex justify-center items-center rounded-full disabled:bg-white/50 top-1/2 -translate-y-1/2">
+				<img src="images/icon-previous.svg" alt="Previous image"
+				     class="w-[9px] h-[14px] text-blue">
+			</button>
+
+			<!--next-->
+			<button
+					class="next-button bg-white hover:bg-orange w-14 h-14 absolute -right-7 flex justify-center items-center rounded-full disabled:bg-white/50 top-1/2 -translate-y-1/2">
+				<img src="images/icon-next.svg" alt="Next image"
+				     class="w-[9px] h-[14px] text-blue">
+			</button>
+		</figure>
+
+		<!--radio-->
+		<fieldset class="w-[440px] mt-10 flex justify-between">
+			<legend class="sr-only"></legend>
+
+			<label
+					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange cursor-pointer"
+					for="light-product-1">
+				<input id="light-product-1" type="radio" name="product"
+				       value="images/image-product-1.jpg"
+				       checked
+				       class="peer appearance-none">
+				<img src="images/image-product-1-thumbnail.jpg" alt="product image 1"
+				     class="w-full h-full object-cover"/>
+			</label>
+
+			<label
+					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange cursor-pointer"
+					for="light-product-2">
+				<input id="light-product-2" type="radio" name="product"
+				       value="images/image-product-2.jpg"
+				       class="peer appearance-none">
+				<img src="images/image-product-2-thumbnail.jpg" alt="product image 2"
+				     class="w-full h-full object-cover"/>
+			</label>
+
+			<label
+					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange cursor-pointer"
+					for="light-product-3">
+				<input id="light-product-3" type="radio" name="product"
+				       value="images/image-product-3.jpg"
+				       class="peer appearance-none">
+				<img src="images/image-product-3-thumbnail.jpg" alt="product image 3"
+				     class="w-full h-full object-cover"/>
+			</label>
+
+			<label
+					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange cursor-pointer"
+					for="light-product-4">
+				<input id="light-product-4" type="radio" name="product"
+				       value="images/image-product-4.jpg"
+				       class="peer appearance-none">
+				<img src="images/image-product-4-thumbnail.jpg" alt="product image 4"
+				     class="w-full h-full object-cover"/>
+			</label>
+		</fieldset>
+	</div>
+</aside>
+
 <hr class="w-[1000px] mx-auto text-blue-100 hidden lg:block"/>
 
 <main class="flex flex-col max-w-[1014px] mx-auto md:mt-[92px] lg:flex-row lg:gap-[126px]">
@@ -125,7 +206,8 @@
 			<label
 					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange cursor-pointer"
 					for="product-1">
-				<input id="product-1" type="radio" name="product" value="images/image-product-1.jpg"
+				<input id="product-1" type="radio" name="thumbnail"
+				       value="images/image-product-1.jpg"
 				       checked
 				       class="peer appearance-none">
 				<img src="images/image-product-1-thumbnail.jpg" alt="product image 1"
@@ -135,7 +217,8 @@
 			<label
 					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange cursor-pointer"
 					for="product-2">
-				<input id="product-2" type="radio" name="product" value="images/image-product-2.jpg"
+				<input id="product-2" type="radio" name="thumbnail"
+				       value="images/image-product-2.jpg"
 				       class="peer appearance-none">
 				<img src="images/image-product-2-thumbnail.jpg" alt="product image 2"
 				     class="w-full h-full object-cover"/>
@@ -144,7 +227,8 @@
 			<label
 					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange cursor-pointer"
 					for="product-3">
-				<input id="product-3" type="radio" name="product" value="images/image-product-3.jpg"
+				<input id="product-3" type="radio" name="thumbnail"
+				       value="images/image-product-3.jpg"
 				       class="peer appearance-none">
 				<img src="images/image-product-3-thumbnail.jpg" alt="product image 3"
 				     class="w-full h-full object-cover"/>
@@ -153,7 +237,8 @@
 			<label
 					class="flex group relative overflow-hidden w-[88px] h-[88px] has-[:checked]:after:absolute after:w-full after:h-full after:bg-blue-100/75 rounded-lg has-[:checked]:outline outline-2 outline-orange cursor-pointer"
 					for="product-4">
-				<input id="product-4" type="radio" name="product" value="images/image-product-4.jpg"
+				<input id="product-4" type="radio" name="thumbnail"
+				       value="images/image-product-4.jpg"
 				       class="peer appearance-none">
 				<img src="images/image-product-4-thumbnail.jpg" alt="product image 4"
 				     class="w-full h-full object-cover"/>
