@@ -127,6 +127,12 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/ecommerce-product-page/)
 
+### 16. [nft-preview-card-component](challenges/nft-preview-card-component)
+
+![Screenshot](challenges/nft-preview-card-component/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/nft-preview-card-component/)
+
 still working...
 
 ## Author
