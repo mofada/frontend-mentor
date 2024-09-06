@@ -30,96 +30,104 @@ css让我很困惑。
 
 ### 1. [二维码组件](challenges/qr-code-component)
 
-![screenshot](challenges/qr-code-component/screenshot/screenshot.png)
+![截图](challenges/qr-code-component/screenshot/screenshot.png)
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/qr-code-component/)
 
 ### 2. [博客预览卡片](challenges/blog-preview-card)
 
-![Screenshot](challenges/blog-preview-card/screenshot/screenshot.png)
+![截图](challenges/blog-preview-card/screenshot/screenshot.png)
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/blog-preview-card/)
 
 ### 3. [社交媒体主页](challenges/social-links-profile)
 
-![Screenshot](challenges/social-links-profile/screenshot/screenshot.png)
+![截图](challenges/social-links-profile/screenshot/screenshot.png)
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/social-links-profile/)
 
 ### 4. [食谱页面](challenges/recipe-page)
 
-![Screenshot](challenges/recipe-page/screenshot/screenshot.png)
+![截图](challenges/recipe-page/screenshot/screenshot.png)
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/recipe-page/)
 
 ### 5. [产品预览卡片](challenges/product-preview-card-component)
 
-![Screenshot](challenges/product-preview-card-component/screenshot/screenshot.png)
+![截图](challenges/product-preview-card-component/screenshot/screenshot.png)
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/product-preview-card-component/)
 
 ### 6. [四卡功能区](challenges/four-card-feature-section)
 
-![Screenshot](challenges/four-card-feature-section/screenshot/screenshot.png)
+![截图](challenges/four-card-feature-section/screenshot/screenshot.png)
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/four-card-feature-section/)
 
 ### 7. [见证网格部分](challenges/testimonials-grid-section)
 
-![Screenshot](challenges/testimonials-grid-section/screenshot/screenshot.png)
+![截图](challenges/testimonials-grid-section/screenshot/screenshot.png)
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/testimonials-grid-section/)
 
 ### 8. [文章预览组件](challenges/article-preview-component)
 
-![Screenshot](challenges/article-preview-component/screenshot/screenshot.png)
+![截图](challenges/article-preview-component/screenshot/screenshot.png)
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/article-preview-component/)
 
 ### 9. [时事通讯注册成功消息](challenges/newsletter-sign-up-with-success-message)
 
-![Screenshot](challenges/newsletter-sign-up-with-success-message/screenshot/screenshot.png)
+![截图](challenges/newsletter-sign-up-with-success-message/screenshot/screenshot.png)
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/newsletter-sign-up-with-success-message/)
 
-### 9. [时间跟踪仪表板](challenges/time-tracking-dashboard)
+### 10. [时间跟踪仪表板](challenges/time-tracking-dashboard)
 
-![Screenshot](challenges/time-tracking-dashboard/screenshot/screenshot.png)
-
-[在线预览](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
-
-### 10. [小费计算器应用程序](challenges/tip-calculator-app)
-
-![Screenshot](challenges/tip-calculator-app/screenshot/screenshot.png)
+![截图](challenges/time-tracking-dashboard/screenshot/screenshot.png)
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
 
-### 11. [互动评级组件](challenges/interactive-rating-component)
+### 11. [小费计算器应用程序](challenges/tip-calculator-app)
 
-![Screenshot](challenges/interactive-rating-component/screenshot/screenshot.png)
+![截图](challenges/tip-calculator-app/screenshot/screenshot.png)
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
+
+### 12. [互动评级组件](challenges/interactive-rating-component)
+
+![截图](challenges/interactive-rating-component/screenshot/screenshot.png)
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/interactive-rating-component/)
 
-### 12. [常见问题-手风琴](challenges/faq-accordion)
+### 13. [常见问题-手风琴](challenges/faq-accordion)
 
-![Screenshot](challenges/faq-accordion/screenshot/screenshot.png)
+![截图](challenges/faq-accordion/screenshot/screenshot.png)
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/faq-accordion/)
 
-### 13. [联系表单](challenges/contact-form)
+### 14. [联系表单](challenges/contact-form)
 
-![Screenshot](challenges/contact-form/screenshot/screenshot.png)
+![截图](challenges/contact-form/screenshot/screenshot.png)
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/contact-form/)
 
 
-### 14. [新闻首页](challenges/news-homepage)
+### 15. [新闻首页](challenges/news-homepage)
 
-![Screenshot](challenges/news-homepage/screenshot/screenshot.png)
+![截图](challenges/news-homepage/screenshot/screenshot.png)
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/news-homepage/)
 
-### 15. [电子商务产品页面](challenges/ecommerce-product-page)
+### 16. [电子商务产品页面](challenges/ecommerce-product-page)
 
-![Screenshot](challenges/ecommerce-product-page/screenshot/screenshot.png)
+![截图](challenges/ecommerce-product-page/screenshot/screenshot.png)
 
 [在线预览](https://mofada.github.io/frontend-mentor/challenges/ecommerce-product-page/)
+
+### 17. [nft-预览卡组件](challenges/nft-preview-card-component)
+
+![截图](challenges/nft-preview-card-component/screenshot/screenshot.png)
+
+[在线预览](https://mofada.github.io/frontend-mentor/challenges/nft-preview-card-component/)
+
+still working...
 
 
 正在开发中...

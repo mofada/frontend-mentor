@@ -85,49 +85,49 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/newsletter-sign-up-with-success-message/)
 
-### 9. [time-tracking-dashboard](challenges/time-tracking-dashboard)
+### 10. [time-tracking-dashboard](challenges/time-tracking-dashboard)
 
 ![Screenshot](challenges/time-tracking-dashboard/screenshot/screenshot.png)
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
 
-### 10. [tip-calculator-app](challenges/tip-calculator-app)
+### 11. [tip-calculator-app](challenges/tip-calculator-app)
 
 ![Screenshot](challenges/tip-calculator-app/screenshot/screenshot.png)
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/time-tracking-dashboard/)
 
-### 11. [interactive-rating-component](challenges/interactive-rating-component)
+### 12. [interactive-rating-component](challenges/interactive-rating-component)
 
 ![Screenshot](challenges/interactive-rating-component/screenshot/screenshot.png)
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/interactive-rating-component/)
 
-### 12. [faq-accordion](challenges/faq-accordion)
+### 13. [faq-accordion](challenges/faq-accordion)
 
 ![Screenshot](challenges/faq-accordion/screenshot/screenshot.png)
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/faq-accordion/)
 
-### 13. [contact-form](challenges/contact-form)
+### 14. [contact-form](challenges/contact-form)
 
 ![Screenshot](challenges/contact-form/screenshot/screenshot.png)
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/contact-form/)
 
-### 14. [news-homepage](challenges/news-homepage)
+### 15. [news-homepage](challenges/news-homepage)
 
 ![Screenshot](challenges/news-homepage/screenshot/screenshot.png)
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/news-homepage/)
 
-### 15. [ecommerce-product-page](challenges/ecommerce-product-page)
+### 16. [ecommerce-product-page](challenges/ecommerce-product-page)
 
 ![Screenshot](challenges/ecommerce-product-page/screenshot/screenshot.png)
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/ecommerce-product-page/)
 
-### 16. [nft-preview-card-component](challenges/nft-preview-card-component)
+### 17. [nft-preview-card-component](challenges/nft-preview-card-component)
 
 ![Screenshot](challenges/nft-preview-card-component/screenshot/screenshot.png)
 
