@@ -20,6 +20,8 @@
   "homepage": "https://github.com/mofada/frontend-mentor#readme",
   "web-types": "./web-types.json",
   "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.10"
   }
 }
