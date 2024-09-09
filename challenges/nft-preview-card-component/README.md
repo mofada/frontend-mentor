@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [nft-preview-card-component]()
+- Solution URL: [nft-preview-card-component](https://www.frontendmentor.io/solutions/nft-preview-card-component-with-tailwind-Dwx6wKw72T)
 - Live Site URL: [nft-preview-card-component](https://mofada.github.io/frontend-mentor/challenges/nft-preview-card-component/)
 
 ## My process
