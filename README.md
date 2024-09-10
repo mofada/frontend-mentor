@@ -133,6 +133,12 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/nft-preview-card-component/)
 
+### 18. [loopstudios-landing-page](challenges/loopstudios-landing-page)
+
+![Screenshot](challenges/loopstudios-landing-page/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/loopstudios-landing-page/)
+
 still working...
 
 ## Author
