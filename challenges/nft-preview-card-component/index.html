@@ -14,7 +14,7 @@
 	<link href="css/font.css" rel="stylesheet">
 
 	<!--debug-->
-<!--	<script src="js/debug.js" defer></script>-->
+	<!--	<script src="js/debug.js" defer></script>-->
 
 	<!--use local tailwind-->
 	<script src="js/tailwindcss-3.4.5.min.js"></script>
@@ -23,11 +23,20 @@
 <body
 		class="flex flex-col justify-center w-screen min-h-screen text-lg font-outfit text-blue bg-blue-900">
 <main class="w-[350px] h-[545px] bg-blue-800 rounded-xl p-6 z-20 mx-auto md:h-[600px]">
-	<img src="images/image-equilibrium.jpg"
-	     alt="Holographic cube with vibrant colors against a dark blue background"
-	     class="w-full rounded-lg">
+	<figure class="w-full rounded-lg relative overflow-hidden group cursor-pointer">
+		<img src="images/image-equilibrium.jpg"
+		     alt="Holographic cube with vibrant colors against a dark blue background"
+		>
 
-	<h1 class="text-[22px] font-semibold text-white mt-6">Equilibrium #3429</h1>
+		<button class="absolute top-0 left-0 right-0 bottom-0 bg-cyan/50 hidden group-hover:flex"
+		        aria-label="preview">
+			<img src="images/icon-view.svg" alt="View icon" class="m-auto"/>
+		</button>
+	</figure>
+
+
+	<h1 class="text-[22px] font-semibold text-white mt-6 hover:text-cyan cursor-pointer">Equilibrium
+		#3429</h1>
 
 	<p class="text-base font-normal mt-[14px] text-blue md:mt-5 md:text-lg md:leading-6">
 		Our Equilibrium collection promotes balance and calm.
@@ -57,7 +66,7 @@
 
 		<span class="text-blue md:text-base">
         <span>Creation of</span>
-        <span class="text-white ml-1">Jules Wyvern</span>
+        <span class="text-white ml-1 hover:text-cyan cursor-pointer">Jules Wyvern</span>
       </span>
 	</div>
 </main>
