@@ -16,7 +16,7 @@ function addPictureElement() {
   const img = document.createElement("img");
   img.src = "design/mobile-design.jpg";
   img.alt = "background";
-  img.className = "w-full z-0 absolute top-0 left-0 right-0 object-cover";
+  img.className = "w-full -z-10 absolute top-0 left-0 right-0 object-cover";
 
   picture.appendChild(sourceDesktop);
   picture.appendChild(sourceMobile);
