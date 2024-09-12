@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 tailwind.config = {
 	theme: {
 		colors: {
@@ -13,5 +14,8 @@ tailwind.config = {
 			alata: ["Alata", "sans-serif"],
 			"josefin-sans": ["Josefin Sans", "sans-serif"],
 		},
+		backgroundImage: (theme) => ({
+			mask: "linear-gradient(to right, #00000088, transparent)",
+		}),
 	},
 };
