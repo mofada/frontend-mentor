@@ -27,21 +27,42 @@
 	<!--banner-->
 	<picture class="w-full col-span-full row-span-full">
 		<source srcset="./images/desktop/image-hero.jpg" media="(min-width: 1024px)">
-		<img src="./images/mobile/image-hero.jpg" alt="hero image">
+		<img src="./images/mobile/image-hero.jpg" alt="hero image" class="w-full">
 	</picture>
 
 	<!--menu-->
-	<div class="row-start-1 col-start-1 self-start px-6 py-10 flex justify-between">
-		<img src="./images/logo.svg" alt="Loopstudios logo" class="w-[146px]">
+	<div
+			class="row-start-1 col-start-1 self-start px-6 py-10 flex justify-between md:py-16 md:px-[164px]">
+		<img src="./images/logo.svg" alt="Loopstudios logo" class="w-[146px] md:w-[192px]">
 
-		<button aria-label="Open menu">
+		<nav class="hidden md:flex items-center">
+			<ul class="flex gap-x-[30px] text-white text-base items-end font-alata">
+				<li><a href="#"
+				       class="relative after:h-[2px] after:w-5 after:bg-white after:hidden hover:after:inline-block after:left-0 after:right-0 after:mx-auto after:absolute after:-bottom-2">About</a>
+				</li>
+				<li><a href="#"
+				       class="relative after:h-[2px] after:w-5 after:bg-white after:hidden hover:after:inline-block after:left-0 after:right-0 after:mx-auto after:absolute after:-bottom-2">Careers</a>
+				</li>
+				<li><a href="#"
+				       class="relative after:h-[2px] after:w-5 after:bg-white after:hidden hover:after:inline-block after:left-0 after:right-0 after:mx-auto after:absolute after:-bottom-2">Events</a>
+				</li>
+				<li><a href="#"
+				       class="relative after:h-[2px] after:w-5 after:bg-white after:hidden hover:after:inline-block after:left-0 after:right-0 after:mx-auto after:absolute after:-bottom-2">Products</a>
+				</li>
+				<li><a href="#"
+				       class="relative after:h-[2px] after:w-5 after:bg-white after:hidden hover:after:inline-block after:left-0 after:right-0 after:mx-auto after:absolute after:-bottom-2">Support</a>
+				</li>
+			</ul>
+		</nav>
+
+		<button aria-label="Open menu" class="md:hidden">
 			<img src="images/icon-hamburger.svg" alt="Hamburger icon">
 		</button>
 	</div>
 
 	<!--  title-->
 	<h1
-			class="col-span-full row-span-full self-center justify-self-center text-white text-[40px] leading-[38px] uppercase border mx-6 p-6 mt-[4px]">
+			class="col-span-full row-span-full self-center justify-self-center text-white text-[40px] leading-[38px] uppercase border mx-6 p-6 mt-[4px] md:self-end md:justify-self-start md:ml-[164px] md:mb-[144px] md:border-2 md:text-[60px] max-w-[650px] md:p-[42px] md:leading-[64px]">
 		Immersive experiences that deliver
 	</h1>
 </header>
