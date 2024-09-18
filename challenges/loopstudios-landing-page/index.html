@@ -14,7 +14,7 @@
 	<link href="css/app.css" rel="stylesheet">
 
 	<!--debug-->
-	<script src="js/debug.js" defer></script>
+<!--	<script src="js/debug.js" defer></script>-->
 
 	<!--use local tailwind-->
 	<script src="js/tailwindcss-3.4.5.min.js"></script>
@@ -23,7 +23,7 @@
 <body
 		class="flex flex-col w-screen min-h-screen text-[15px] leading-6 font-josefin-sans font-light text-black">
 <!--header-->
-<header class="grid opacity-50">
+<header class="grid">
 	<!--banner-->
 	<picture class="w-full col-span-full row-span-full">
 		<source srcset="./images/desktop/image-hero.jpg" media="(min-width: 1024px)">
@@ -32,10 +32,10 @@
 
 	<!--menu-->
 	<div
-			class="row-start-1 col-start-1 self-start px-6 py-10 flex justify-between md:py-16 md:px-[164px]">
-		<img src="./images/logo.svg" alt="Loopstudios logo" class="w-[146px] md:w-[192px]">
+			class="row-start-1 col-start-1 self-start px-6 py-10 flex justify-between lg:py-16 lg:px-[164px]">
+		<img src="./images/logo.svg" alt="Loopstudios logo" class="w-[146px] lg:w-[192px]">
 
-		<nav class="hidden md:flex items-center">
+		<nav class="hidden lg:flex items-center">
 			<ul class="flex gap-x-[30px] text-white text-base items-end font-alata">
 				<li><a href="#"
 				       class="relative after:h-[2px] after:w-5 after:bg-white after:hidden hover:after:inline-block after:left-0 after:right-0 after:mx-auto after:absolute after:-bottom-2">About</a>
@@ -55,32 +55,35 @@
 			</ul>
 		</nav>
 
-		<button aria-label="Open menu" class="md:hidden">
+		<button aria-label="Open menu" class="lg:hidden">
 			<img src="images/icon-hamburger.svg" alt="Hamburger icon">
 		</button>
 	</div>
 
 	<!--  title-->
 	<h1
-			class="col-span-full row-span-full self-center justify-self-center text-white text-[40px] leading-[38px] uppercase border mx-6 p-6 mt-[4px] md:self-end md:justify-self-start md:ml-[164px] md:mb-[144px] md:border-2 md:text-[60px] max-w-[650px] md:p-[42px] md:leading-[64px]">
+			class="col-span-full row-span-full self-center justify-self-center text-white text-[40px] leading-[38px] uppercase border mx-6 p-6 mt-[4px] lg:self-end lg:justify-self-start lg:ml-[164px] lg:mb-[144px] lg:border-2 lg:text-[72px] max-w-[650px] lg:p-[40px] lg:py-[28px] lg:pt-[38px] lg:leading-[70px]">
 		Immersive experiences that deliver
 	</h1>
 </header>
 
-<main class="mx-6 flex flex-col gap-y-24 mt-24">
-	<article class="grid">
-		<picture>
+<main
+		class="mx-6 flex flex-col gap-y-24 mt-24 lg:max-w-[1115px] lg:mx-auto lg:mt-40 lg:gap-y-[186px]">
+	<article class="grid lg:grid-cols-[570px,160px,1fr] lg:grid-rows-[auto,315px]">
+		<picture class="lg:col-[1/3] lg:row-[1/3]">
 			<source srcset="./images/desktop/image-interactive.jpg" media="(min-width: 1024px)">
 			<img src="./images/mobile/image-interactive.jpg" alt="interactive image">
 		</picture>
 
-		<section class="mt-12 flex flex-col text-center">
-			<h2 class="text-[32px] leading-[32px] text-black uppercase">
+		<section
+				class="mt-12 flex flex-col text-center lg:col-[2/4] lg:row-[2/3] lg:bg-white lg:pl-[96px] lg:mt-0 lg:justify-end">
+			<h2
+					class="text-[32px] leading-[32px] text-black uppercase lg:text-[48px] lg:leading-[48px] lg:text-start">
 				The leader in interactive VR
 			</h2>
 
 			<p
-					class="mt-4 font-alata font-normal text-[15px] text-gray-900 leading-[25px] px-4">
+					class="mt-4 font-alata font-normal text-[15px] text-gray-900 leading-[25px] px-4 lg:mt-6 lg:p-0 lg:text-start lg:text-[15px] lg:tracking-[0.15px]">
 				Founded in 2011, Loopstudios has been producing world-class virtual reality
 				projects for some of the best companies around the globe. Our award-winning
 				creations have transformed businesses through digital experiences that bind
@@ -90,20 +93,22 @@
 	</article>
 
 
-	<article class="grid">
-		<h2 class="text-[32px] leading-[32px] text-black uppercase text-center">
+	<article class="grid md:grid-cols-2">
+		<h2
+				class="text-[32px] leading-[32px] text-black uppercase text-center -order-2 lg:text-[48px] lg:leading-[48px] lg:text-start">
 			Our creations
 		</h2>
 
 		<button
-				class="order-last uppercase w-[160px] grid place-content-center h-[42px] border-2 border-black justify-self-center text-black mt-8 text-[15px] font-alata font-normal tracking-[5px] hover:bg-black hover:text-white">
+				class="order-last uppercase w-[160px] grid place-content-center h-[42px] border-2 border-black justify-self-center text-black mt-8 text-[15px] font-alata font-normal tracking-[5px] hover:bg-black hover:text-white lg:-order-1 lg:justify-self-end lg:self-start lg:mt-[2px] lg:ml-[2px] rounded">
 			See all
 		</button>
 
-		<section class="mt-12 grid gap-y-6">
+		<section
+				class="mt-12 grid gap-y-6 lg:grid-cols-4 col-span-full lg:mt-20 lg:gap-x-[30px] lg:gap-y-[30px]">
 			<!--Deep earth-->
 			<figure
-					class="group relative before:bg-mask before:absolute  before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80">
+					class="group relative before:bg-mask before:absolute before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80 lg:before:bottom-0 lg:before:right-0 lg:before:top-[60%] lg:before:bg-md-mask">
 				<picture>
 					<source srcset="./images/desktop/image-deep-earth.jpg"
 					        media="(min-width: 1024px)">
@@ -112,14 +117,14 @@
 				</picture>
 
 				<figcaption
-						class="absolute left-5 bottom-5 uppercase text-white text-[24px] w-min group-hover:text-black z-10">
+						class="absolute left-5 bottom-5 uppercase text-white text-[24px] w-min group-hover:text-black z-10 lg:left-10 lg:bottom-8 lg:text-[32px] lg:leading-[32px]">
 					Deep earth
 				</figcaption>
 
 			</figure>
 
 			<!--Night arcade-->
-			<figure class="group relative before:bg-mask before:absolute  before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80">
+			<figure class="group relative before:bg-mask before:absolute before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80 lg:before:bottom-0 lg:before:right-0 lg:before:top-[60%] lg:before:bg-md-mask">
 				<picture>
 					<source srcset="./images/desktop/image-night-arcade.jpg"
 					        media="(min-width: 1024px)">
@@ -128,13 +133,13 @@
 				</picture>
 
 				<figcaption
-						class="absolute left-5 bottom-5 uppercase text-white text-[24px] w-min group-hover:text-black z-10">
+						class="absolute left-5 bottom-5 uppercase text-white text-[24px] w-min group-hover:text-black z-10 lg:left-10 lg:bottom-8 lg:text-[32px] lg:leading-[32px]">
 					Night arcade
 				</figcaption>
 			</figure>
 
 			<!--Soccer team VR-->
-			<figure class="group relative before:bg-mask before:absolute  before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80">
+			<figure class="group relative before:bg-mask before:absolute before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80 lg:before:bottom-0 lg:before:right-0 lg:before:top-[60%] lg:before:bg-md-mask">
 				<picture>
 					<source srcset="./images/desktop/image-soccer-team.jpg"
 					        media="(min-width: 1024px)">
@@ -143,13 +148,13 @@
 				</picture>
 
 				<figcaption
-						class="absolute left-5 bottom-5 uppercase text-white text-[24px] group-hover:text-black z-10">
+						class="absolute left-5 bottom-5 uppercase text-white text-[24px] group-hover:text-black z-10 lg:left-10 lg:bottom-8 lg:text-[32px] lg:leading-[32px]">
 					Soccer <br/> team VR
 				</figcaption>
 			</figure>
 
 			<!--The grid-->
-			<figure class="group relative before:bg-mask before:absolute  before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80">
+			<figure class="group relative before:bg-mask before:absolute before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80 lg:before:bottom-0 lg:before:right-0 lg:before:top-[60%] lg:before:bg-md-mask">
 				<picture>
 					<source srcset="./images/desktop/image-grid.jpg"
 					        media="(min-width: 1024px)">
@@ -158,13 +163,13 @@
 				</picture>
 
 				<figcaption
-						class="absolute left-5 bottom-5 uppercase text-white text-[24px] w-min group-hover:text-black z-10">
+						class="absolute left-5 bottom-5 uppercase text-white text-[24px] w-min group-hover:text-black z-10 lg:left-10 lg:bottom-8 lg:text-[32px] lg:leading-[32px]">
 					The grid
 				</figcaption>
 			</figure>
 
 			<!--From up above VR-->
-			<figure class="group relative before:bg-mask before:absolute  before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80">
+			<figure class="group relative before:bg-mask before:absolute before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80 lg:before:bottom-0 lg:before:right-0 lg:before:top-[60%] lg:before:bg-md-mask">
 				<picture>
 					<source srcset="./images/desktop/image-from-above.jpg"
 					        media="(min-width: 1024px)">
@@ -173,13 +178,13 @@
 				</picture>
 
 				<figcaption
-						class="absolute left-5 bottom-5 uppercase text-white text-[24px] group-hover:text-black z-10">
+						class="absolute left-5 bottom-5 uppercase text-white text-[24px] group-hover:text-black z-10 lg:left-10 lg:bottom-8 lg:text-[32px] lg:leading-[32px]">
 					From up <br/> above VR
 				</figcaption>
 			</figure>
 
 			<!--Pocket borealis-->
-			<figure class="group relative before:bg-mask before:absolute  before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80">
+			<figure class="group relative before:bg-mask before:absolute before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80 lg:before:bottom-0 lg:before:right-0 lg:before:top-[60%] lg:before:bg-md-mask">
 				<picture>
 					<source srcset="./images/desktop/image-pocket-borealis.jpg"
 					        media="(min-width: 1024px)">
@@ -188,13 +193,13 @@
 				</picture>
 
 				<figcaption
-						class="absolute left-5 bottom-5 uppercase text-white text-[24px] w-min group-hover:text-black z-10">
+						class="absolute left-5 bottom-5 uppercase text-white text-[24px] w-min group-hover:text-black z-10 lg:left-10 lg:bottom-8 lg:text-[32px] lg:leading-[32px]">
 					Pocket borealis
 				</figcaption>
 			</figure>
 
 			<!--The curiosity-->
-			<figure class="group relative before:bg-mask before:absolute  before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80">
+			<figure class="group relative before:bg-mask before:absolute before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80 lg:before:bottom-0 lg:before:right-0 lg:before:top-[60%] lg:before:bg-md-mask">
 				<picture>
 					<source srcset="./images/desktop/image-curiosity.jpg"
 					        media="(min-width: 1024px)">
@@ -203,14 +208,14 @@
 				</picture>
 
 				<figcaption
-						class="absolute left-5 bottom-5 uppercase text-white text-[24px] w-min group-hover:text-black z-10">
+						class="absolute left-5 bottom-5 uppercase text-white text-[24px] w-min group-hover:text-black z-10 lg:left-10 lg:bottom-8 lg:text-[32px] lg:leading-[32px]">
 					The curiosity
 				</figcaption>
 			</figure>
 
 			<!--Make it fisheye-->
 			<figure
-					class="group relative before:bg-mask before:absolute  before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80">
+					class="group relative before:bg-mask before:absolute before:top-0 before:left-0 before:bottom-0 before:right-1/3 after:top-0 after:left-0 after:bottom-0 after:right-0 after:absolute hover:after:bg-white/80 lg:before:bottom-0 lg:before:right-0 lg:before:top-[60%] lg:before:bg-md-mask">
 				<picture>
 					<source srcset="./images/desktop/image-fisheye.jpg"
 					        media="(min-width: 1024px)">
@@ -219,7 +224,7 @@
 				</picture>
 
 				<figcaption
-						class="absolute left-5 bottom-5 uppercase text-white text-[24px] group-hover:text-black z-10">
+						class="absolute left-5 bottom-5 uppercase text-white text-[24px] group-hover:text-black z-10 lg:left-10 lg:bottom-8 lg:text-[32px] lg:leading-[32px]">
 					Make it <br/> fisheye
 				</figcaption>
 			</figure>
@@ -232,10 +237,12 @@
 <!--  Products-->
 <!--  Support-->
 
-<footer class="grid py-14 text-white relative bg-black mt-24">
+<footer
+		class="grid py-14 text-white relative bg-black mt-24 lg:grid-cols-2 lg:grid-rows-2 lg:mt-[184px] lg:justify-between lg:grid-flow-col lg:py-[40px] lg:gap-y-7 lg:justify-items-center">
 	<img src="./images/logo.svg" alt="Loopstudios logo" class="w-[146px] justify-self-center">
 
-	<nav class="mt-8 flex flex-col items-center gap-y-[17px] font-alata">
+	<nav
+			class="mt-8 flex flex-col items-center gap-y-[17px] font-alata lg:flex-row lg:mt-0 lg:gap-x-8">
 		<a href="#"
 		   class="relative after:h-[2px] after:w-5 after:bg-white after:hidden hover:after:inline-block after:left-0 after:right-0 after:mx-auto after:absolute after:-bottom-2">About
 		</a>
@@ -250,7 +257,7 @@
 		   class="relative after:h-[2px] after:w-5 after:bg-white after:hidden hover:after:inline-block after:left-0 after:right-0 after:mx-auto after:absolute after:-bottom-2">Support</a>
 	</nav>
 
-	<nav class="mt-12 flex gap-x-4 justify-center items-center">
+	<nav class="mt-12 flex gap-x-4 justify-center items-center  lg:mt-0">
 		<a href="#"
 		   class="relative after:h-[2px] after:w-5 after:bg-white after:hidden hover:after:inline-block after:left-0 after:right-0 after:mx-auto after:absolute after:-bottom-2"><img
 				src="images/icon-facebook.svg" alt="facebook"/></a>
@@ -265,7 +272,7 @@
 				src="images/icon-instagram.svg" alt="instagram"/></a>
 	</nav>
 
-	<p class="text-center mt-5 text-base">© 2021 Loopstudios. All rights reserved.</p>
+	<p class="text-center mt-5 text-base  lg:mt-0">© 2021 Loopstudios. All rights reserved.</p>
 
 	<p class="absolute bottom-2 inset-x-0 text-center text-xs text-gray">
 		Challenge by

@@ -16,6 +16,7 @@ tailwind.config = {
 		},
 		backgroundImage: (theme) => ({
 			mask: "linear-gradient(to right, #00000088, transparent)",
+			'md-mask': "linear-gradient(to top, #00000088, transparent)",
 		}),
 	},
 };
