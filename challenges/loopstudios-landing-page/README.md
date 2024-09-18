@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [loopstudios-landing-page](https://www.frontendmentor.io/solutions/nft-preview-card-component-with-tailwind-Dwx6wKw72T)
+- Solution URL: [loopstudios-landing-page](https://www.frontendmentor.io/solutions/loopstudios-landing-page-with-tailwind-css-gw7HXN6dbH)
 - Live Site URL: [loopstudios-landing-page](https://mofada.github.io/frontend-mentor/challenges/loopstudios-landing-page/)
 
 ## My process
