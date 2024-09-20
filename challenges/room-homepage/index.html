@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+
+	<title>Frontend Mentor | Room homepage</title>
+
+	<!--loading font-->
+	<link href="css/font.css" rel="stylesheet">
+
+	<!--css-->
+	<link href="css/app.css" rel="stylesheet">
+
+
+	<!--debug-->
+	<!--	<script src="js/debug.js" defer></script>-->
+
+	<!--use local tailwind-->
+	<script src="js/tailwindcss-3.4.5.min.js"></script>
+	<script src="js/tailwind-config.js"></script>
+</head>
+
+<body
+		class="grid w-screen min-h-screen text-xs font-league-spartan font-medium text-black">
+
+<main>
+	<!-- Header -->
+	<header class="header self-start h-[108px] px-6">
+		<button aria-label="open menu">
+			<img src="images/icon-hamburger.svg" alt="">
+		</button>
+
+		<h1 class="text-[30px] text-white">room</h1>
+
+		<nav class=" gap-4 hidden">
+			<a href="#" class="hover:underline">Home</a>
+			<a href="#" class="hover:underline">Shop</a>
+			<a href="#" class="hover:underline">About</a>
+			<a href="#" class="hover:underline">Contact</a>
+		</nav>
+	</header>
+
+	<!-- Hero -->
+	<figure class="hero relative">
+		<picture>
+			<source srcset="images/mobile-image-hero-1.jpg" media="(max-width: 768px)">
+			<source srcset="images/desktop-image-hero-1.jpg" media="(min-width: 768px)">
+			<img src="images/mobile-image-hero-1.jpg" alt="hero image"
+			     class="w-full h-full object-cover object-center">
+		</picture>
+
+		<figcaption class="absolute right-0 bottom-0 w-[112px] h-[55px] bg-gray-300/75 flex">
+			<button class="actions__item" aria-label="previous image">
+				<img src="images/icon-angle-left.svg" alt="previous image" class="h-[16px]">
+			</button>
+			<button class="actions__item" aria-label="next image">
+				<img src="images/icon-angle-right.svg" alt="previous image" class="h-[16px]">
+			</button>
+		</figcaption>
+	</figure>
+
+	<section class="main px-[30px] pt-[60px]">
+		<!--  Home-->
+		<h2 class="text-[36px] leading-[36px] text-black font-semibold ml-[2px]">
+			Discover innovative ways to decorate
+		</h2>
+		<p class="text-[15px] leading-[22px] text-black mt-4 font-semibold">
+			We provide unmatched quality, comfort, and style for
+			property owners across the country. Our experts combine form and function in bringing
+			your vision to life. Create a room in your own style with our collection and make your
+			property a reflection of you and what you love.
+		</p>
+		<button class="flex items-center mt-11 text-[16px] font-semibold uppercase tracking-[12px]">
+			Shop now
+			<img src="images/icon-arrow.svg" alt="arrow" class="ml-5">
+		</button>
+	</section>
+
+	<figure class="about-dark">
+		<img src="images/image-about-dark.jpg"
+		     alt="Minimalist living room with black chairs and a wooden table."
+		     class="w-full h-full object-cover object-center">
+	</figure>
+
+	<section class="about px-[30px] pt-[50px]">
+		<!--  Home-->
+		<h3
+				class="text-[14px] leading-[14px] text-black font-semibold ml-[2px] uppercase tracking-[6px]">
+			About our furniture
+		</h3>
+		<p class="text-[15px] leading-[22px] text-black mt-5 font-semibold">
+			Our multifunctional collection blends design and function to suit your individual taste.
+			Make each room unique, or pick a cohesive theme that best express your interests and
+			what
+			inspires you. Find the furniture pieces you need, from traditional to contemporary
+			styles
+			or anything in between. Product specialists are available to help you create your dream
+			space.
+		</p>
+	</section>
+
+	<figure class="about-light">
+		<img src="images/image-about-light.jpg" alt="White chair against a gray background."
+		     class="w-full h-full object-cover object-center">
+	</figure>
+</main>
+
+<!--mobile menu-->
+<aside
+		class="mobile-menu fixed top-0 left-0 right-0 bottom-0 bg-gray-300/75 z-50 pointer-events-none md:hidden hidden">
+	<!-- Header -->
+	<header class="header self-start h-[110px] px-6 bg-white flex">
+		<button aria-label="close menu">
+			<img src="images/icon-close.svg" alt="">
+		</button>
+
+		<nav class="flex items-end gap-8 ml-auto">
+			<a href="#">Home</a>
+			<a href="#">Shop</a>
+			<a href="#">About</a>
+			<a href="#">Contact</a>
+		</nav>
+	</header>
+</aside>
+
+<!-- Footer -->
+<footer
+		class="text-xs text-center bottom-2 inset-x-0 mt-auto text-black p-2">
+	Challenge by
+	<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+	   class="hover:underline">
+		Frontend Mentor .
+	</a>
+	Coded by
+	<a href="https://www.frontendmentor.io/profile/mofada"
+	   class="hover:underline">
+		Fada Mo.
+	</a>
+</footer>
+</body>
+</html>
