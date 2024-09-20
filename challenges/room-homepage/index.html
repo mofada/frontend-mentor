@@ -30,13 +30,13 @@
 <main>
 	<!-- Header -->
 	<header class="header self-start h-[108px] px-6">
-		<button aria-label="open menu">
+		<button aria-label="open menu" class="md:hidden">
 			<img src="images/icon-hamburger.svg" alt="">
 		</button>
 
 		<h1 class="text-[30px] text-white">room</h1>
 
-		<nav class=" gap-4 hidden">
+		<nav class="gap-4 hidden md:flex" aria-label="Primary navigation">
 			<a href="#" class="hover:underline">Home</a>
 			<a href="#" class="hover:underline">Shop</a>
 			<a href="#" class="hover:underline">About</a>
@@ -63,7 +63,7 @@
 		</figcaption>
 	</figure>
 
-	<section class="main px-[30px] pt-[60px]">
+	<section class="introduce px-[30px] pt-[60px]">
 		<!--  Home-->
 		<h2 class="text-[36px] leading-[36px] text-black font-semibold ml-[2px]">
 			Discover innovative ways to decorate
@@ -129,7 +129,7 @@
 
 <!-- Footer -->
 <footer
-		class="text-xs text-center bottom-2 inset-x-0 mt-auto text-black p-2">
+		class="text-xs text-center bottom-2 inset-x-0 text-black p-2 lg:fixed">
 	Challenge by
 	<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
 	   class="hover:underline">

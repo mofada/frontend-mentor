@@ -8,7 +8,7 @@ main {
     display: grid;
     grid-template-areas:
     "hero"
-    "main"
+    "introduce"
     "about-dark"
     "about"
     "about-light";
@@ -41,8 +41,8 @@ main {
     }
 }
 
-.main {
-    grid-area: main;
+.introduce {
+    grid-area: introduce;
 }
 
 .about-dark {
@@ -58,12 +58,39 @@ main {
 }
 
 
-.mobile-menu{
-    nav{
-        a{
+.mobile-menu {
+    nav {
+        a {
             color: #000;
             font-size: 14px;
             font-weight: 600;
         }
     }
+}
+
+
+/* ----------------------------pad----------------------------------  */
+@media screen and (min-width: 768px) {
+    main {
+        grid-template-areas:
+        "hero hero hero hero hero"
+        "about-dark about-dark introduce introduce introduce"
+        "about about about about-light about-light";
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-rows: 360px 410px 300px;
+    }
+}
+
+/* ----------------------------desktop----------------------------------  */
+@media screen and (min-width: 1024px) {
+    main {
+        max-width: 1110px;
+        margin: auto;
+        grid-template-areas:
+        "hero hero hero hero introduce introduce introduce"
+        "about-dark about-dark about about about about-light about-light";
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        grid-template-rows: 360px 410px;
+    }
+
 }
