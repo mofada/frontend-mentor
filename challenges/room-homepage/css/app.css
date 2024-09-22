@@ -110,7 +110,7 @@ main {
 /* ----------------------------desktop----------------------------------  */
 @media screen and (min-width: 1024px) {
     main {
-        min-height: 100vh;
+        height: 100vh;
         grid-template-areas:
         "hero hero introduce introduce"
         "about-dark about about about-light";
