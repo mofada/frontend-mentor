@@ -27,12 +27,12 @@ main {
 /**/
 .hero {
     grid-area: hero;
+}
 
-    /*actions*/
-
-    .hero_actions {
-        display: flex;
-    }
+.actions {
+    grid-area: hero;
+    align-self: flex-end;
+    justify-self: flex-end;
 
     .actions__item {
         flex: 1 1 auto;
@@ -73,24 +73,59 @@ main {
 @media screen and (min-width: 768px) {
     main {
         grid-template-areas:
-        "hero hero hero hero hero"
-        "about-dark about-dark introduce introduce introduce"
-        "about about about about-light about-light";
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        "hero hero hero"
+        "about-dark introduce introduce"
+        "about about about-light";
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-template-rows: 360px 410px 300px;
+    }
+
+    /* link hover style */
+    .header a {
+        font-size: 15px;
+        color: white;
+        text-transform: lowercase;
+        font-weight: 500;
+
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s;
+        }
+    }
+
+    .header a:hover:after {
+        width: 22px;
     }
 }
 
 /* ----------------------------desktop----------------------------------  */
 @media screen and (min-width: 1024px) {
     main {
-        max-width: 1110px;
-        margin: auto;
+        min-height: 100vh;
         grid-template-areas:
-        "hero hero hero hero introduce introduce introduce"
-        "about-dark about-dark about about about about-light about-light";
-        grid-template-columns: repeat(7, minmax(0, 1fr));
-        grid-template-rows: 360px 410px;
+        "hero hero introduce introduce"
+        "about-dark about about about-light";
+        grid-template-columns: 420fr 420fr 160fr 440fr;
+        grid-template-rows: minmax(0, 530fr) minmax(0, 270fr);
+
+        * {
+            min-height: 0;
+            min-width: 0;
+        }
     }
 
+    .actions {
+        grid-area: introduce;
+        align-self: flex-end;
+        justify-self: flex-start;
+    }
 }

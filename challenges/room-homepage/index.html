@@ -17,11 +17,14 @@
 
 
 	<!--debug-->
-	<!--	<script src="js/debug.js" defer></script>-->
+<!--	<script src="js/debug.js" defer></script>-->
 
 	<!--use local tailwind-->
 	<script src="js/tailwindcss-3.4.5.min.js"></script>
 	<script src="js/tailwind-config.js"></script>
+
+	<!--use local alpinejs-->
+	<script src="js/app.js" defer></script>
 </head>
 
 <body
@@ -29,54 +32,60 @@
 
 <main>
 	<!-- Header -->
-	<header class="header self-start h-[108px] px-6">
+	<header class="header self-start h-[108px] px-6 lg:h-[140px] lg:px-16 md:flex">
 		<button aria-label="open menu" class="md:hidden">
 			<img src="images/icon-hamburger.svg" alt="">
 		</button>
 
 		<h1 class="text-[30px] text-white">room</h1>
 
-		<nav class="gap-4 hidden md:flex" aria-label="Primary navigation">
-			<a href="#" class="hover:underline">Home</a>
-			<a href="#" class="hover:underline">Shop</a>
-			<a href="#" class="hover:underline">About</a>
-			<a href="#" class="hover:underline">Contact</a>
+		<nav class="hidden md:flex gap-[32px] ml-[52px]" aria-label="Primary navigation">
+			<a href="#">Home</a>
+			<a href="#">Shop</a>
+			<a href="#">About</a>
+			<a href="#">Contact</a>
 		</nav>
 	</header>
 
 	<!-- Hero -->
-	<figure class="hero relative">
-		<picture>
-			<source srcset="images/mobile-image-hero-1.jpg" media="(max-width: 768px)">
-			<source srcset="images/desktop-image-hero-1.jpg" media="(min-width: 768px)">
-			<img src="images/mobile-image-hero-1.jpg" alt="hero image"
-			     class="w-full h-full object-cover object-center">
-		</picture>
+	<picture class="hero">
+		<source class="hero__mobile" srcset="images/mobile-image-hero-1.jpg"
+		        media="(max-width: 768px)">
+		<source class="hero__desktop" srcset="images/desktop-image-hero-1.jpg"
+		        media="(min-width: 768px)">
+		<img src="images/mobile-image-hero-1.jpg" alt="hero image"
+		     class="hero__img w-full h-full object-cover object-center">
+	</picture>
+	<!--Hero actions-->
+	<section class="actions w-[112px] h-[55px] bg-gray-300/75 flex lg:w-40 lg:h-20 z-10">
+		<button class="actions__item actions__item--prev hover:bg-gray-300"
+		        aria-label="previous image">
+			<img src="images/icon-angle-left.svg" alt="previous image"
+			     class="h-[16px] lg:h-[24px]">
+		</button>
+		<button class="actions__item actions__item--next hover:bg-gray-300" aria-label="next image">
+			<img src="images/icon-angle-right.svg" alt="previous image"
+			     class="h-[16px] lg:h-[24px]">
+		</button>
+	</section>
 
-		<figcaption class="absolute right-0 bottom-0 w-[112px] h-[55px] bg-gray-300/75 flex">
-			<button class="actions__item" aria-label="previous image">
-				<img src="images/icon-angle-left.svg" alt="previous image" class="h-[16px]">
-			</button>
-			<button class="actions__item" aria-label="next image">
-				<img src="images/icon-angle-right.svg" alt="previous image" class="h-[16px]">
-			</button>
-		</figcaption>
-	</figure>
-
-	<section class="introduce px-[30px] pt-[60px]">
-		<!--  Home-->
-		<h2 class="text-[36px] leading-[36px] text-black font-semibold ml-[2px]">
+	<section class="introduce px-[30px] pt-[60px] lg:px-[98px] lg:pt-[120px]">
+		<h2
+				class="introduce__title text-[36px] leading-[36px] text-black font-semibold ml-[2px] lg:text-[44px] lg:leading-[45px]">
 			Discover innovative ways to decorate
 		</h2>
-		<p class="text-[15px] leading-[22px] text-black mt-4 font-semibold">
+		<p
+				class="introduce__description text-[15px] leading-[22px] text-black mt-4 font-semibold lg:mt-[22px]">
 			We provide unmatched quality, comfort, and style for
 			property owners across the country. Our experts combine form and function in bringing
 			your vision to life. Create a room in your own style with our collection and make your
 			property a reflection of you and what you love.
 		</p>
-		<button class="flex items-center mt-11 text-[16px] font-semibold uppercase tracking-[12px]">
+		<button
+				class="group flex items-center mt-11 text-[16px] font-semibold uppercase tracking-[12px] lg:mt-[24px] hover:text-gray-300">
 			Shop now
-			<img src="images/icon-arrow.svg" alt="arrow" class="ml-5">
+			<img src="images/icon-arrow.svg" alt="arrow"
+			     class="ml-5 group-hover:translate-x-2 transition-transform	duration-300 delay-75">
 		</button>
 	</section>
 
@@ -86,13 +95,12 @@
 		     class="w-full h-full object-cover object-center">
 	</figure>
 
-	<section class="about px-[30px] pt-[50px]">
-		<!--  Home-->
+	<section class="about px-[30px] pt-[50px] lg:px-[46px] lg:pt-[68px]">
 		<h3
-				class="text-[14px] leading-[14px] text-black font-semibold ml-[2px] uppercase tracking-[6px]">
+				class="text-[14px] leading-[14px] text-black font-semibold ml-[2px] uppercase tracking-[6px] lg:text-[16px] lg:leading-[16px] lg:font-bold lg:tracking-[6.6px]">
 			About our furniture
 		</h3>
-		<p class="text-[15px] leading-[22px] text-black mt-5 font-semibold">
+		<p class="text-[15px] leading-[22px] text-black mt-5 font-semibold lg:mt-[15px]">
 			Our multifunctional collection blends design and function to suit your individual taste.
 			Make each room unique, or pick a cohesive theme that best express your interests and
 			what
