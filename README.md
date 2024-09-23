@@ -145,9 +145,16 @@ tailwind, become tailwind, surpass tailwind (what? I don't think I can surpass t
 
 [Preview](https://mofada.github.io/frontend-mentor/challenges/room-homepage/)
 
+### 20. [bookmark-landing-page](challenges/bookmark-landing-page)
+
+![Screenshot](challenges/bookmark-landing-page/screenshot/screenshot.png)
+
+[Preview](https://mofada.github.io/frontend-mentor/challenges/bookmark-landing-page/)
+
 still working...
 
 ## Author
 
+- Website - [mofada](https://mofada.github.io/frontend-mentor/)
 - Frontend Mentor - [@mofada](https://www.frontendmentor.io/profile/mofada)
 - Twitter - [@im_mofada](https://x.com/im_mofada)
