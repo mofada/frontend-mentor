@@ -36,6 +36,16 @@ const App = {
      */
     interval: null,
 
+
+    init() {
+        this.initHero();
+
+        this.initMobileMenu();
+    },
+    destroy() {
+        this.interval && clearInterval(this.interval);
+    },
+
     initHero() {
         // hero
         const heroDesktop = document.querySelector(".hero__desktop");
@@ -79,11 +89,20 @@ const App = {
             updateHero();
         }, 5000);
     },
-    init() {
-        this.initHero();
-    },
-    destroy() {
-        this.interval && clearInterval(this.interval);
+
+    initMobileMenu() {
+        const buttonOpen = document.querySelector('.button-open');
+        const buttonClose = document.querySelector('.button-close');
+
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        buttonOpen.onclick = () => {
+            mobileMenu.classList.toggle('hidden', false);
+        }
+
+        buttonClose.onclick = () => {
+            mobileMenu.classList.toggle('hidden', true);
+        }
     }
 };
 
