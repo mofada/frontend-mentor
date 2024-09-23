@@ -1,16 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 tailwind.config = {
-	theme: {
-		colors: {
-			white: "hsl(0, 0%, 100%)", // White
-			black: "hsl(0, 0%, 0%)", // Black
-			gray: {
-				100: "hsl(0, 0%, 63%)", // Dark Gray
-				300: "hsl(0, 0%, 27%)", // Very Dark Gray
-			},
-		},
-		fontFamily: {
-			"league-spartan": ["League Spartan", "sans-serif"],
-		},
-	},
+    theme: {
+        colors: {
+            red: "hsl(0, 94%, 66%)",
+            blue: {
+                soft: "hsl(231, 69%, 60%)",
+                dark: "hsl(229, 31%, 21%)",
+                grayish: "hsl(229, 8%, 60%)",
+            }
+        },
+        fontFamily: {
+            rubik: ["Rubik", "sans-serif"],
+        },
+    },
 };
