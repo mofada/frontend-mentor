@@ -10,10 +10,11 @@
 	<title>Frontend Mentor | Time tracking dashboard</title>
 
 	<!--loading font-->
-	<link href="fonts/rubik.css" rel="stylesheet">
+	<link href="css/rubik.css" rel="stylesheet">
 
 	<!--use local tailwind-->
-	<script src="tailwindcss/tailwind-config.js" type="module"></script>
+	<script src="../../js/tailwindcss-3.4.5.min.js"></script>
+	<script src="js/tailwind-config.js" type="module"></script>
 
 <!--	<script>-->
 <!--        function toggleVisible() {-->
@@ -171,13 +172,13 @@
 		class="flex flex-col w-screen h-screen bg-very-dark-blue text-lg font-rubik">
 <!--design template develop use, set screen width 1440px and develop-->
 <!--if screen is mobile, set screen width 375px-->
-<picture>
-	<source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>
-	<source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>
-	<img src="design/mobile-design.jpg"
-	     alt="background" class="w-full z-0 absolute top-0 lg:bottom-0 lg:h-full"/>
-</picture>
-<button class="fixed right-5 top-5 text-white z-20" onclick="toggleVisible()">Toggle</button>
+<!--<picture>-->
+<!--	<source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>-->
+<!--	<source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>-->
+<!--	<img src="design/mobile-design.jpg"-->
+<!--	     alt="background" class="w-full z-0 absolute top-0 lg:bottom-0 lg:h-full"/>-->
+<!--</picture>-->
+<!--<button class="fixed right-5 top-5 text-white z-20" onclick="toggleVisible()">Toggle</button>-->
 
 <main
 		class="grid gap-y-[26px] px-6 py-20 md:m-auto md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-2 md:gap-[30px] xl:w-[1110px] xl:p-0">
@@ -203,7 +204,7 @@
 
 		<!--action-->
 		<footer
-				class="text-desaturated-blue p-5 flex justify-between flex xl:flex-col xl:py-7 xl:px-7 xl:gap-y-3">
+				class="text-desaturated-blue p-5 flex justify-between xl:flex-col xl:py-7 xl:px-7 xl:gap-y-3">
 			<label class="has-[:checked]:text-white">
 				<input type="radio" name="type" value="daily" class="appearance-none"/>
 				Daily

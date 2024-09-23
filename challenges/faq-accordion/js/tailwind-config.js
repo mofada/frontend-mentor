@@ -11,10 +11,10 @@ tailwind.config = {
             },
         },
         fontFamily: {
-            'overpass': ['Overpass', 'sans-serif'],
+            'work-sans': ['Work-Sans', 'sans-serif'],
         },
-        backgroundImage: theme => ({
+        backgroundImage:  {
             'container': 'linear-gradient(to bottom, #222933, #131E28)',
-        }),
+        },
     }
 }

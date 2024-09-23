@@ -9,7 +9,8 @@
 
     <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+	<!--use local-->
+    <script src="../../js/tailwindcss-3.4.5.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -23,8 +24,7 @@
                     white: 'hsl(0, 0%, 100%)',
                 },
                 fontFamily: {
-                    roboto: ["Roboto", 'sans-serif'],
-                    'roboto-bold': ["Roboto-Bold", 'sans-serif'],
+                    roboto: ["Roboto", 'sans-serif']
                 },
                 backgroundImage: theme => ({
                     'submit': `linear-gradient(to right, ${theme('colors.light-pink')}, ${theme('colors.tomato')})`,
@@ -41,15 +41,15 @@
                 font-style: normal;
                 font-weight: 400;
                 font-display: swap;
-                src: url("assets/fonts/Roboto-Regular.ttf") format('truetype');
+                src: url("../../fonts/Roboto/Roboto-Regular.ttf") format('truetype');
             }
 
             @font-face {
-                font-family: 'Roboto-Bold';
+                font-family: 'Roboto';
                 font-style: normal;
                 font-weight: 700;
                 font-display: swap;
-                src: url("assets/fonts/Roboto-Bold.ttf") format('truetype');
+                src: url("../../fonts/Roboto/Roboto-Regular.ttf") format('truetype');
             }
         }
     </style>
@@ -130,7 +130,7 @@
         </header>
 
         <section class="mx-6 mt-10 lg:flex lg:flex-col lg:mt-20 lg:mx-10">
-            <h1 class="text-[40px] leading-10 font-roboto-bold text-slate-grey lg:text-[56px]">
+            <h1 class="text-[40px] leading-10 font-bold text-slate-grey lg:text-[56px]">
                 Stay updated!
             </h1>
 
@@ -172,7 +172,7 @@
                    placeholder="email@company.com"/>
 
             <button
-                    class="mt-[22px] h-[58px] rounded-lg text-white font-roboto-bold text-base bg-slate-grey hover:bg-submit"
+                    class="mt-[22px] h-[58px] rounded-lg text-white font-bold text-base bg-slate-grey hover:bg-submit"
                     type="submit">
                 Subscribe to monthly newsletter
             </button>
@@ -188,20 +188,20 @@
             </figure>
 
             <h1
-                    class="mt-10 text-[40px] leading-10 font-roboto-bold text-slate-grey lg:text-[56px] lg:mt-10 lg:leading-[56px]">
+                    class="mt-10 text-[40px] leading-10 font-bold text-slate-grey lg:text-[56px] lg:mt-10 lg:leading-[56px]">
                 Thanks for subscribing!
             </h1>
 
             <p class="mt-6">
                 A confirmation email has been sent to
-                <span class="email font-roboto-bold">ash@loremcompany.com.</span>
+                <span class="email font-bold">ash@loremcompany.com.</span>
                 Please open it and click the button inside to confirm your subscription.
             </p>
         </header>
 
         <footer class="mt-auto mx-6 mb-10 lg:mx-9">
             <button
-                    class="w-full h-[56px] rounded-lg text-white font-roboto-bold text-base bg-slate-grey hover:bg-submit"
+                    class="w-full h-[56px] rounded-lg text-white font-bold text-base bg-slate-grey hover:bg-submit"
                     type="button" aria-label="dismiss" onclick="hideTooltip()">
                 Dismiss message
             </button>
