@@ -1,0 +1,31 @@
+body {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-areas:
+        "header"
+        "hero"
+        "features";
+}
+
+header {
+    grid-area: header;
+}
+
+.hero{
+    grid-area: hero;
+}
+
+.features{
+    grid-area: features;
+}
+
+
+@media (min-width: 1024px) {
+    body {
+        grid-template-columns: minmax(0, 170px) minmax(auto, 1180px) minmax(0, 1fr);
+        grid-template-areas:
+                ". header ."
+                ". hero hero"
+                "features features .";
+    }
+}

@@ -16,36 +16,102 @@
 	<link href="css/app.css" rel="stylesheet">
 
 	<!--debug-->
-	<!--	<script src="js/debug.js" defer></script>-->
+	<script src="js/debug.js" defer></script>
 
 	<!--use local tailwind-->
 	<script src="../../js/tailwindcss-3.4.5.min.js"></script>
 	<script src="js/tailwind-config.js"></script>
 </head>
-<body
-		class="grid w-screen min-h-screen text-lg font-rubik font-medium text-blue-dark">
+<body class="w-screen  text-lg font-rubik font-medium text-blue-dark">
 
-<!--  Features-->
-<!--  Pricing-->
-<!--  Contact-->
-<!--  Login-->
+<!--header-->
+<header
+		class="flex items-center h-[105px] px-8 gap-[50px] lg:h-[136px] lg:pl-0 lg:pr-[75px] opacity-75">
+	<img src="images/logo-bookmark.svg" alt="Bookmark logo" class="">
 
-<!--  A Simple Bookmark Manager-->
+	<button class="ml-auto menu-open md:hidden" aria-label="open menu">
+		<img src="images/icon-hamburger.svg" alt="Hamburger icon">
+	</button>
 
-<!--  A clean and simple interface to organize your favourite websites. Open a new-->
-<!--  browser tab and see your sites load instantly. Try it for free.-->
+	<nav class="hidden ml-auto md:contents">
+		<ul
+				class="ml-auto flex gap-[45px] text-blue-gray *:font-normal *:text-xs *:uppercase *:tracking-[2px]">
+			<li class="">
+				<a href="#" class="hover:text-red">Features</a>
+			</li>
+			<li>
+				<a href="#" class="hover:text-red">Pricing</a>
+			</li>
+			<li>
+				<a href="#" class="hover:text-red">Contact</a>
+			</li>
+		</ul>
+	</nav>
 
-<!--  Get it on Chrome-->
-<!--  Get it on Firefox-->
+	<button
+			class="hidden md:block bg-red text-white w-[110px] h-[40px] rounded shadow-md border-2 border-red/0 hover:border-red hover:bg-red/0 hover:text-blue-dark transition-colors duration-300">
+		Login
+	</button>
+</header>
 
-<!--  Features-->
+<main class="contents">
+	<!--hero-->
+	<article class="hero flex flex-col gap-[55px] py-[36px]">
+		<figure
+				class="mx-[10px] max-w-[600px] self-end relative before:bg-blue-soft before:absolute before:h-[200px] before:-right-[10px] before:-bottom-[6px] before:w-[305px] before:rounded-l-full before:z-0">
+			<img src="images/illustration-hero.svg" alt="table of hero"
+			     class="w-full z-10 relative"/>
+		</figure>
 
-<!--  Our aim is to make it quick and easy for you to access your favourite websites.-->
-<!--  Your bookmarks sync between your devices so you can access them on the go.-->
+		<section class="px-6 text-center flex flex-col gap-[18px]">
+			<h1 class="text-[30px] leading-[40px] font-medium">A Simple Bookmark Manager</h1>
 
-<!--  Simple Bookmarking-->
-<!--  Speedy Searching-->
-<!--  Easy Sharing-->
+			<p class="text-[15px] leading-[25px] font-normal px-5">
+				A clean and simple interface to organize your favourite websites. Open a new
+				browser tab and see your sites load instantly. Try it for free.
+			</p>
+
+			<div class="flex justify-center gap-[12px] mt-3">
+				<button
+						class="flex justify-center items-center w-[150px] h-[48px] text-[14px] font-medium rounded-md text-white tracking-[0.3px] bg-blue-soft border-2 border-blue-soft/0 hover:border-blue-soft hover:bg-blue-soft/0 hover:text-blue-soft shadow lg:shadow-xl transition-colors duration-300">
+					Get it on Chrome
+				</button>
+				<button
+						class="flex justify-center items-center w-[150px] h-[48px] text-[14px] font-medium rounded-md text-blue-gray tracking-[0.3px] bg-white border-2 border-transparent hover:border-blue-gray shadow lg:shadow-xl transition-colors duration-300">
+					Get it on Firefox
+				</button>
+			</div>
+		</section>
+	</article>
+
+	<!--features-->
+	<article class="features flex flex-col gap-[55px] mt-[110px] ">
+		<header class="px-8 text-center flex flex-col">
+			<h2 class="text-[24px] leading-[40px] font-medium">Features</h2>
+			<p class="text-[15px] leading-[25px] font-normal mt-2">
+				Our aim is to make it quick and easy for you to access your favourite websites.
+				Your bookmarks sync between your devices so you can access them on the go.
+			</p>
+			<!--radio group-->
+			<fieldset class="flex flex-col font-normal mt-8">
+				<label>
+					<input type="radio" name="rating" value="1" class="appearance-none"/>
+					<span>Simple Bookmarking</span>
+				</label>
+
+				<label>
+					<input type="radio" name="rating" value="2" class="appearance-none"/>
+					<span>Speedy Searching</span>
+				</label>
+
+				<label>
+					<input type="radio" name="rating" value="3" class="appearance-none"/>
+					<span>Easy Sharing</span>
+				</label>
+			</fieldset>
+		</header>
+	</article>
+</main>
 
 <!--  Bookmark in one click-->
 
