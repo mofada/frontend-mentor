@@ -3,22 +3,21 @@
  */
 function addPictureElement() {
 	const picture = document.createElement("picture");
+	picture.className = "w-full fixed top-0 left-0";
 
 	const sourceDesktop = document.createElement("source");
 	sourceDesktop.media = "(min-width: 768px)";
-	// sourceDesktop.srcset = "design/desktop-design.jpg";
-	sourceDesktop.srcset = "design/desktop-design-slide-1.jpg";
+	sourceDesktop.srcset = "design/desktop-design.jpg";
 
 	const sourceMobile = document.createElement("source");
 	sourceMobile.media = "(max-width: 768px)";
 	sourceMobile.srcset = "design/mobile-design.jpg";
-	// sourceMobile.srcset = "design/mobile-navigation.jpg";
 
 	const img = document.createElement("img");
 	img.src = "design/mobile-design.jpg";
 	img.alt = "background";
 	img.className =
-		"w-full -z-10 absolute top-0 left-0 right-0 object-cover opacity-50";
+		"w-full -z-10 absolute top-0 left-0 right-0 object-cover opacity-65";
 
 	picture.appendChild(sourceDesktop);
 	picture.appendChild(sourceMobile);

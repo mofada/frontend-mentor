@@ -1,123 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-    <title>Frontend Mentor | Product preview card component</title>
+	<title>Frontend Mentor | Product preview card component</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 
-    <!--font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
+	<!--font-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+	      rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+	      rel="stylesheet">
 
-    <!--use local js-->
-    <script src="../../js/tailwindcss-3.4.5.min.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                colors: {
-                    'dark-cyan': 'hsl(158, 36%, 37%)',
-                    'very-dark-cyan': 'hsl(156, 42%, 18%)',
-                    'cream': 'hsl(30, 38%, 92%)',
-                    'very-dark-blue': 'hsl(212, 21%, 14%)',
-                    'dark-grayish-blue': 'hsl(228, 12%, 48%)',
-                    'white': 'hsl(0, 0%, 100%)',
-                },
-                fontFamily: {
-                    montserrat: ["Montserrat", 'sans-serif'],
-                    fraunces: ['Fraunces', 'serif'],
-                },
-            }
-        }
-    </script>
+	<!--use local js-->
+	<script src="../../js/tailwindcss-3.4.5.min.js"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				colors: {
+					'dark-cyan': 'hsl(158, 36%, 37%)',
+					'very-dark-cyan': 'hsl(156, 42%, 18%)',
+					'cream': 'hsl(30, 38%, 92%)',
+					'very-dark-blue': 'hsl(212, 21%, 14%)',
+					'dark-grayish-blue': 'hsl(228, 12%, 48%)',
+					'white': 'hsl(0, 0%, 100%)',
+				},
+				fontFamily: {
+					montserrat: ["Montserrat", 'sans-serif'],
+					fraunces: ['Fraunces', 'serif'],
+				},
+			}
+		}
+	</script>
 
-    <style>
+	<style>
 
-    </style>
+	</style>
 
-    <!--    <script>-->
-    <!--        function changOpacity() {-->
-    <!--            const container = document.querySelector('main');-->
-    <!--            container.classList.toggle('hidden');-->
-    <!--        }-->
-    <!--    </script>-->
+	<!--debug-->
+<!--	<script src="../../js/debug.js"></script>-->
 </head>
 <body class="flex flex-col w-screen h-screen bg-cream text-base font-medium font-montserrat">
 
-<!--design template develop use, set screen width 1440px and develop-->
-<!--if screen is mobile, set screen width 375px-->
-<!--<picture>-->
-<!--    <source media="(min-width: 768px)" srcset="design/desktop-design.jpg"/>-->
-<!--    <source media="(max-width: 768px)" srcset="design/mobile-design.jpg"/>-->
-<!--    <img src="design/mobile-design.jpg"-->
-<!--         alt="background" class="w-full h-full z-0 absolute top-0 bottom-0"/>-->
-<!--</picture>-->
-<!--<button class="fixed right-5 bottom-5 text-white z-20" onclick="changOpacity()">Toggle</button>-->
-
 <!-- main content -->
 <main
-        class="m-auto flex flex-col w-[343px] h-[612px] bg-white rounded-xl md:flex-row md:w-[600px] md:h-[450px]">
-    <!-- Cover Image -->
-    <picture class="md:grow md:basis-3/6">
-        <source media="(min-width: 768px)" srcset="images/image-product-desktop.jpg"/>
-        <source media="(max-width: 768px)" srcset="images/image-product-mobile.jpg"/>
-        <img src="images/image-product-mobile.jpg"
-             alt="produce image" class="w-full rounded-t-xl md:rounded-l-xl md:rounded-r-none"/>
-    </picture>
+		class="m-auto flex flex-col w-[343px] h-[612px] bg-white rounded-xl md:flex-row md:w-[600px] md:h-[450px]">
+	<!-- Cover Image -->
+	<picture class="md:grow md:basis-3/6">
+		<source media="(min-width: 768px)" srcset="images/image-product-desktop.jpg"/>
+		<source media="(max-width: 768px)" srcset="images/image-product-mobile.jpg"/>
+		<img src="images/image-product-mobile.jpg"
+		     alt="produce image" class="w-full rounded-t-xl md:rounded-l-xl md:rounded-r-none"/>
+	</picture>
 
-    <section class="flex flex-col px-6 md:grow md:px-8 md:basis-3/6">
-        <!-- Product Type -->
-        <h2 class="mt-6  text-xs text-dark-grayish-blue tracking-[5px] uppercase md:mt-8">
-            Perfume</h2>
+	<section class="flex flex-col px-6 md:grow md:px-8 md:basis-3/6">
+		<!-- Product Type -->
+		<h2 class="mt-6  text-xs text-dark-grayish-blue tracking-[5px] uppercase md:mt-8">
+			Perfume</h2>
 
-        <!-- Product Title -->
-        <h1 class="text-[32px] text-very-dark-blue font-fraunces font-bold  mt-3 leading-8 md:mt-5">
-            Gabrielle Essence Eau De Parfum
-        </h1>
+		<!-- Product Title -->
+		<h1 class="text-[32px] text-very-dark-blue font-fraunces font-bold  mt-3 leading-8 md:mt-5">
+			Gabrielle Essence Eau De Parfum
+		</h1>
 
-        <!-- Product Description -->
-        <p class="text-sm text-dark-grayish-blue leading-[23px]  mt-4 md:mt-6">
-            A floral, solar and voluptuous interpretation composed by Olivier Polge,
-            Perfumer-Creator
-            for the House of CHANEL.
-        </p>
+		<!-- Product Description -->
+		<p class="text-sm text-dark-grayish-blue leading-[23px]  mt-4 md:mt-6">
+			A floral, solar and voluptuous interpretation composed by Olivier Polge,
+			Perfumer-Creator
+			for the House of CHANEL.
+		</p>
 
-        <!-- Product Prices -->
-        <p class="mt-7  flex items-center gap-5 md:mt-8">
-            <span class="text-[32px] text-dark-cyan font-bold font-fraunces ">$149.99</span>
-            <!--use s tag maybe correct-->
-            <s class="text-[13px] text-dark-grayish-blue  ">$169.99</s>
-        </p>
+		<!-- Product Prices -->
+		<p class="mt-7  flex items-center gap-5 md:mt-8">
+			<span class="text-[32px] text-dark-cyan font-bold font-fraunces ">$149.99</span>
+			<!--use s tag maybe correct-->
+			<s class="text-[13px] text-dark-grayish-blue  ">$169.99</s>
+		</p>
 
-        <!-- Add to Cart Button -->
-        <button
-                class="mt-6 h-12 bg-dark-cyan  rounded-lg text-white flex justify-center items-center gap-[11px] text-sm cursor-pointer hover:bg-very-dark-cyan md:mt-[34px]"
-                aria-label="Add to Cart">
-            <img src="images/icon-cart.svg" alt="Cart Icon">
-            Add to Cart
-        </button>
-    </section>
+		<!-- Add to Cart Button -->
+		<button
+				class="mt-6 h-12 bg-dark-cyan  rounded-lg text-white flex justify-center items-center gap-[11px] text-sm cursor-pointer hover:bg-very-dark-cyan md:mt-[34px]"
+				aria-label="Add to Cart">
+			<img src="images/icon-cart.svg" alt="Cart Icon">
+			Add to Cart
+		</button>
+	</section>
 </main>
 
 <footer class="fixed bottom-0 inset-x-0 text-xs text-center">
-    Challenge by
-    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-dark-cyan">
-        Frontend Mentor .
-    </a>
-    Coded by
-    <a href="https://www.frontendmentor.io/profile/mofada" class="text-dark-cyan">Fada Mo.</a>
+	Challenge by
+	<a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-dark-cyan">
+		Frontend Mentor .
+	</a>
+	Coded by
+	<a href="https://www.frontendmentor.io/profile/mofada" class="text-dark-cyan">Fada Mo.</a>
 </footer>
 </body>
 </html>
