@@ -3,7 +3,6 @@
  */
 function addPictureElement() {
 	const picture = document.createElement("picture");
-	picture.className = "w-full fixed top-0 left-0";
 
 	const sourceDesktop = document.createElement("source");
 	sourceDesktop.media = "(min-width: 768px)";
@@ -17,7 +16,7 @@ function addPictureElement() {
 	img.src = "design/mobile-design.jpg";
 	img.alt = "background";
 	img.className =
-		"w-full -z-10 absolute top-0 left-0 right-0 object-cover opacity-65";
+		"w-screen -z-10 absolute top-0 left-0 right-0 object-cover opacity-65";
 
 	picture.appendChild(sourceDesktop);
 	picture.appendChild(sourceMobile);

@@ -1,31 +1,136 @@
-body {
-    display: grid;
-    grid-auto-rows: auto;
-    grid-template-areas:
+/* base */
+p {
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: normal;
+    color: hsl(229, 8%, 60%);
+}
+
+/* components */
+.button--primary {
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: white;
+
+    background-color: hsl(231, 69%, 60%);
+    border: 2px solid transparent;
+
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        border-color: hsl(231, 69%, 60%);
+        background-color: white;
+        color: hsl(231, 69%, 60%);
+    }
+}
+
+.button--secondary {
+
+}
+
+.radio {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    border-bottom: 1px solid hsl(229, 8%, 60%);
+    position: relative;
+    color: hsl(229, 8%, 60%);
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 140px;
+        height: 3px;
+        border-radius: 2px;
+    }
+
+    &:hover {
+        color: hsl(0, 94%, 66%);
+    }
+
+    /*checked status*/
+
+    &:has(input:checked) {
+        color: hsl(229, 31%, 21%);
+
+        &:after {
+            background-color: hsl(0, 94%, 66%);
+        }
+    }
+
+    &:first-child {
+        border-top: 1px solid hsl(229, 8%, 60%);
+    }
+}
+
+
+.extension__card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 290px;
+    height: 370px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 8px hsl(229, 8%, 60%, 0.2);
+    opacity: 0.2;
+}
+
+/* layout */
+
+@layer layout {
+    body {
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-areas:
         "header"
         "hero"
-        "features";
-}
-
-header {
-    grid-area: header;
-}
-
-.hero{
-    grid-area: hero;
-}
-
-.features{
-    grid-area: features;
-}
+        "features"
+        "banner"
+        "extension";
+    }
 
 
-@media (min-width: 1024px) {
-    body {
-        grid-template-columns: minmax(0, 170px) minmax(auto, 1180px) minmax(0, 1fr);
-        grid-template-areas:
+    @media (min-width: 1024px) {
+        body {
+            grid-template-columns: minmax(0, 170px) minmax(auto, 1180px) minmax(0, 1fr);
+            grid-template-areas:
                 ". header ."
                 ". hero hero"
-                "features features .";
+                "features features features"
+                "banner banner ."
+                "extension extension extension";
+        }
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    .hero {
+        grid-area: hero;
+    }
+
+    .features {
+        grid-area: features;
+    }
+
+    .banner {
+        grid-area: banner;
     }
 }
