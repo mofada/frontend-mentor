@@ -119,6 +119,7 @@
 							name="rating"
 							value="1"
 							class="appearance-none"
+							checked
 					/>
 					<span>Simple Bookmarking</span>
 				</label>
@@ -196,7 +197,7 @@
 				class="mt-10 grid grid-cols-[repeat(auto-fill, minmax(290px, 1fr))] gap-y-[42px] justify-center">
 			<article class="extension__card">
 				<header class="flex-1 flex flex-col justify-end items-center">
-					<img src="images/logo-chrome.svg" alt="chrome" class="mb-7 w-[105px]">
+					<img src="images/logo-chrome.svg" alt="chrome" class="mb-7 h-[100px]">
 					<h3 class="mb-2 text-blue-dark text-[20px]">Add to Chrome</h3>
 					<p class="mb-7 text-blue-gray text-[15px]">Minimum version 62</p>
 				</header>
@@ -214,7 +215,7 @@
 
 			<article class="extension__card">
 				<header class="flex-1 flex flex-col justify-end items-center">
-					<img src="images/logo-firefox.svg" alt="firefox" class="mb-7 w-[105px]">
+					<img src="images/logo-firefox.svg" alt="firefox" class="mb-8 h-[100px]">
 					<h3 class="mb-2 text-blue-dark text-[20px]">Add to Firefox</h3>
 					<p class="mb-7 text-blue-gray text-[15px]">Minimum version 55</p>
 				</header>
@@ -232,7 +233,7 @@
 
 			<article class="extension__card">
 				<header class="flex-1 flex flex-col justify-end items-center">
-					<img src="images/logo-opera.svg" alt="opera" class="mb-7 w-[105px]">
+					<img src="images/logo-opera.svg" alt="opera" class="mb-8 h-[100px]">
 					<h3 class="mb-2 text-blue-dark text-[20px]">Add to Opera</h3>
 					<p class="mb-7 text-blue-gray text-[15px]">Minimum version 46</p>
 				</header>
@@ -251,7 +252,7 @@
 	</article>
 
 	<!--question-->
-	<article class="questions mt-[135px]">
+	<article class="questions pt-[135px] pb-[122px]">
 		<header class="text-center ">
 			<h2 class="text-2xl font-medium px-8">Frequently Asked Questions</h2>
 			<p class="px-8 mt-4">
@@ -260,14 +261,14 @@
 			</p>
 		</header>
 
-		<section class="px-8">
+		<section class="px-8 mt-[50px] flex flex-col gap-2">
 			<details class="details--question">
 				<summary
-						class="list-none w-full">
+						class="question__summary list-none w-full">
 					What is Bookmark?
 				</summary>
 
-				<p class="">
+				<p class="question__content">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
 					justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
 				</p>
@@ -275,11 +276,11 @@
 
 			<details class="details--question">
 				<summary
-						class="list-none w-full">
+						class="question__summary list-none w-full">
 					How can I request a new browser?
 				</summary>
 
-				<p class="">
+				<p class="question__content">
 					Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies
 					non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis
 					ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdie
@@ -290,11 +291,11 @@
 
 			<details class="details--question">
 				<summary
-						class="list-none w-full">
+						class="question__summary list-none w-full">
 					Is there a mobile app?
 				</summary>
 
-				<p class="">
+				<p class="question__content">
 					Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum
 					dolor, ut condimentum urna vulputate eget. Cras in ligula quis est pharetra
 					mattis sit amet pharetra purus. Sed sollicitudin ex et ultricies bibendum.
@@ -303,25 +304,44 @@
 
 			<details class="details--question">
 				<summary
-						class="list-none w-full">
+						class="question__summary list-none w-full">
 					What about other Chromium browsers?
 				</summary>
 
-				<p class="">
+				<p class="question__content">
 					Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at
 					euismod dui. Aliquam vitae neque eget nisl gravida pellentesque non ut velit.
 				</p>
 			</details>
 		</section>
+
+		<button class="button--primary mx-auto mt-12 w-[115px]">More Info</button>
+	</article>
+
+	<!--contact-->
+	<article class="bg-blue-soft h-[360px] flex flex-col pt-[72px] px-8">
+		<p class="text-white text-xs text-center font-medium tracking-[5px] uppercase">
+			35,000+ already joined
+		</p>
+		<h3 class="text-white text-2xl text-center mt-3 leading-7">
+			Stay up-to-date with what we’re doing
+		</h3>
+
+		<form class="mt-8 flex flex-col gap-3">
+			<input
+					type="email"
+					placeholder="Enter your email address"
+					class="w-full h-[50px] px-5 rounded text-sm text-blue-dark"
+			/>
+
+			<button
+					class="button--primary w-full bg-red hover:text-red hover:border-red"
+			>
+				Contact Us
+			</button>
+		</form>
 	</article>
 </main>
-
-
-<!--  More Info-->
-
-<!--  35,000+ already joined-->
-
-<!--  Stay up-to-date with what we’re doing-->
 
 <!--  Contact Us-->
 

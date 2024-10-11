@@ -115,6 +115,40 @@ p {
     opacity: 0.2;
 }
 
+.details--question {
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: normal;
+    color: hsl(229, 8%, 60%);
+
+    border-bottom: 1px solid hsl(229, 8%, 60%);
+
+    .question__summary {
+        display: flex;
+        align-items: center;
+        height: 56px;
+
+        &:after {
+            content: url("../images/icon-arrow.svg");
+            transition: rotate 0.3s;
+            margin-left: auto;
+        }
+    }
+
+    .question__content {
+        padding: 15px 0 25px 0;
+        font-size: 15px;
+        line-height: 30px;
+    }
+}
+
+.details--question[open] {
+    .question__summary:after {
+        rotate: 180deg;
+        filter: hue-rotate(90deg);
+    }
+}
+
 /* layout */
 
 @layer layout {
