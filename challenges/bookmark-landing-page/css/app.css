@@ -160,19 +160,25 @@ p {
         "hero"
         "features"
         "banner"
-        "extension";
+        "extension"
+        "questions"
+        "contact"
+        "footer";
     }
 
 
     @media (min-width: 1024px) {
         body {
-            grid-template-columns: minmax(0, 170px) minmax(auto, 1180px) minmax(0, 1fr);
+            grid-template-columns: minmax(0, 165px) minmax(auto, 1fr) minmax(165px, 0);
             grid-template-areas:
                 ". header ."
                 ". hero hero"
                 "features features features"
                 "banner banner ."
-                "extension extension extension";
+                "extension extension extension"
+                "questions questions questions"
+                "contact contact contact"
+                "footer footer footer";
         }
     }
 
@@ -190,5 +196,21 @@ p {
 
     .banner {
         grid-area: banner;
+    }
+
+    .extension {
+        grid-area: extension;
+    }
+
+    .questions {
+        grid-area: questions;
+    }
+
+    .contact {
+        grid-area: contact;
+    }
+
+    .footer {
+        grid-area: footer;
     }
 }
